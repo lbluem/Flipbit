@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - KutiFramework
+  - bigPaddle
+  - ControlChange
+  - powerballItem
+  - MoveBlock
+  - brick
+  - smallPaddle
+  - shieldItem
+  - glueItem
+  - Player2Paddle
+  - SideTag
+  - Level2
+  - Player1Paddle
+  - ball
+  - Level3
+  - Level1
+  - PlayerOne
+  - PlayerOneButton
+  - PlayerTwoButton
+  - PlayerTwo
+  - TextCanvas
+  - 1
+  - 3
+  - Token
+  - 2
+  - Food
+  - Item
+  - 0
+  - ground
+  - button
+  - death
+  - jumpi
+  - finish
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - paddle
+  - item
+  - ball
+  - one_button_racer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Back
+    uniqueID: 3948719025
+    locked: 0
+  - name: BeforeBack
+    uniqueID: 69158761
+    locked: 0
+  - name: Boden
+    uniqueID: 1121707991
+    locked: 0
+  - name: Elements
+    uniqueID: 2348619779
+    locked: 0
+  - name: Front
+    uniqueID: 781809881
+    locked: 0
+  - name: Player
+    uniqueID: 1588783501
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
