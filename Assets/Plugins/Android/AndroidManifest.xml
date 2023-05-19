@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.dnomad.uaoflibrary" xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
+    <uses-permission android:name="android.permission.READ_INTERNAL_STORAGE" tools:node="replace"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" tools:node="replace"/>
+	  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" tools:node="replace"/>
+    <uses-permission android:name="android.permission.WRITE_MEDIA_STORAGE" tools:node="replace"/>
+ 
+
+  <application
+    android:allowBackup="true"
+    android:theme="@android:style/Theme.Black.NoTitleBar"
+    android:supportsRtl="true">
+    
+    <activity 
+      android:name="com.dnomad.uaoflibrary.BaseOverrideActivity">
+     
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+
+        <!-- These two lines are setting it as a launcher-->
+        <category android:name="android.intent.category.HOME"/>
+        <category android:name="android.intent.category.DEFAULT"/>
+      </intent-filter>
+    </activity>
+    <!--
+        <receiver
+            android:name="com.dnomad.uaoflibrary.BootReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        -->
+  </application>
+
+</manifest>
