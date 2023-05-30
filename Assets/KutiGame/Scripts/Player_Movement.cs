@@ -9,7 +9,7 @@ public class Player_Movement : MonoBehaviour
     public float speed = 8;
     private float moveDirection;
     // flippt das Sprite 
-    private bool turned = false;
+    public bool turned = false;
     public float jumpStrength = 9;
     private int jumpDirection = 1;
     private bool isJumping = false;
@@ -28,26 +28,50 @@ public class Player_Movement : MonoBehaviour
 
         if (!isJumping)
         {
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID)||KutiInput.GetKutiButtonDown(EKutiButton.P2_MID))
+            if(!turned)
             {
-                myRB.velocity = Vector2.up * jumpStrength * jumpDirection;
-                isJumping = !isJumping;
+                if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID))
+                {
+                    myRB.velocity = Vector2.up * jumpStrength * jumpDirection;
+                    isJumping = !isJumping;
+                }
+            }else{
+                if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID))
+                {
+                    myRB.velocity = Vector2.up * jumpStrength * jumpDirection;
+                    isJumping = !isJumping;
+                }
             }
         }
 
-         if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT) || KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+        if(!turned)
         {
-            moveDirection = -1;
-        }else if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT) || KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
+            {
+                moveDirection = -1;
+            }else if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+            {
+                moveDirection = 1;
+            }else if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            {
+                moveDirection = 0;
+            } 
+        }else
         {
-            moveDirection = 1;
-        }else if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT)||
-                KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
-        {
-            moveDirection = 0;
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            {
+                moveDirection = -1;
+            }else if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
+            {
+                moveDirection = 1;
+            }else if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+            {
+                moveDirection = 0;
+            }  
         }
 
-        if(!turned)
+
+        /* if(!turned)
         {
             if(myRB.position.y > 1)
             {
@@ -59,12 +83,12 @@ public class Player_Movement : MonoBehaviour
             {
                 GravityTurn();
             }
-        }
+        } */
 
     }
 
 
-    void GravityTurn()
+    public void GravityTurn()
     {
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
