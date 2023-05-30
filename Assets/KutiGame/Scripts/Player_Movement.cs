@@ -90,6 +90,7 @@ public class Player_Movement : MonoBehaviour
 
     public void GravityTurn()
     {
+        moveDirection = 0;
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
