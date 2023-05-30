@@ -9,7 +9,7 @@ public class Player_Movement : MonoBehaviour
     public float speed = 8;
     private float moveDirection;
     // flippt das Sprite 
-    private bool turned = false;
+    public bool turned = false;
     public float jumpStrength = 9;
     private int jumpDirection = 1;
     private bool isJumping = false;
@@ -71,7 +71,7 @@ public class Player_Movement : MonoBehaviour
         }
 
 
-        if(!turned)
+        /* if(!turned)
         {
             if(myRB.position.y > 1)
             {
@@ -83,12 +83,12 @@ public class Player_Movement : MonoBehaviour
             {
                 GravityTurn();
             }
-        }
+        } */
 
     }
 
 
-    void GravityTurn()
+    public void GravityTurn()
     {
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
