@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class goal_handler : MonoBehaviour
 {
     [SerializeField]
-    public string NextLevelName;
+    private string NextLevelName;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,8 +19,9 @@ public class goal_handler : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-{
-    SceneManager.LoadScene(NextLevelName, LoadSceneMode.Single);
-}
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        SceneManager.LoadScene(NextLevelName, LoadSceneMode.Single);
+        print("hello world");
+    }
 }
