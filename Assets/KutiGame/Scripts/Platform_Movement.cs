@@ -11,6 +11,10 @@ public class Platform_Movement : MonoBehaviour
     public Vector3 startPosition;
     public bool turned;
 
+    // Grenzen sind (erstmal) hard gecodet
+    public float leftBorder = -10;
+    public float rightBorder = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,11 @@ public class Platform_Movement : MonoBehaviour
         //thisRB.velocity = new Vector2(speed*moveDirection, thisRB.velocity.y);
 
         transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);
+
+        if(transform.position.x <= leftBorder || transform.position.x >= rightBorder)
+            {
+                moveDirection = 0;
+            }
 
         // Hier wird sich der Reset widerfinden
         /* if(!turned)
@@ -49,6 +58,7 @@ public class Platform_Movement : MonoBehaviour
             if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
             {
                 moveDirection = -1;
+
             }else if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
             {
                 moveDirection = 1;
@@ -63,9 +73,11 @@ public class Platform_Movement : MonoBehaviour
             {
                 moveDirection = -1;
 
+
             }else if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
             {
                 moveDirection = 1;
+
             }else if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
             {
                 moveDirection = 0;
@@ -79,7 +91,14 @@ public class Platform_Movement : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.transform.SetParent(transform);
-        }
+        }/* else if(other.gameObject.tag == "Ground")
+        {
+            if(other.transform.position.x > transform.position.x)
+            {
+                //rechte wand wurde getroffen
+                Debug.Log("RECHTE WAND GETROFFEN");
+            }
+        } */
     }
 
     private void OnCollisionExit2D(Collision2D other) 
