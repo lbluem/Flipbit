@@ -71,5 +71,20 @@ public class Platform_Movement : MonoBehaviour
                 moveDirection = 0;
             }  
         }
+
     }
+
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Player")
+        {
+            other.transform.SetParent(transform);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other) 
+    {
+        other.transform.SetParent(null);
+    }
+
 }
