@@ -51,6 +51,7 @@ public class startscreen_handler : MonoBehaviour
                 }
             }
             playerObject.GetComponent<Player_Movement>().enabled = true;
+            Destroy(GameObject.Find("StartScreen"), 5);
         }
     }
 
