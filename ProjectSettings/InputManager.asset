@@ -294,6 +294,22 @@ InputManager:
     axis: 0
     joyNum: 0
   - serializedVersion: 3
+    m_Name: KUTI_P2_MID
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: 
+    positiveButton: u
+    altNegativeButton: 
+    altPositiveButton: joystick button 16
+    gravity: 1000
+    dead: 0.001
+    sensitivity: 1000
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
     m_Name: KUTI_P1_RIGHT
     descriptiveName: 
     descriptiveNegativeName: 
@@ -345,8 +361,8 @@ InputManager:
     m_Name: P1_horizontal
     descriptiveName: P1_horizontal
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: 
+    negativeButton: a
+    positiveButton: d
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -361,8 +377,8 @@ InputManager:
     m_Name: P2_horizontal
     descriptiveName: P2_horizontal
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: k
+    negativeButton: k
+    positiveButton: h
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3

@@ -37,6 +37,7 @@ TagManager:
   - death
   - jumpi
   - finish
+  - Ground
   layers:
   - Default
   - TransparentFX
@@ -50,7 +51,7 @@ TagManager:
   - item
   - ball
   - one_button_racer
-  - 
+  - Ground
   - 
   - 
   - 

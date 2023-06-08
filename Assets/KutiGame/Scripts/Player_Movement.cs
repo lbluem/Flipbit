@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public Rigidbody2D myRB;
+    [SerializeField] private Rigidbody2D myRB;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
-    public float speed = 8;
+    private float horizontal;
+
+    public float speed = 12f;
     private float moveDirection;
     // flippt das Sprite 
     public bool turned = false;
-    public float jumpStrength = 9;
+    public float jumpStrength = 19;
     private int jumpDirection = 1;
     private bool isJumping = false;
 
@@ -18,7 +22,7 @@ public class Player_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Für den Fall das wir anfangen mit dem Spieler 2
+        // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
         {
             GravityTurn();
@@ -29,7 +33,32 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myRB.velocity = new Vector2(speed*moveDirection, myRB.velocity.y);
+        if(!turned)
+        {
+            horizontal = Input.GetAxisRaw("P1_horizontal");
+
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
+            {   
+                myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
+            {   
+                myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
+            }
+
+        }else
+        {
+            horizontal = Input.GetAxisRaw("P2_horizontal");
+
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
+            {   
+                myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
+            }
+        }
+
+        
+
+        /* myRB.velocity = new Vector2(speed*moveDirection, myRB.velocity.y);
 
         if (!isJumping)
         {
@@ -73,25 +102,18 @@ public class Player_Movement : MonoBehaviour
             {
                 moveDirection = 0;
             }  
-        }
-
-
-        /* if(!turned)
-        {
-            if(myRB.position.y > 1)
-            {
-                GravityTurn();
-            }
-        }else
-        {
-            if (myRB.position.y < -1)
-            {
-                GravityTurn();
-            }
         } */
-
     }
 
+    private void FixedUpdate() 
+    {
+        myRB.velocity = new Vector2(horizontal * speed, myRB.velocity.y);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+    }
 
     public void GravityTurn()
     {
