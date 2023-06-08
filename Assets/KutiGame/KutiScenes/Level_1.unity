@@ -1020,7 +1020,7 @@ GameObject:
   - component: {fileID: 774813133}
   m_Layer: 0
   m_Name: button_p1_up
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1080,7 +1080,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 44690db350a515e4ba21f0a4bfee9ac5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9716981, g: 0.9716981, b: 0.9716981, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 1178648315}
   m_Layer: 0
   m_Name: button_p1_right
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2353,7 +2353,7 @@ GameObject:
   - component: {fileID: 1653761714}
   m_Layer: 0
   m_Name: button_p1_left
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2585,7 +2585,7 @@ GameObject:
   - component: {fileID: 1878916066}
   m_Layer: 0
   m_Name: button_p2_up
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2701,7 +2701,7 @@ GameObject:
   - component: {fileID: 2057966306}
   m_Layer: 0
   m_Name: button_p2_right
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2783,7 +2783,7 @@ GameObject:
   - component: {fileID: 2081405384}
   m_Layer: 0
   m_Name: button_p2_left
-  m_TagString: Untagged
+  m_TagString: UIButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -37,6 +37,8 @@ TagManager:
   - death
   - jumpi
   - finish
+  - Ground
+  - UIButton
   layers:
   - Default
   - TransparentFX
