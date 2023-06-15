@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
-    public Rigidbody2D myRB;
+    [SerializeField] private Rigidbody2D myRB;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
-    public float speed = 8;
+    private float horizontal = 0f;
+
+    public float speed = 12f;
     private float moveDirection;
     // flippt das Sprite 
     public bool turned = false;
-    public float jumpStrength = 9;
+    public float jumpStrength = 19;
     private int jumpDirection = 1;
     private bool isJumping = false;
 
@@ -18,7 +22,7 @@ public class Player_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Für den Fall das wir anfangen mit dem Spieler 2
+        // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
         {
             GravityTurn();
@@ -29,7 +33,38 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        myRB.velocity = new Vector2(speed*moveDirection, myRB.velocity.y);
+        if(!turned)
+        {
+            // horizontal = Input.GetAxisRaw("P1_horizontal");
+
+            CalculateHorizontal(1);
+
+            // Horizontal selbst aus den Axen zsm bauen
+            // ist ja eig nur -1, 0 oder 1
+
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
+            {   
+                myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
+            {   
+                myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
+            }
+
+        }else
+        {
+            //horizontal = Input.GetAxisRaw("P2_horizontal");
+            CalculateHorizontal(2);
+
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
+            {   
+                myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
+            }
+        }
+
+        
+
+        /* myRB.velocity = new Vector2(speed*moveDirection, myRB.velocity.y);
 
         if (!isJumping)
         {
@@ -73,33 +108,74 @@ public class Player_Movement : MonoBehaviour
             {
                 moveDirection = 0;
             }  
-        }
-
-
-        /* if(!turned)
-        {
-            if(myRB.position.y > 1)
-            {
-                GravityTurn();
-            }
-        }else
-        {
-            if (myRB.position.y < -1)
-            {
-                GravityTurn();
-            }
         } */
+    }
 
+    private void FixedUpdate() 
+    {
+        myRB.velocity = new Vector2(horizontal * speed, myRB.velocity.y);
+    }
+
+    private bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
 
+    private void CalculateHorizontal(int player)
+    {
+
+        // Eleganter wäre eine "activePlayer" Variable die zwischen
+        // EKutiButton.P1.. und EKutiButton.P2.. swapped
+        // die if Abfragen anpassen und damit sollte Code gespart werden
+
+        if(player == 1)
+        {
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
+            {
+                horizontal -= 1;
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
+            {
+                horizontal += 1;
+            }
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+            {
+                horizontal += 1;
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            {
+                horizontal -= 1;
+            }
+        }else if(player == 2)
+        {
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
+            {
+                horizontal += 1;
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
+            {
+                horizontal -= 1;
+            }
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            {
+                horizontal -= 1;
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+            {
+                horizontal += 1;
+            }
+        }
+    }
+
     public void GravityTurn()
     {
-        moveDirection = 0;
+        // moveDirection = 0;
+        horizontal = 0;
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
-        jumpDirection *= -1;
+        //jumpDirection *= -1;
     }
 
     private void OnCollisionEnter2D(Collision2D other) 
@@ -118,3 +194,5 @@ public class Player_Movement : MonoBehaviour
         }
     }
 }
+
+
