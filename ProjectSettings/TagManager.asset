@@ -38,6 +38,7 @@ TagManager:
   - jumpi
   - finish
   - Ground
+  - UIButton
   layers:
   - Default
   - TransparentFX
