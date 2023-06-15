@@ -124,6 +124,11 @@ public class Player_Movement : MonoBehaviour
 
     private void CalculateHorizontal(int player)
     {
+
+        // Eleganter wäre eine "activePlayer" Variable die zwischen
+        // EKutiButton.P1.. und EKutiButton.P2.. swapped
+        // die if Abfragen anpassen und damit sollte Code gespart werden
+
         if(player == 1)
         {
             if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
