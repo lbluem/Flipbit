@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 568c9fbb0893ee848900ece839731e26, type: 3}
   m_Name: Kuti Game
   m_EditorClassIdentifier: 
-  _gameIcon: {fileID: 21300000, guid: eb17e3bb460700e45b970851a167144e, type: 3}
-  _startingSceneName: KutiGame/KutiScenes/Game
+  _gameIcon: {fileID: 21300000, guid: 48100cc14f35fa24aa73ba0c97a64af2, type: 3}
+  _startingSceneName: Kuti Game/KutiScenes/Game
   _internalGameName: Kuti Game
-  _displayedGameName: Kuti Game
-  _gameDescription: Kuti Game
-  _locked: 0
+  _displayedGameName: Baked with Love
+  _gameDescription: Cooperative gravitational platformer
+  _locked: 
   _sortOrder: 0
   _quizText: 
   _quizBackground: {fileID: 0}

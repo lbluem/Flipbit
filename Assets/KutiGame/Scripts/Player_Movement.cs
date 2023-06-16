@@ -17,6 +17,7 @@ public class Player_Movement : MonoBehaviour
     public float jumpStrength = 19;
     private int jumpDirection = 1;
     private bool isJumping = false;
+    private bool isFacingRight = true;
 
 
     // Start is called before the first frame update
@@ -33,6 +34,9 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        Flip();
+
         if(!turned)
         {
             // horizontal = Input.GetAxisRaw("P1_horizontal");
@@ -61,54 +65,6 @@ public class Player_Movement : MonoBehaviour
                 myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
             }
         }
-
-        
-
-        /* myRB.velocity = new Vector2(speed*moveDirection, myRB.velocity.y);
-
-        if (!isJumping)
-        {
-            if(!turned)
-            {
-                if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID))
-                {
-                    myRB.velocity = Vector2.up * jumpStrength * jumpDirection;
-                    isJumping = !isJumping;
-                }
-            }else{
-                if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID))
-                {
-                    myRB.velocity = Vector2.up * jumpStrength * jumpDirection;
-                    isJumping = !isJumping;
-                }
-            }
-        }
-
-        if(!turned)
-        {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
-            {
-                moveDirection = -1;
-            }else if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
-            {
-                moveDirection = 1;
-            }else if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
-            {
-                moveDirection = 0;
-            } 
-        }else
-        {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
-            {
-                moveDirection = -1;
-            }else if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
-            {
-                moveDirection = 1;
-            }else if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
-            {
-                moveDirection = 0;
-            }  
-        } */
     }
 
     private void FixedUpdate() 
@@ -166,6 +122,18 @@ public class Player_Movement : MonoBehaviour
                 horizontal += 1;
             }
         }
+    }
+
+    private void Flip()
+    {
+        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
+        {
+            isFacingRight = !isFacingRight;
+            Vector3 localScale = transform.localScale;
+            localScale.x *= -1;
+            transform.localScale = localScale;
+        }
+
     }
 
     public void GravityTurn()
