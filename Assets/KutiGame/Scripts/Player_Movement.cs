@@ -8,6 +8,8 @@ public class Player_Movement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    private Animator _animator;
+
     private float horizontal = 0f;
 
     public float speed = 12f;
@@ -16,7 +18,7 @@ public class Player_Movement : MonoBehaviour
     public bool turned = false;
     public float jumpStrength = 19;
     private int jumpDirection = 1;
-    private bool isJumping = false;
+    private bool inAir = false;
     private bool isFacingRight = true;
 
 
@@ -29,6 +31,8 @@ public class Player_Movement : MonoBehaviour
             GravityTurn();
             turned = true;
         }
+
+        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,32 +43,48 @@ public class Player_Movement : MonoBehaviour
 
         if(!turned)
         {
-            // horizontal = Input.GetAxisRaw("P1_horizontal");
-
             CalculateHorizontal(1);
-
-            // Horizontal selbst aus den Axen zsm bauen
-            // ist ja eig nur -1, 0 oder 1
 
             if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
+                inAir = true;
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
+                inAir = true;
             }
 
         }else
         {
-            //horizontal = Input.GetAxisRaw("P2_horizontal");
             CalculateHorizontal(2);
 
             if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
+                inAir = true;
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_MID) && myRB.velocity.y < 0f)
+            {   
+                myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
+                inAir = true;
             }
         }
+
+        _animator.SetBool("isJumping", !IsGrounded());
+
+
+        if(IsGrounded() && inAir)
+        {
+            _animator.SetBool("isLanding", true);
+            inAir = false;
+            Debug.Log("is jelandet");
+        }else
+        {
+            _animator.SetBool("isLanding", false);
+        }
+
     }
 
     private void FixedUpdate() 
@@ -146,21 +166,4 @@ public class Player_Movement : MonoBehaviour
         //jumpDirection *= -1;
     }
 
-    private void OnCollisionEnter2D(Collision2D other) 
-    {
-        if(other.gameObject.CompareTag("Ground"))   
-        {
-            isJumping = false;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other) 
-    {
-        if(other.gameObject.CompareTag("Ground"))    
-        {
-            isJumping = true;
-        }
-    }
 }
-
-
