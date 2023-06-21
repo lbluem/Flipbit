@@ -24,17 +24,19 @@ public class startscreen_handler : MonoBehaviour
             player_1 = true;
             foreach (GameObject button in uiButtons)
             {
-                if(button.name == "button_p1_up"){
+                /* if(button.name == "button_p1_up"){
                    button.GetComponent<SpriteRenderer>().color = Color.green;
-                }
+                } */
+                
             }
         }else if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID)){
             player_2 = true;
             foreach (GameObject button in uiButtons)
             {
-                if(button.name == "button_p2_up"){
+                /* if(button.name == "button_p2_up"){
                    button.GetComponent<SpriteRenderer>().color = Color.green;
-                }
+                } */
+                
             }
         }
 
@@ -51,8 +53,9 @@ public class startscreen_handler : MonoBehaviour
                 }
             }
             playerObject.GetComponent<Player_Movement>().enabled = true;
-            Destroy(GameObject.Find("StartScreen"), 5);
+            Destroy(GameObject.Find("StartScreen"), 2);
         }
     }
+
 
 }
