@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386840269220881978}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.428, y: 0.005, z: 0}
+  m_LocalPosition: {x: -0.106, y: 0.005, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 3.6050894}
   m_Children: []
   m_Father: {fileID: 4561591150616302435}
@@ -106,7 +106,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2432899115771601665}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0.419, y: 0.005, z: 0}
+  m_LocalPosition: {x: 0.111, y: 0.005, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 3.6050894}
   m_Children: []
   m_Father: {fileID: 4561591150616302435}
@@ -152,7 +152,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 4018006125521607342}
   - component: {fileID: 8121405504805373790}
   m_Layer: 12
-  m_Name: MovingPlatform
+  m_Name: MovingPlatform 1
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8a7ffa45943bb6c43a670ef5c0b6ea92, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b6ea9830e6f3a244a1e608f5c8491c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -265,14 +265,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.96, y: 0.12}
+    oldSize: {x: 0.32, y: 0.12}
     newSize: {x: 3, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.96, y: 0.12}
+  m_Size: {x: 0.3, y: 0.11}
   m_EdgeRadius: 0
 --- !u!114 &4018006125521607342
 MonoBehaviour:

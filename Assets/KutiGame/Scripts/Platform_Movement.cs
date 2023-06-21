@@ -34,10 +34,7 @@ public class Platform_Movement : MonoBehaviour
 
         transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);
 
-        if(transform.position.x <= leftBorder || transform.position.x >= rightBorder)
-            {
-                moveDirection = 0;
-            }
+       
 
         // Hier wird sich der Reset widerfinden
         /* if(!turned)
@@ -91,7 +88,11 @@ public class Platform_Movement : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             other.transform.SetParent(transform);
-        }/* else if(other.gameObject.tag == "Ground")
+        }else if(other.gameObject.tag == "Ground")
+        {
+            moveDirection = 0;
+        }
+        /* else if(other.gameObject.tag == "Ground")
         {
             if(other.transform.position.x > transform.position.x)
             {
@@ -101,6 +102,14 @@ public class Platform_Movement : MonoBehaviour
         } */
     }
 
+    private bool wallCollision(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            return true;
+        }
+        return false;
+    }
     private void OnCollisionExit2D(Collision2D other) 
     {
         other.transform.SetParent(null);
