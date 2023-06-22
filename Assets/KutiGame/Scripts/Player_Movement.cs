@@ -30,14 +30,14 @@ public class Player_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
+
         // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
         {
             GravityTurn();
             turned = true;
         }
-
-        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,12 +53,10 @@ public class Player_Movement : MonoBehaviour
             if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
-                inAir = true;
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
-                inAir = true;
             }
 
         }else
@@ -79,12 +77,15 @@ public class Player_Movement : MonoBehaviour
 
         _animator.SetBool("isJumping", !IsGrounded());
 
+        if(!IsGrounded())
+        {
+            inAir = true;
+        }
 
         if(IsGrounded() && inAir)
         {
             _animator.SetBool("isLanding", true);
             inAir = false;
-            //Debug.Log("is jelandet");
         }else
         {
             _animator.SetBool("isLanding", false);
@@ -181,6 +182,15 @@ public class Player_Movement : MonoBehaviour
 
     public void GravityTurn()
     {
+        // wenn zu "geturned" wird sollte folgendes passieren
+        p1ButtonLeftUp = true;
+        p1ButtonRightUp = true;
+        p2ButtonLeftUp = true;
+        p2ButtonRightUp = true;
+
+        // so wie oben ist das Problem erstmal gelöst
+        // aber führt zu anderen nischigeren Problemen
+
         //horizontal = 0;
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
