@@ -5,13 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/KutiGame/KutiScenes/Game.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/Level_1.unity
     guid: 53832fb8ba9cd3a40ae32597873194a2
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/Level_2.unity
-    guid: 9aa42b756b77cad419c52c282cb4abfd
+    guid: 3b231e9cf7b39dd4899ac8fcfc0de1d1
   - enabled: 1
-    path: Assets/KutiGame/KutiScenes/Game.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    path: Assets/KutiGame/KutiScenes/Level_3.unity
+    guid: 986d1b13b0dec2a49a1759545d35fbe8
   m_configObjects: {}

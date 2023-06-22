@@ -79,7 +79,7 @@ public class Player_Movement : MonoBehaviour
         {
             _animator.SetBool("isLanding", true);
             inAir = false;
-            Debug.Log("is jelandet");
+            //Debug.Log("is jelandet");
         }else
         {
             _animator.SetBool("isLanding", false);
@@ -158,8 +158,9 @@ public class Player_Movement : MonoBehaviour
 
     public void GravityTurn()
     {
+        GameObject.FindGameObjectWithTag("MovingPlatform").GetComponent<Platform_Movement>().moveDirection = 0;
         // moveDirection = 0;
-        horizontal = 0;
+        //horizontal = 0;
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;

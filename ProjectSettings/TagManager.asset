@@ -39,6 +39,7 @@ TagManager:
   - finish
   - Ground
   - UIButton
+  - MovingPlatform
   layers:
   - Default
   - TransparentFX
