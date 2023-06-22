@@ -11,6 +11,12 @@ public class Platform_Movement : MonoBehaviour
     public Vector3 startPosition;
     public bool turned;
 
+      // Button Tracker
+    private bool p1ButtonLeftUp = true;
+    private bool p1ButtonRightUp = true;
+    private bool p2ButtonLeftUp = true;
+    private bool p2ButtonRightUp = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,23 +66,55 @@ public class Platform_Movement : MonoBehaviour
     {
         if(turned)
         {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
             {
                 moveDirection -= 1;
+                p1ButtonLeftUp = false;
             }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT) || KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            {
+                moveDirection -= 1;
+                p1ButtonRightUp = true;
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
             {
                 moveDirection += 1;
+                p1ButtonLeftUp = true;
+            }
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+            {
+                moveDirection += 1;
+                p1ButtonRightUp = false;
+            }
+            if(p1ButtonLeftUp && p1ButtonRightUp)
+            {
+                moveDirection = 0;
             }
         }else
         {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT)|| KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
             {
                 moveDirection += 1;
+                p2ButtonLeftUp = false;
             }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT)||KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+            {
+                moveDirection += 1;
+                p2ButtonRightUp = true;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
             {
                 moveDirection -= 1;
+                p2ButtonLeftUp = true;
+            }
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            {
+                moveDirection -= 1;
+                p2ButtonRightUp = false;
+            }
+            if(p2ButtonLeftUp && p2ButtonRightUp)
+            {
+                moveDirection = 0;
             }
         }
     }

@@ -21,6 +21,11 @@ public class Player_Movement : MonoBehaviour
     private bool inAir = false;
     private bool isFacingRight = true;
 
+    // Button Tracker
+    private bool p1ButtonLeftUp = true;
+    private bool p1ButtonRightUp = true;
+    private bool p2ButtonLeftUp = true;
+    private bool p2ButtonRightUp = true;
 
     // Start is called before the first frame update
     void Start()
@@ -110,36 +115,54 @@ public class Player_Movement : MonoBehaviour
             if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
             {
                 horizontal -= 1;
+                p1ButtonLeftUp = false;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            {
+                horizontal -= 1;
+                p1ButtonRightUp = true;
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
             {
                 horizontal += 1;
+                p1ButtonLeftUp = true;
             }
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
             {
                 horizontal += 1;
+                p1ButtonRightUp = false;
             }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            if(p1ButtonLeftUp && p1ButtonRightUp)
             {
-                horizontal -= 1;
+                horizontal = 0;
             }
+
+
         }else if(player == 2)
         {
             if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
             {
                 horizontal += 1;
+                p2ButtonLeftUp = false;
             }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
-            {
-                horizontal -= 1;
-            }
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
-            {
-                horizontal -= 1;
-            }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
             {
                 horizontal += 1;
+                p2ButtonRightUp = true;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
+            {
+                horizontal -= 1;
+                p2ButtonLeftUp = true;
+            }
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            {
+                horizontal -= 1;
+                p2ButtonRightUp = false;
+            }
+            if(p2ButtonLeftUp && p2ButtonRightUp)
+            {
+                horizontal = 0;
             }
         }
     }
@@ -158,13 +181,10 @@ public class Player_Movement : MonoBehaviour
 
     public void GravityTurn()
     {
-        GameObject.FindGameObjectWithTag("MovingPlatform").GetComponent<Platform_Movement>().moveDirection = 0;
-        // moveDirection = 0;
         //horizontal = 0;
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
-        //jumpDirection *= -1;
     }
 
 }
