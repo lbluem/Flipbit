@@ -191,8 +191,6 @@ public class Player_Movement : MonoBehaviour
         p2ButtonLeftUp = true;
         p2ButtonRightUp = true;
 
-        //FindObjectOfType<AudioManager>().Play("PlayerTurn");
-
         // so wie oben ist das Problem erstmal gelöst
         // aber führt zu anderen nischigeren Problemen
 
