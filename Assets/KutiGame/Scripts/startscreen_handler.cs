@@ -12,7 +12,12 @@ public class startscreen_handler : MonoBehaviour
     private bool player_1 = false;
     private bool player_2 = false;
 
+    private bool playSound;
+
     void Start() {
+
+        playSound = true;
+
         playerObject = GameObject.Find("Player");
         playerObject.GetComponent<Player_Movement>().enabled = false;
 
@@ -24,17 +29,19 @@ public class startscreen_handler : MonoBehaviour
             player_1 = true;
             foreach (GameObject button in uiButtons)
             {
-                if(button.name == "button_p1_up"){
+                /* if(button.name == "button_p1_up"){
                    button.GetComponent<SpriteRenderer>().color = Color.green;
-                }
+                } */
+                
             }
         }else if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID)){
             player_2 = true;
             foreach (GameObject button in uiButtons)
             {
-                if(button.name == "button_p2_up"){
+                /* if(button.name == "button_p2_up"){
                    button.GetComponent<SpriteRenderer>().color = Color.green;
-                }
+                } */
+                
             }
         }
 
@@ -51,8 +58,19 @@ public class startscreen_handler : MonoBehaviour
                 }
             }
             playerObject.GetComponent<Player_Movement>().enabled = true;
-            Destroy(GameObject.Find("StartScreen"), 5);
+            Destroy(GameObject.Find("StartScreen"), 2);
+
+            // Diese If Abfrage wird trotzdem sie zerstört wurde immer noch unzählige male
+            // ausgeführt, d.h. ich kann keinen Sound abspielen da auch dieser dann
+            // bis zu tausende male abgespielt wird
+            if (playSound)
+            {
+                FindObjectOfType<AudioManager>().Play("MenuButton");
+                playSound = false;
+            }
+            //Debug.Log("MENUUEE");
         }
     }
+
 
 }

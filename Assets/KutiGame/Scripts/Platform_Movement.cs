@@ -6,14 +6,16 @@ public class Platform_Movement : MonoBehaviour
 {
 
     public float speed = 8;
-    private float moveDirection = 0;
+    public float moveDirection = 0;
     // Start Position um da zurückkehren zu können
     public Vector3 startPosition;
     public bool turned;
 
-    // Grenzen sind (erstmal) hard gecodet
-    public float leftBorder = -10;
-    public float rightBorder = 10;
+      // Button Tracker
+    private bool p1ButtonLeftUp = true;
+    private bool p1ButtonRightUp = true;
+    private bool p2ButtonLeftUp = true;
+    private bool p2ButtonRightUp = true;
 
     // Start is called before the first frame update
     void Start()
@@ -32,12 +34,8 @@ public class Platform_Movement : MonoBehaviour
         // Ist ein RigidBody überhaupt nötig?
         //thisRB.velocity = new Vector2(speed*moveDirection, thisRB.velocity.y);
 
-        transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);
-
-        if(transform.position.x <= leftBorder || transform.position.x >= rightBorder)
-            {
-                moveDirection = 0;
-            }
+        GetMovement();
+       
 
         // Hier wird sich der Reset widerfinden
         /* if(!turned)
@@ -53,45 +51,86 @@ public class Platform_Movement : MonoBehaviour
             }
         } */
 
+
+    }
+
+    private void FixedUpdate() {
+        /* if(transform.position.x < 9.3 && transform.position.x > -9.3)
+        {
+        } */
+            transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);        
+    }
+
+
+    private void GetMovement()
+    {
         if(turned)
         {
             if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
             {
-                moveDirection = -1;
-
-            }else if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+                moveDirection -= 1;
+                p1ButtonLeftUp = false;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
             {
-                moveDirection = 1;
-
-            }else if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+                moveDirection -= 1;
+                p1ButtonRightUp = true;
+            }
+            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
+            {
+                moveDirection += 1;
+                p1ButtonLeftUp = true;
+            }
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+            {
+                moveDirection += 1;
+                p1ButtonRightUp = false;
+            }
+            if(p1ButtonLeftUp && p1ButtonRightUp)
             {
                 moveDirection = 0;
-            } 
+            }
         }else
         {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
             {
-                moveDirection = -1;
-
-
-            }else if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
+                moveDirection += 1;
+                p2ButtonLeftUp = false;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
             {
-                moveDirection = 1;
-
-            }else if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT)||KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+                moveDirection += 1;
+                p2ButtonRightUp = true;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
+            {
+                moveDirection -= 1;
+                p2ButtonLeftUp = true;
+            }
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            {
+                moveDirection -= 1;
+                p2ButtonRightUp = false;
+            }
+            if(p2ButtonLeftUp && p2ButtonRightUp)
             {
                 moveDirection = 0;
-            }  
+            }
         }
-
     }
+
 
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.gameObject.tag == "Player")
         {
             other.transform.SetParent(transform);
-        }/* else if(other.gameObject.tag == "Ground")
+        }
+        /* }else if(other.gameObject.tag == "Ground")
+        {
+            moveDirection = 0;
+        } */
+        /* else if(other.gameObject.tag == "Ground")
         {
             if(other.transform.position.x > transform.position.x)
             {
@@ -101,6 +140,14 @@ public class Platform_Movement : MonoBehaviour
         } */
     }
 
+    private bool wallCollision(Collision2D other) 
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            return true;
+        }
+        return false;
+    }
     private void OnCollisionExit2D(Collision2D other) 
     {
         other.transform.SetParent(null);

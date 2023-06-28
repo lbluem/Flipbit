@@ -21,6 +21,10 @@ public class spike_handler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
+        if(other.tag == "Player")
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerHit");
+            SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
+        }
     }
 }

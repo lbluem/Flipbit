@@ -21,18 +21,23 @@ public class Player_Movement : MonoBehaviour
     private bool inAir = false;
     private bool isFacingRight = true;
 
+    // Button Tracker
+    private bool p1ButtonLeftUp = true;
+    private bool p1ButtonRightUp = true;
+    private bool p2ButtonLeftUp = true;
+    private bool p2ButtonRightUp = true;
 
     // Start is called before the first frame update
     void Start()
     {
+        _animator = GetComponent<Animator>();
+
         // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
         {
             GravityTurn();
             turned = true;
         }
-
-        _animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,12 +53,11 @@ public class Player_Movement : MonoBehaviour
             if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
-                inAir = true;
+                FindObjectOfType<AudioManager>().Play("PlayerJump");
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
-                inAir = true;
             }
 
         }else
@@ -63,25 +67,30 @@ public class Player_Movement : MonoBehaviour
             if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
-                inAir = true;
+                FindObjectOfType<AudioManager>().Play("PlayerJump");
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P2_MID) && myRB.velocity.y < 0f)
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
-                inAir = true;
             }
         }
 
         _animator.SetBool("isJumping", !IsGrounded());
 
+        if(!IsGrounded())
+        {
+            inAir = true;
+        }
 
         if(IsGrounded() && inAir)
         {
+            FindObjectOfType<AudioManager>().Play("PlayerFall");
+            Debug.Log("I FELL");
             _animator.SetBool("isLanding", true);
             inAir = false;
-            Debug.Log("is jelandet");
         }else
         {
+            
             _animator.SetBool("isLanding", false);
         }
 
@@ -94,7 +103,7 @@ public class Player_Movement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.9f, groundLayer);
     }
 
 
@@ -110,36 +119,54 @@ public class Player_Movement : MonoBehaviour
             if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
             {
                 horizontal -= 1;
+                p1ButtonLeftUp = false;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            {
+                horizontal -= 1;
+                p1ButtonRightUp = true;
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
             {
                 horizontal += 1;
+                p1ButtonLeftUp = true;
             }
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
             {
                 horizontal += 1;
+                p1ButtonRightUp = false;
             }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+            if(p1ButtonLeftUp && p1ButtonRightUp)
             {
-                horizontal -= 1;
+                horizontal = 0;
             }
+
+
         }else if(player == 2)
         {
             if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
             {
                 horizontal += 1;
+                p2ButtonLeftUp = false;
             }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
-            {
-                horizontal -= 1;
-            }
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
-            {
-                horizontal -= 1;
-            }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
             {
                 horizontal += 1;
+                p2ButtonRightUp = true;
+            }
+            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
+            {
+                horizontal -= 1;
+                p2ButtonLeftUp = true;
+            }
+            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+            {
+                horizontal -= 1;
+                p2ButtonRightUp = false;
+            }
+            if(p2ButtonLeftUp && p2ButtonRightUp)
+            {
+                horizontal = 0;
             }
         }
     }
@@ -158,12 +185,21 @@ public class Player_Movement : MonoBehaviour
 
     public void GravityTurn()
     {
-        // moveDirection = 0;
-        horizontal = 0;
+        // wenn zu "geturned" wird sollte folgendes passieren
+        p1ButtonLeftUp = true;
+        p1ButtonRightUp = true;
+        p2ButtonLeftUp = true;
+        p2ButtonRightUp = true;
+
+        //FindObjectOfType<AudioManager>().Play("PlayerTurn");
+
+        // so wie oben ist das Problem erstmal gelöst
+        // aber führt zu anderen nischigeren Problemen
+
+        //horizontal = 0;
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
-        //jumpDirection *= -1;
     }
 
 }

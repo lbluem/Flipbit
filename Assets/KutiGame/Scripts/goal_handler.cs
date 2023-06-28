@@ -21,7 +21,8 @@ public class goal_handler : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        FindObjectOfType<AudioManager>().Play("PlayerPickup");
         SceneManager.LoadScene(NextLevelName, LoadSceneMode.Single);
-        print("hello world");
+        //print("hello world");
     }
 }
