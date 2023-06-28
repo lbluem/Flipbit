@@ -53,6 +53,7 @@ public class Player_Movement : MonoBehaviour
             if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
+                FindObjectOfType<AudioManager>().Play("PlayerJump");
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
             {   
@@ -66,12 +67,11 @@ public class Player_Movement : MonoBehaviour
             if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
-                inAir = true;
+                FindObjectOfType<AudioManager>().Play("PlayerJump");
             }
             if(KutiInput.GetKutiButtonUp(EKutiButton.P2_MID) && myRB.velocity.y < 0f)
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
-                inAir = true;
             }
         }
 
@@ -84,10 +84,13 @@ public class Player_Movement : MonoBehaviour
 
         if(IsGrounded() && inAir)
         {
+            FindObjectOfType<AudioManager>().Play("PlayerFall");
+            Debug.Log("I FELL");
             _animator.SetBool("isLanding", true);
             inAir = false;
         }else
         {
+            
             _animator.SetBool("isLanding", false);
         }
 
@@ -187,6 +190,8 @@ public class Player_Movement : MonoBehaviour
         p1ButtonRightUp = true;
         p2ButtonLeftUp = true;
         p2ButtonRightUp = true;
+
+        FindObjectOfType<AudioManager>().Play("PlayerTurn");
 
         // so wie oben ist das Problem erstmal gelöst
         // aber führt zu anderen nischigeren Problemen
