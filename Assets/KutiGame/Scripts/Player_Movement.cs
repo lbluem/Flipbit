@@ -86,7 +86,7 @@ public class Player_Movement : MonoBehaviour
         if(IsGrounded() && inAir)
         {
             FindObjectOfType<AudioManager>().Play("PlayerFall");
-            Debug.Log("I FELL");
+            //Debug.Log("I FELL");
             _animator.SetBool("isLanding", true);
             inAir = false;
         }else
@@ -104,7 +104,7 @@ public class Player_Movement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.9f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.6f, groundLayer);
     }
 
     private bool IsRunning()

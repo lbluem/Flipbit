@@ -7,22 +7,28 @@ public class goal_handler : MonoBehaviour
 {
     [SerializeField]
     private string NextLevelName;
+    [SerializeField] private float transitionTime = 2;
+
+    private Animator _animator;
+
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Start Coroutine and Animation
         FindObjectOfType<AudioManager>().Play("PlayerPickup");
-        SceneManager.LoadScene(NextLevelName, LoadSceneMode.Single);
-        //print("hello world");
+        _animator.SetTrigger("Opening");
+        StartCoroutine(SceneEndTimer(transitionTime));
     }
+
+    private IEnumerator SceneEndTimer(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        SceneManager.LoadScene(NextLevelName, LoadSceneMode.Single);
+    }
+
 }
