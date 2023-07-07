@@ -20,15 +20,18 @@ public class goal_handler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         // Start Coroutine and Animation
-        FindObjectOfType<AudioManager>().Play("PlayerPickup");
-        _animator.SetTrigger("Opening");
-        StartCoroutine(SceneEndTimer(transitionTime));
+        if(other.gameObject.tag == "Player")
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerPickup");
+            _animator.SetTrigger("Opening");
+            StartCoroutine(SceneEndTimer(transitionTime));
+        }
     }
 
     private IEnumerator SceneEndTimer(float duration)
     {
         yield return new WaitForSeconds(duration);
-        SceneManager.LoadScene(NextLevelName, LoadSceneMode.Single);
+        SceneManager.LoadScene(NextLevelName, LoadSceneMode.Single);        
     }
 
 }
