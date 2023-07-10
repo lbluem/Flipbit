@@ -35,23 +35,6 @@ public class Platform_Movement : MonoBehaviour
         //thisRB.velocity = new Vector2(speed*moveDirection, thisRB.velocity.y);
 
         GetMovement();
-       
-
-        // Hier wird sich der Reset widerfinden
-        /* if(!turned)
-        {
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID))
-            {
-                
-            }
-        }else{
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID))
-            {
-                
-            }
-        } */
-
-
     }
 
     private void FixedUpdate() {
@@ -142,6 +125,7 @@ public class Platform_Movement : MonoBehaviour
 
     private bool wallCollision(Collision2D other) 
     {
+        Debug.Log("Wilde Sachen passieren");
         if(other.gameObject.tag == "Ground")
         {
             return true;
@@ -150,7 +134,10 @@ public class Platform_Movement : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D other) 
     {
-        other.transform.SetParent(null);
+        if(other.gameObject.tag == "Player")
+        {
+            other.transform.SetParent(null);
+        }
     }
 
 }
