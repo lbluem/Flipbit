@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0b2c29e2f2a88d34f831afea3e092b06
+guid: 1ee703d2e881c454b8415f70437940cb
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Kawaii Bubble
+  fontName: Short Stack
   fontNames:
-  - Kawaii Bubble
+  - Short Stack
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

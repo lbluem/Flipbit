@@ -18,8 +18,8 @@ public class startscreen_handler : MonoBehaviour
 
         playSound = true;
 
-        playerObject = GameObject.Find("Player");
-        playerObject.GetComponent<Player_Movement>().enabled = false;
+        //playerObject = GameObject.Find("Player");
+        //playerObject.GetComponent<Player_Movement>().enabled = false;
 
         uiButtons = GameObject.FindGameObjectsWithTag("UIButton");
     }
@@ -45,7 +45,7 @@ public class startscreen_handler : MonoBehaviour
             }
         }
 
-        if(player_1 && player_2){
+        if(player_1 || player_2){
             if(myUIGroup.alpha >= 0){
                 myUIGroup.alpha -= Time.deltaTime;
             }
@@ -57,7 +57,7 @@ public class startscreen_handler : MonoBehaviour
                     button.GetComponent<SpriteRenderer>().color = colorTmp;
                 }
             }
-            playerObject.GetComponent<Player_Movement>().enabled = true;
+            //playerObject.GetComponent<Player_Movement>().enabled = true;
             Destroy(GameObject.Find("StartScreen"), 2);
 
             // Diese If Abfrage wird trotzdem sie zerstört wurde immer noch unzählige male
