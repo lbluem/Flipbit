@@ -41,7 +41,16 @@ public class Platform_Movement : MonoBehaviour
         /* if(transform.position.x < 9.3 && transform.position.x > -9.3)
         {
         } */
-            transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);        
+
+        if(moveDirection == 0)
+        {
+            //FindObjectOfType<AudioManager>().Stop("PlatformMove");
+            //Debug.Log("Stopping Platform Move Sound");
+        }else{
+            //FindObjectOfType<AudioManager>().Play("PlatformMove");
+            //Debug.Log("Platform Move Sound");
+        }
+        transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);        
     }
 
 
@@ -109,6 +118,8 @@ public class Platform_Movement : MonoBehaviour
         {
             other.transform.SetParent(transform);
         }
+
+
         /* }else if(other.gameObject.tag == "Ground")
         {
             moveDirection = 0;
@@ -128,6 +139,7 @@ public class Platform_Movement : MonoBehaviour
         Debug.Log("Wilde Sachen passieren");
         if(other.gameObject.tag == "Ground")
         {
+            FindObjectOfType<AudioManager>().Stop("PlatformMove");
             return true;
         }
         return false;

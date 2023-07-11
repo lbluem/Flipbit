@@ -9,7 +9,6 @@ public class AudioManager : MonoBehaviour
 
     public static AudioManager instance;
 
-    // Start is called before the first frame update
     private void Awake() {
 
         if(instance == null)
@@ -34,6 +33,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void Start() {
+        Play("Soundtrack");
+    }
+
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -43,5 +46,16 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+    }
+
+    public void Stop (string name)
+    {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s== null)
+        {
+            Debug.LogWarning("Sound to stop: "+ name + " not found!");
+            return;
+        }
+        s.source.Stop();
     }
 }

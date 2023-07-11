@@ -80,3 +80,15 @@ MonoBehaviour:
     pitch: 0.85
     loop: 0
     source: {fileID: 0}
+  - name: PlatformMove
+    clip: {fileID: 8300000, guid: b6e12c07c3ee5504ab07d1c8ea0c2887, type: 3}
+    volume: 0.19
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: Soundtrack
+    clip: {fileID: 8300000, guid: 8523d00fac242ff48991e1086730087b, type: 3}
+    volume: 0.3
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
