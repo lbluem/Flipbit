@@ -23,5 +23,4 @@ public class SwapArea : MonoBehaviour
             other.GetComponent<Player_Movement>().GravityTurn();
         }
     }
-
 }
