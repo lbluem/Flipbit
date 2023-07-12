@@ -8,7 +8,7 @@ public class goal_handler : MonoBehaviour
     [SerializeField]
     private string NextLevelName;
     [SerializeField] private float transitionTime = 2;
-
+    [SerializeField] private bool start;
     private Animator _animator;
 
     // Start is called before the first frame update
@@ -24,7 +24,10 @@ public class goal_handler : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("PlayerPickup");
             _animator.SetTrigger("Opening");
-            StartCoroutine(SceneEndTimer(transitionTime));
+            if(!start){
+                StartCoroutine(SceneEndTimer(transitionTime));
+
+            }
         }
     }
 
