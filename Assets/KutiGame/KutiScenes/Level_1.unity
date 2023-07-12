@@ -713,6 +713,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwippitySwappity (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7334747210065569645, guid: f61dd93e37a679f42bfef03e184d4c83,
+        type: 3}
+      propertyPath: directionIsUp
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7334747210065569647, guid: f61dd93e37a679f42bfef03e184d4c83,
         type: 3}
       propertyPath: m_Color.a

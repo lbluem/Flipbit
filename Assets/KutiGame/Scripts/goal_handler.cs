@@ -15,6 +15,10 @@ public class goal_handler : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        if(start)
+        {
+            _animator.SetTrigger("Closing");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,11 +26,12 @@ public class goal_handler : MonoBehaviour
         // Start Coroutine and Animation
         if(other.gameObject.tag == "Player")
         {
-            FindObjectOfType<AudioManager>().Play("PlayerPickup");
-            _animator.SetTrigger("Opening");
             if(!start){
+                FindObjectOfType<AudioManager>().Play("PlayerPickup");
+                _animator.SetTrigger("Opening");
                 StartCoroutine(SceneEndTimer(transitionTime));
-
+            }else{
+                /* _animator.SetTrigger("Closing"); */
             }
         }
     }
