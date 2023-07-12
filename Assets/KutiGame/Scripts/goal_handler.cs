@@ -5,19 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class goal_handler : MonoBehaviour
 {
-    [SerializeField]
-    private string NextLevelName;
+    [SerializeField] private string NextLevelName;
     [SerializeField] private float transitionTime = 2;
     [SerializeField] private bool start;
-    private Animator _animator;
+    private Animator doorAnimator;
+    [SerializeField] private Animator dialogueAnimator;
 
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
+        doorAnimator = GetComponent<Animator>();
+        
         if(start)
         {
-            _animator.SetTrigger("Closing");
+            doorAnimator.SetTrigger("Closing");
+        }else
+        {
+            dialogueAnimator.SetTrigger("Dialogue");
         }
     }
 
@@ -28,7 +32,7 @@ public class goal_handler : MonoBehaviour
         {
             if(!start){
                 FindObjectOfType<AudioManager>().Play("PlayerPickup");
-                _animator.SetTrigger("Opening");
+                doorAnimator.SetTrigger("Opening");
                 StartCoroutine(SceneEndTimer(transitionTime));
             }else{
                 /* _animator.SetTrigger("Closing"); */

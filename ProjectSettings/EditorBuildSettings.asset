@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/Level_3.unity
     guid: 986d1b13b0dec2a49a1759545d35fbe8
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/Level_4.unity
+    guid: 800af6f36d82b494099570d68d339f5d
   m_configObjects: {}
