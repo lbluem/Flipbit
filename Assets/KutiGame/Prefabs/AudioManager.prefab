@@ -46,13 +46,13 @@ MonoBehaviour:
   sounds:
   - name: PlayerJump
     clip: {fileID: 8300000, guid: a9e8136a798ed474cadf5968d5fa8b6f, type: 3}
-    volume: 0.35
+    volume: 0.7
     pitch: 0.85
     loop: 0
     source: {fileID: 0}
   - name: PlayerHit
     clip: {fileID: 8300000, guid: d5d7c8f6dcfe4d74da254e128367167b, type: 3}
-    volume: 0.35
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
@@ -64,31 +64,31 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: MenuButton
     clip: {fileID: 8300000, guid: 39fef5d8316d85e4b87eeb21d0f874ea, type: 3}
-    volume: 0.35
+    volume: 0.7
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerFall
     clip: {fileID: 8300000, guid: 1d1c33fec8962c94180ecd8f85b062f9, type: 3}
-    volume: 0.2
+    volume: 0.4
     pitch: 1.3
     loop: 0
     source: {fileID: 0}
   - name: PlayerTurn
     clip: {fileID: 8300000, guid: 17419064924da8f4ca6fab5565eae567, type: 3}
-    volume: 0.3
+    volume: 0.6
     pitch: 0.85
     loop: 0
     source: {fileID: 0}
   - name: PlatformMove
     clip: {fileID: 8300000, guid: b6e12c07c3ee5504ab07d1c8ea0c2887, type: 3}
-    volume: 0.19
+    volume: 0.35
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: Soundtrack
     clip: {fileID: 8300000, guid: 8523d00fac242ff48991e1086730087b, type: 3}
-    volume: 0.3
+    volume: 0.6
     pitch: 1
     loop: 1
     source: {fileID: 0}
