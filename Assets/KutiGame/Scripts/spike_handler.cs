@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class spike_handler : MonoBehaviour
 {
+    //[SerializeField] private Component dC;
     private string thisScene;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class spike_handler : MonoBehaviour
         if(other.tag == "Player")
         {
             FindObjectOfType<AudioManager>().Play("PlayerHit");
+            //dC.GetComponent<DeathCounter>().addDeathCount();
             SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
         }
     }
