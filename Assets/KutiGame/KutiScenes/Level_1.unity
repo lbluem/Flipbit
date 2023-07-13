@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 77404375}
   - component: {fileID: 77404374}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: DeathCounter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
