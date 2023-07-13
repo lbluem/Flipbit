@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6143997986833402106}
   - component: {fileID: 2460920486638675071}
   - component: {fileID: 2149707531739153480}
+  - component: {fileID: 4756024425292841760}
   m_Layer: 0
   m_Name: PigPlayer
   m_TagString: Player
@@ -173,6 +174,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.17812353, y: 0.16758817}
   m_EdgeRadius: 0
+--- !u!114 &4756024425292841760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3670149240149632409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c26b4b6cec1f82b4b84c571e898e1bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7779817846213626338
 GameObject:
   m_ObjectHideFlags: 0

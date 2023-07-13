@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class Player_Movement : MonoBehaviour
 
     private float horizontal = 0f;
 
+    //für Out of Bounds Check
+    private string thisScene;
     public float speed = 12f;
     private float moveDirection;
     // flippt das Sprite 
@@ -31,6 +34,7 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
+        thisScene = SceneManager.GetActiveScene().name;
 
         // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
@@ -45,6 +49,7 @@ public class Player_Movement : MonoBehaviour
     {
 
         Flip();
+        CheckOutOfBounds();
 
         if(!turned)
         {
@@ -212,4 +217,17 @@ public class Player_Movement : MonoBehaviour
         turned = !turned;
     }
 
+    private void CheckOutOfBounds()
+    {
+        var thisPosition = transform.position;
+
+        if(thisPosition.x > 11.5 || thisPosition.x < -11.5
+        || thisPosition.y > 9.5 || thisPosition.y < -9.5)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerHit");
+            SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
+        }
+    }
+
 }
+

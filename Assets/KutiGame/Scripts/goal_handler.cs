@@ -34,8 +34,6 @@ public class goal_handler : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("PlayerPickup");
                 doorAnimator.SetTrigger("Opening");
                 StartCoroutine(SceneEndTimer(transitionTime));
-            }else{
-                /* _animator.SetTrigger("Closing"); */
             }
         }
     }

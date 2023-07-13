@@ -429,13 +429,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1361622465082442018}
-  m_LocalRotation: {x: -0, y: -0, z: 0.14213604, w: 0.9898472}
-  m_LocalPosition: {x: 303, y: -172, z: 492.20013}
+  m_LocalRotation: {x: 0, y: 0, z: -0.17106965, w: 0.98525894}
+  m_LocalPosition: {x: 350.7, y: -21.6, z: 445.8}
   m_LocalScale: {x: 58.579998, y: -46.864, z: 46.864}
   m_Children: []
   m_Father: {fileID: 2847286953200708779}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 736.343}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 700.3}
 --- !u!212 &4332454821685610820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -635,7 +635,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: -129}
+  m_AnchoredPosition: {x: 187.2, y: 67.3}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4819775779491396976
@@ -1284,7 +1284,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129, y: -99}
+  m_AnchoredPosition: {x: 317.2, y: 97.29999}
   m_SizeDelta: {x: 400, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5097565154574923607
@@ -2462,13 +2462,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9190527556323034828}
-  m_LocalRotation: {x: -0, y: -0, z: -0.350202, w: 0.9366742}
-  m_LocalPosition: {x: 299, y: -82, z: 492.20013}
-  m_LocalScale: {x: 53.377934, y: 53.377934, z: 53.377934}
+  m_LocalRotation: {x: 0, y: 0, z: -0.8480481, w: 0.5299192}
+  m_LocalPosition: {x: 453, y: 15.25, z: 492.20013}
+  m_LocalScale: {x: 47.812016, y: 58.117805, z: 53.377934}
   m_Children: []
   m_Father: {fileID: 2847286953200708779}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 679.001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 604}
 --- !u!212 &8256553260770572106
 SpriteRenderer:
   m_ObjectHideFlags: 0
