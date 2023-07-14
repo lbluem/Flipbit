@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NextLevelName: 
-  transitionTime: 2
+  transitionTime: 1
   start: 0
   dialogueAnimator: {fileID: 2305056248300109163}
 --- !u!70 &7395902585626404852

@@ -88,7 +88,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Soundtrack
     clip: {fileID: 8300000, guid: 8523d00fac242ff48991e1086730087b, type: 3}
-    volume: 0.6
+    volume: 0
     pitch: 1
     loop: 1
     source: {fileID: 0}
