@@ -6,7 +6,8 @@ using TMPro;
 public class DeathCounter : MonoBehaviour
 {
     public static DeathCounter instance;
-    private int deathCounter = 0;
+    // eig kein Death Counter sondern VERSUCHs Counter deswegen Start bei 1
+    private int deathCounter = 1;
 
     public TextMeshProUGUI deathCounterLabel_P1;
     public TextMeshProUGUI deathCounterLabel_P2;
@@ -42,8 +43,8 @@ public class DeathCounter : MonoBehaviour
 
     public void resetDeathCount()
     {
-        deathCounter = 0;
+        deathCounter = 1;
         PlayerPrefs.SetInt("deathCounter", deathCounter);
-        Debug.Log("Death Counter resetted");
+        //Debug.Log("Death Counter resetted");
     }
 }
