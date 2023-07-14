@@ -20,7 +20,6 @@ public class Player_Movement : MonoBehaviour
     // flippt das Sprite 
     public bool turned = false;
     public float jumpStrength = 19;
-    private int jumpDirection = 1;
     private bool inAir = false;
     private bool isFacingRight = true;
 

@@ -25,6 +25,7 @@ public class spike_handler : MonoBehaviour
         if(other.tag == "Player")
         {
             FindObjectOfType<AudioManager>().Play("PlayerHit");
+            DeathCounter.instance.addDeathCount();
             //dC.GetComponent<DeathCounter>().addDeathCount();
             SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
         }

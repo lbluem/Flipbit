@@ -17,7 +17,10 @@ public class startscreen_handler : MonoBehaviour
     void Start() {
 
         playSound = true;
-
+        if(DeathCounter.instance != null)
+        {
+            DeathCounter.instance.resetDeathCount();
+        }
         //playerObject = GameObject.Find("Player");
         //playerObject.GetComponent<Player_Movement>().enabled = false;
 

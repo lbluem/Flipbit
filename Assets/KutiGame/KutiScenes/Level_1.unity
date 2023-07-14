@@ -284,6 +284,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2514bfe93ab8f774791ecd17cf9c04de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathCounterLabel_P1: {fileID: 0}
+  deathCounterLabel_P2: {fileID: 0}
 --- !u!4 &77404375
 Transform:
   m_ObjectHideFlags: 0

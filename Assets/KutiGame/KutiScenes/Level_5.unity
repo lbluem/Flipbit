@@ -1246,6 +1246,51 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 375111235}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &884003067
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 884003069}
+  - component: {fileID: 884003068}
+  m_Layer: 0
+  m_Name: DeathCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &884003068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884003067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2514bfe93ab8f774791ecd17cf9c04de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathCounterLabel_P1: {fileID: 0}
+  deathCounterLabel_P2: {fileID: 0}
+--- !u!4 &884003069
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 884003067}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.68762213, y: 0.19219655, z: -3.0191066}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &906125181 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4561591150616302435, guid: d28b16162dc058f4fad697dbff81f432,
@@ -1582,12 +1627,12 @@ PrefabInstance:
     - target: {fileID: 5941327761198874639, guid: a677338aa2b8b1a45bf5d857f92629e4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.59
+      value: -9.55
       objectReference: {fileID: 0}
     - target: {fileID: 5941327761198874639, guid: a677338aa2b8b1a45bf5d857f92629e4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.15
+      value: 1.22
       objectReference: {fileID: 0}
     - target: {fileID: 5941327761198874639, guid: a677338aa2b8b1a45bf5d857f92629e4,
         type: 3}
@@ -1627,6 +1672,11 @@ PrefabInstance:
     - target: {fileID: 5941327761198874639, guid: a677338aa2b8b1a45bf5d857f92629e4,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6143997986833402106, guid: a677338aa2b8b1a45bf5d857f92629e4,
+        type: 3}
+      propertyPath: turned
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
