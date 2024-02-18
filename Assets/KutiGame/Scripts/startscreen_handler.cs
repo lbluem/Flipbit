@@ -20,6 +20,7 @@ public class startscreen_handler : MonoBehaviour
         if(DeathCounter.instance != null)
         {
             DeathCounter.instance.resetDeathCount();
+            Debug.Log("Death Counter resetted");
         }
         //playerObject = GameObject.Find("Player");
         //playerObject.GetComponent<Player_Movement>().enabled = false;

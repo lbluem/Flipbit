@@ -11,6 +11,7 @@ public class ResetSceneManager : MonoBehaviour
         if(KutiInput.GetKutiButtonDown(EKutiButton.MENU))
         {
             SceneManager.LoadScene("Level_1", LoadSceneMode.Single);
+            Debug.Log("Scene resetted");
         }
     }
 }

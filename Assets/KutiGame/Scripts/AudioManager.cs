@@ -46,6 +46,7 @@ public class AudioManager : MonoBehaviour
             return;
         }
         s.source.Play();
+        Debug.Log("Sound: "+ name + " played");
     }
 
     public void Stop (string name)

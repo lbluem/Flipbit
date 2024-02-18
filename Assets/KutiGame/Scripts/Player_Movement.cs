@@ -48,7 +48,7 @@ public class Player_Movement : MonoBehaviour
     {
 
         Flip();
-        CheckOutOfBounds();
+        /* CheckOutOfBounds(); */
 
         if(!turned)
         {
@@ -90,7 +90,7 @@ public class Player_Movement : MonoBehaviour
         if(IsGrounded() && inAir)
         {
             FindObjectOfType<AudioManager>().Play("PlayerFall");
-            //Debug.Log("I FELL");
+            Debug.Log("I FELL");
             _animator.SetBool("isLanding", true);
             inAir = false;
         }else
@@ -216,7 +216,7 @@ public class Player_Movement : MonoBehaviour
         turned = !turned;
     }
 
-    private void CheckOutOfBounds()
+/*     private void CheckOutOfBounds()
     {
         var thisPosition = transform.position;
 
@@ -226,7 +226,7 @@ public class Player_Movement : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("PlayerHit");
             SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
         }
-    }
+    } */
 
 }
 
