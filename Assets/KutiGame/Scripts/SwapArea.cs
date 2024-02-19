@@ -23,10 +23,13 @@ public class SwapArea : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
 
+        //Debug.Log("SwapArea: Collider Entered");
         if(other.tag == "Player")
         {
+            //Debug.Log("SwapArea: Player Entered");
             if((directionIsUp && !turned)||!directionIsUp && turned)
             {
+                Debug.Log("SwapArea: Player Swapped");
                 FindObjectOfType<AudioManager>().Play("PlayerTurn");
                 other.GetComponent<Player_Movement>().GravityTurn();
             } /* else if(!directionIsUp && turned)
@@ -38,4 +41,18 @@ public class SwapArea : MonoBehaviour
             
         }
     }
+
+    /* private void OnTriggerEnter2D(TilemapCollider2D other) {
+        
+        if(other.tag == "Player")
+        {
+            if((directionIsUp && !turned)||!directionIsUp && turned)
+            {
+                FindObjectOfType<AudioManager>().Play("PlayerTurn");
+                other.GetComponent<Player_Movement>().GravityTurn();
+            }
+
+            
+        }
+    } */
 }

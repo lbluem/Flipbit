@@ -21,7 +21,7 @@ public class Player_Movement : MonoBehaviour
     public bool turned = false;
     public float jumpStrength = 19;
     private bool inAir = false;
-    private bool isFacingRight = true;
+    private bool isFacingRight = false;
 
     // Button Tracker
     private bool p1ButtonLeftUp = true;
@@ -90,7 +90,7 @@ public class Player_Movement : MonoBehaviour
         if(IsGrounded() && inAir)
         {
             FindObjectOfType<AudioManager>().Play("PlayerFall");
-            Debug.Log("I FELL");
+            //Debug.Log("Player Movement: I FELL");
             _animator.SetBool("isLanding", true);
             inAir = false;
         }else
