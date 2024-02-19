@@ -21,7 +21,7 @@ public class Player_Movement : MonoBehaviour
     public bool turned = false;
     public float jumpStrength = 19;
     private bool inAir = false;
-    private bool isFacingRight = false;
+    private bool isFacingRight = true;
 
     // Button Tracker
     private bool p1ButtonLeftUp = true;
