@@ -8,25 +8,28 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/NewArtTest_Level.unity
+    guid: 1dc85b32e469d0742bfaba7c6298a4d8
   - enabled: 0
     path: Assets/KutiGame/KutiScenes/Game.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/Level_1.unity
     guid: 53832fb8ba9cd3a40ae32597873194a2
-  - enabled: 1
+  - enabled: 0
     path: Assets/KutiGame/KutiScenes/Level_2.unity
     guid: 3b231e9cf7b39dd4899ac8fcfc0de1d1
-  - enabled: 1
+  - enabled: 0
     path: Assets/KutiGame/KutiScenes/Level_3.unity
     guid: 986d1b13b0dec2a49a1759545d35fbe8
-  - enabled: 1
+  - enabled: 0
     path: Assets/KutiGame/KutiScenes/Level_4.unity
     guid: 800af6f36d82b494099570d68d339f5d
-  - enabled: 1
+  - enabled: 0
     path: Assets/KutiGame/KutiScenes/Level_5.unity
     guid: e76bbf33eb8e1094daafcd5a451c071e
-  - enabled: 1
+  - enabled: 0
     path: Assets/KutiGame/KutiScenes/Level_End.unity
     guid: 763ad79e380c1fd4cac75741807c2c12
   m_configObjects: {}
