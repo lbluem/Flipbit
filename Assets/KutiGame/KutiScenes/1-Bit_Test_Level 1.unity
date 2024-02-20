@@ -268,6 +268,8 @@ GameObject:
   - component: {fileID: 321661527}
   - component: {fileID: 321661526}
   - component: {fileID: 321661528}
+  - component: {fileID: 321661530}
+  - component: {fileID: 321661529}
   m_Layer: 12
   m_Name: Boundaries
   m_TagString: Untagged
@@ -1241,10 +1243,121 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 16
   m_ExtrusionFactor: 0.00001
+--- !u!66 &321661529
+CompositeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321661524}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_GeometryType: 0
+  m_GenerationType: 0
+  m_EdgeRadius: 0
+  m_ColliderPaths:
+  - m_Collider: {fileID: 321661528}
+    m_ColliderPaths:
+    - - X: 100000000
+        Y: -160000000
+      - X: 100000000
+        Y: -120000000
+      - X: 200000000
+        Y: -120000000
+      - X: 200000000
+        Y: 160000000
+      - X: -60000000
+        Y: 160000000
+      - X: -60000000
+        Y: 140000000
+      - X: -200000000
+        Y: 140000000
+      - X: -200000000
+        Y: 0
+      - X: -80000000
+        Y: 0
+      - X: -80000000
+        Y: 40000000
+      - X: -180000000
+        Y: 40000000
+      - X: -180000000
+        Y: 120000000
+      - X: -40000000
+        Y: 120000000
+      - X: -40000000
+        Y: 140000000
+      - X: 180000000
+        Y: 140000000
+      - X: 180000000
+        Y: -100000000
+      - X: 80000000
+        Y: -100000000
+      - X: 80000000
+        Y: -140000000
+      - X: -180000000
+        Y: -140000000
+      - X: -180000000
+        Y: -40000000
+      - X: -200000000
+        Y: -40000000
+      - X: -200000000
+        Y: -160000000
+  m_CompositePaths:
+    m_Paths:
+    - - {x: 9.99997, y: -16}
+      - {x: 10.00003, y: -12}
+      - {x: 20, y: -11.99997}
+      - {x: 19.999971, y: 16}
+      - {x: -6, y: 15.999971}
+      - {x: -6.0000296, y: 14}
+      - {x: -20, y: 13.999971}
+      - {x: -19.999971, y: 0}
+      - {x: -8, y: 0.000029300001}
+      - {x: -8.00003, y: 4}
+      - {x: -18, y: 4.0000296}
+      - {x: -17.999971, y: 12}
+      - {x: -4, y: 12.00003}
+      - {x: -3.9999704, y: 14}
+      - {x: 18, y: 13.999971}
+      - {x: 17.999971, y: -10}
+      - {x: 8, y: -10.00003}
+      - {x: 7.9999704, y: -14}
+      - {x: -18, y: -13.999971}
+      - {x: -18.000029, y: -4}
+      - {x: -20, y: -4.000029}
+      - {x: -19.999971, y: -16}
+  m_VertexDistance: 0.0005
+  m_OffsetDistance: 0.00005
+--- !u!50 &321661530
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 321661524}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &554784681
 GameObject:
   m_ObjectHideFlags: 0
@@ -2405,7 +2518,7 @@ PrefabInstance:
     - target: {fileID: 2304084417477067334, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.69272155
+      value: 0.68750393
       objectReference: {fileID: 0}
     - target: {fileID: 2304084417477067334, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}
@@ -2415,7 +2528,12 @@ PrefabInstance:
     - target: {fileID: 2304084417477067334, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}
       propertyPath: m_Offset.y
-      value: -0.1582919
+      value: -0.1556831
+      objectReference: {fileID: 0}
+    - target: {fileID: 2308790977573479025, guid: 54032957e9c159845af34d368f9c22ca,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3513500695338247063, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}
