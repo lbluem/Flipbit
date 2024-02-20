@@ -11,6 +11,9 @@ public class Platform_Movement : MonoBehaviour
     public Vector3 startPosition;
     public bool turned;
 
+    // Collision of player
+    private Collision2D player = null;
+
     // Button Tracker
     private bool p1ButtonLeftUp = true;
     private bool p1ButtonRightUp = true;
@@ -38,10 +41,7 @@ public class Platform_Movement : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        /* if(transform.position.x < 9.3 && transform.position.x > -9.3)
-        {
-        } */
-
+       
         if(moveDirection == 0)
         {
             //FindObjectOfType<AudioManager>().Stop("PlatformMove");
@@ -119,12 +119,19 @@ public class Platform_Movement : MonoBehaviour
     // Kollisionshandler für auf der Plattform sein
     private void OnCollisionEnter2D(Collision2D other) 
     {
+        //Debug.Log("Platform Movement: Collision detected");
         if(other.gameObject.tag == "Player")
         {
+            player = other;
             other.transform.SetParent(transform);
+        }else if(other.gameObject.tag == "Ground")
+        {
+            //Debug.Log("Platform Movement: Ground detected");
+            /* if(player != null)
+            {
+                player.transform.SetParent(null);
+            } */
         }
-
-
         /* }else if(other.gameObject.tag == "Ground")
         {
             moveDirection = 0;
@@ -141,7 +148,7 @@ public class Platform_Movement : MonoBehaviour
 
     // Wall Collision Handler
     // Kollisionshandler für die Wand
-    private bool wallCollision(Collision2D other) 
+    /* private bool wallCollision(Collision2D other) 
     {
         Debug.Log("Wilde Sachen passieren");
         if(other.gameObject.tag == "Ground")
@@ -150,7 +157,7 @@ public class Platform_Movement : MonoBehaviour
             return true;
         }
         return false;
-    }
+    } */
 
     // Collision Handler for leaving the platform
     // Kollisionshandler für  Plattform verlassen

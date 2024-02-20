@@ -1640,6 +1640,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8121405504805373790, guid: 195b84de3a8a69e43b4dd31a87b219d4,
+        type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 195b84de3a8a69e43b4dd31a87b219d4, type: 3}
 --- !u!4 &1521436544 stripped
@@ -1983,6 +1988,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1536321989064094545, guid: 145bd658f0d4950439c0c8be63210ed4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 1536321989064094548, guid: 145bd658f0d4950439c0c8be63210ed4,
         type: 3}
       propertyPath: m_Tiles.Array.size
