@@ -19,7 +19,8 @@ public class spike_handler : MonoBehaviour
     {
         
     }
-
+    //spike collision with player handler
+    //spike kollision mit spieler 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")

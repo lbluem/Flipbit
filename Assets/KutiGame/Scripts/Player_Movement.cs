@@ -13,11 +13,12 @@ public class Player_Movement : MonoBehaviour
 
     private float horizontal = 0f;
 
-    //für Out of Bounds Check
+    //Out of Bounds Check
     private string thisScene;
     public float speed = 12f;
     private float moveDirection;
-    // flippt das Sprite 
+
+    // Flip sprite
     public bool turned = false;
     public float jumpStrength = 19;
     private bool inAir = false;
@@ -36,6 +37,7 @@ public class Player_Movement : MonoBehaviour
         thisScene = SceneManager.GetActiveScene().name;
 
         // Für den Fall das wir mit dem Spieler 2 anfangen
+        // For the case that we start with player 2
         if(turned)
         {
             GravityTurn();
@@ -50,6 +52,7 @@ public class Player_Movement : MonoBehaviour
         Flip();
         /* CheckOutOfBounds(); */
 
+        
         if(!turned)
         {
             CalculateHorizontal(1);
@@ -106,11 +109,15 @@ public class Player_Movement : MonoBehaviour
         myRB.velocity = new Vector2(horizontal * speed, myRB.velocity.y);
     }
 
+    // Check if the player is grounded
+    // Überprüfe, ob der Spieler auf dem Boden steht
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.6f, groundLayer);
     }
 
+    // Check if the player is running
+    // Überprüfe, ob der Spieler rennt
     private bool IsRunning()
     {
         if(horizontal == 0)
@@ -123,6 +130,8 @@ public class Player_Movement : MonoBehaviour
     }
 
 
+    // Calculate horizontal movement based on player
+    // Berechne die horizontale Bewegung basierend auf dem Spieler
     private void CalculateHorizontal(int player)
     {
 
@@ -199,7 +208,9 @@ public class Player_Movement : MonoBehaviour
 
     }
 
-    public void GravityTurn()
+    // Invert gravity for the player
+    // Die Schwerkraft für den Spieler umkehren
+   public void GravityTurn()
     {
         // wenn zu "geturned" wird sollte folgendes passieren
         p1ButtonLeftUp = true;

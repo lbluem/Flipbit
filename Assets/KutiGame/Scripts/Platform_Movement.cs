@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Platform_Movement : MonoBehaviour
 {
-
     public float speed = 8;
     public float moveDirection = 0;
     // Start Position um da zurückkehren zu können
+    // start position to return to
     public Vector3 startPosition;
     public bool turned;
 
-      // Button Tracker
+    // Button Tracker
     private bool p1ButtonLeftUp = true;
     private bool p1ButtonRightUp = true;
     private bool p2ButtonLeftUp = true;
@@ -53,11 +53,13 @@ public class Platform_Movement : MonoBehaviour
         transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);        
     }
 
-
+    // Movement Handler 
     private void GetMovement()
     {
         if(turned)
         {
+            // Handle movement input for player 1
+            // Bewegungseingabe für Spieler 1
             if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
             {
                 moveDirection -= 1;
@@ -84,7 +86,9 @@ public class Platform_Movement : MonoBehaviour
             }
         }else
         {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
+            // Handle movement input for player 2
+            // Bewegungseingabe für Spieler 2
+       if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
             {
                 moveDirection += 1;
                 p2ButtonLeftUp = false;
@@ -111,7 +115,8 @@ public class Platform_Movement : MonoBehaviour
         }
     }
 
-
+    // Collision Handler for being on the platform
+    // Kollisionshandler für auf der Plattform sein
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if(other.gameObject.tag == "Player")
@@ -134,6 +139,8 @@ public class Platform_Movement : MonoBehaviour
         } */
     }
 
+    // Wall Collision Handler
+    // Kollisionshandler für die Wand
     private bool wallCollision(Collision2D other) 
     {
         Debug.Log("Wilde Sachen passieren");
@@ -144,6 +151,9 @@ public class Platform_Movement : MonoBehaviour
         }
         return false;
     }
+
+    // Collision Handler for leaving the platform
+    // Kollisionshandler für  Plattform verlassen
     private void OnCollisionExit2D(Collision2D other) 
     {
         if(other.gameObject.tag == "Player")

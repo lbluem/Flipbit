@@ -11,6 +11,9 @@ public class AudioManager : MonoBehaviour
 
     private void Awake() {
 
+
+        // Ensure there's only one instance of AudioManager
+        // Sicher stellen, dass es nur eine Instanz von AudioManager gibt
         if(instance == null)
         {
             instance = this;
@@ -20,6 +23,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        // Keep AudioManager persistent across scenes
+        // Behalte AudioManager über Szenenwechsel hinweg
         DontDestroyOnLoad(gameObject);
 
         foreach (Sound s in sounds)
@@ -33,10 +38,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    // Play the soundtrack when the scene starts
+    // Spielt Soundtrack ab, wenn die Szene startet
     private void Start() {
         Play("Soundtrack");
     }
 
+    // Find and play the sound with the specified name
+    // Findet den Sound mit dem bestimmten Namen und spielt ihn ab
     public void Play (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -49,6 +58,8 @@ public class AudioManager : MonoBehaviour
         //Debug.Log("AudioManager: Sound: "+ name + " played");
     }
 
+    // Find and stop the sound with the specified name
+    // Findet den Sound mit dem bestimmten Namen und stoppt ihn
     public void Stop (string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

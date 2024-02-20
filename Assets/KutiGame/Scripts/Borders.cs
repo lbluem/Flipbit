@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Borders : MonoBehaviour {
-    public Camera MainCamera; //be sure to assign this in the inspector to your main camera
+    //Be sure to assign this in the inspector to your main camera
+    // Stell sicher, dass es im Inspector der Hauptkamera zugewiesen ist
+    public Camera MainCamera; 
     private Vector2 screenBounds;
     private float objectWidth;
     private float objectHeight;

@@ -5,7 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class goal_handler : MonoBehaviour
 {
+    // Name of the next level to load
+    // Name des nächsten Levels, das geladen werden soll
     [SerializeField] private string NextLevelName;
+    // Time taken for transition to the next level
+    // Zeit für den Übergang zum nächsten Level
     [SerializeField] private float transitionTime = 2;
     [SerializeField] private bool start;
     private Animator doorAnimator;
@@ -25,9 +29,10 @@ public class goal_handler : MonoBehaviour
         }
     }
 
+    // Start Coroutine and Animation when the player enters the trigger area
+    // Startet die Coroutine und die Animation, wenn der Spieler den Triggerbereich betritt
     private void OnTriggerEnter2D(Collider2D other)
     {
-        // Start Coroutine and Animation
         if(other.gameObject.tag == "Player")
         {
             if(!start){
@@ -38,6 +43,8 @@ public class goal_handler : MonoBehaviour
         }
     }
 
+    // Coroutine for delaying scene transition
+    // Coroutine für Verzögern des Szenenübergangs
     private IEnumerator SceneEndTimer(float duration)
     {
         yield return new WaitForSeconds(duration);
