@@ -29,7 +29,7 @@ public class SwapArea : MonoBehaviour
             //Debug.Log("SwapArea: Player Entered");
             if((directionIsUp && !turned)||!directionIsUp && turned)
             {
-                Debug.Log("SwapArea: Player Swapped");
+                //Debug.Log("SwapArea: Player Swapped");
                 FindObjectOfType<AudioManager>().Play("PlayerTurn");
                 other.GetComponent<Player_Movement>().GravityTurn();
             } /* else if(!directionIsUp && turned)
