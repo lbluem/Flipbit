@@ -1211,7 +1211,7 @@ Tilemap:
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -11, y: -8, z: 0}
-  m_Size: {x: 29, y: 16, z: 1}
+  m_Size: {x: 29, y: 18, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -2719,6 +2719,21 @@ PrefabInstance:
         type: 3}
       propertyPath: turned
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6300349581760335604, guid: 54032957e9c159845af34d368f9c22ca,
+        type: 3}
+      propertyPath: jumpStrength
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312426013789417185, guid: 54032957e9c159845af34d368f9c22ca,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7312426013789417185, guid: 54032957e9c159845af34d368f9c22ca,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54032957e9c159845af34d368f9c22ca, type: 3}
