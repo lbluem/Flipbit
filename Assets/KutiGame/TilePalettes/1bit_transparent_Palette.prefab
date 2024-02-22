@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5992123479655168608}
   - component: {fileID: 5170136769541695276}
   m_Layer: 31
-  m_Name: transparent_1bit_Palette
+  m_Name: 1bit_transparent_Palette
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
