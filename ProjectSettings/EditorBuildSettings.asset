@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/KutiGame/KutiScenes/1-Bit/Level 1.unity
     guid: 2beed6c27a81bd14ca5723543794f4a2
   - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 2.unity
+    guid: 230e6308f98db3e4b813c0d6d7898add
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 3.unity
+    guid: af3fcc0cb6303d3438b61bae96c3b14f
+  - enabled: 1
     path: Assets/KutiGame/KutiScenes/Porko/Level_1.unity
     guid: 53832fb8ba9cd3a40ae32597873194a2
   - enabled: 1

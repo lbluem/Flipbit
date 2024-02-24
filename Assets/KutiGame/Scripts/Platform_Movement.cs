@@ -53,21 +53,32 @@ public class Platform_Movement : MonoBehaviour
             //FindObjectOfType<AudioManager>().Play("PlatformMove");
             //Debug.Log("Platform Move Sound");
         }
-
-        if(
-            (transform.position.x > leftEnd.position.x && transform.position.x < rightEnd.position.x)||
-            (transform.position.x <= leftEnd.position.x && moveDirection == 1)||
-            (transform.position.x >= rightEnd.position.x && moveDirection == -1))
+        if(leftEnd != null && rightEnd != null)
         {
-            transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);        
+            if(
+                (transform.position.x > leftEnd.position.x && transform.position.x < rightEnd.position.x)||
+                (transform.position.x <= leftEnd.position.x && moveDirection == 1)||
+                (transform.position.x >= rightEnd.position.x && moveDirection == -1))
+            {
+                transform.Translate(Vector2.right * speed * Time.deltaTime * moveDirection);        
+            }
+        }else
+        {
+            Debug.LogWarning("Platform Movement: Left and Right End Component required!");
         }
     }
 
     // Um die mögliche Strecke der Plattform zu visualisieren
     private void OnDrawGizmos() 
     {
-        Gizmos.DrawLine(transform.position, leftEnd.position);
-        Gizmos.DrawLine(transform.position, rightEnd.position);    
+        if(leftEnd != null && rightEnd != null)
+        {
+            Gizmos.DrawLine(transform.position, leftEnd.position);
+            Gizmos.DrawLine(transform.position, rightEnd.position);    
+        }else
+        {
+            Debug.LogWarning("Platform Movement: Cant draw Gizmo. Left and Right End not set!");
+        }
     }
 
     // Movement Handler 
