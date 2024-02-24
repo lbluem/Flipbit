@@ -7,6 +7,7 @@ public class NextSceneHandler : MonoBehaviour
 {
 
     //public int LevelToLoad;
+    [SerializeField] private bool restartToLevel1;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -16,7 +17,14 @@ public class NextSceneHandler : MonoBehaviour
             //SceneManager.LoadScene(LevelToLoad, LoadSceneMode.Single);
             
             // lädt nächste Szene nach Build Index
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+            if(!restartToLevel1)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+            }else
+            {
+                SceneManager.LoadScene(0, LoadSceneMode.Single);
+
+            }
         }
     }
 }

@@ -127,7 +127,7 @@ MonoBehaviour:
     m_Bits: 4096
   speed: 16
   turned: 0
-  jumpStrength: 35
+  jumpStrength: 32
 --- !u!95 &2308790977573479025
 Animator:
   serializedVersion: 3
@@ -160,18 +160,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00006708503, y: -0.15771586}
+  m_Offset: {x: -0.00006711483, y: -0.31502178}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 2, y: 2}
     newSize: {x: 0.18, y: 0.17}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7484798, y: 0.6842836}
+  m_Size: {x: 1.4937501, y: 1.3759484}
   m_EdgeRadius: 0
 --- !u!114 &4624141327231730990
 MonoBehaviour:
@@ -197,7 +197,7 @@ GameObject:
   m_Layer: 0
   m_Name: GroundCheck
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -209,8 +209,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7627967544241836012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.49, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
+  m_LocalScale: {x: 3, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 5791449983888492033}
   m_RootOrder: 0
