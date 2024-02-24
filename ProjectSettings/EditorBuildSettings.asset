@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/KutiGame/KutiScenes/1-Bit_Test_Level 1.unity
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 1.unity
     guid: 2beed6c27a81bd14ca5723543794f4a2
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/Porko/Level_1.unity
