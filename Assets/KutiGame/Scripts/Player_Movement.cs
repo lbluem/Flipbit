@@ -113,7 +113,7 @@ public class Player_Movement : MonoBehaviour
     // Überprüfe, ob der Spieler auf dem Boden steht
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.8f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.75f, groundLayer);
     }
 
     // Check if the player is running
