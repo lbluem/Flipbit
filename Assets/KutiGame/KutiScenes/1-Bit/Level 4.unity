@@ -3755,6 +3755,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2214738414371291489, guid: 3fc42064355812049a4e02668cf446f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8631879543690177394, guid: 3fc42064355812049a4e02668cf446f6,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -4278,7 +4283,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TileAssetArray.Array.data[15].m_Data
       value: 
-      objectReference: {fileID: 11400000, guid: d11f4cb389b74e64c9de2c53bc8852aa,
+      objectReference: {fileID: 11400000, guid: f3ebdfcbdfe78754b9c08c00f039768f,
         type: 2}
     - target: {fileID: 3803718320418308320, guid: b4326296fe3531a4f92e987a0e3a6b99,
         type: 3}
@@ -4394,7 +4399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TileSpriteArray.Array.data[15].m_Data
       value: 
-      objectReference: {fileID: -1133734732948462072, guid: 8beb9eaca9bd00c488b948d2c37b70ff,
+      objectReference: {fileID: -2088863968931996787, guid: 8beb9eaca9bd00c488b948d2c37b70ff,
         type: 3}
     - target: {fileID: 3803718320418308320, guid: b4326296fe3531a4f92e987a0e3a6b99,
         type: 3}

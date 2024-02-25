@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DiamondWipe
+  m_Controller: {fileID: 9100000, guid: c71b85c1c3bce7d468294ce5fa203e14, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: f70dc6de8d973f44995d17308b4188c7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 1af7e47c2dc3a504ab7cabf7d0c3ed07, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 3ed530287ced4f143b7f61ec67d27486, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 70cab452286f6ea47a7b61a5f30f9877, type: 2}

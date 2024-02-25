@@ -1808,6 +1808,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2214738414371291489, guid: 3fc42064355812049a4e02668cf446f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8631879543690177394, guid: 3fc42064355812049a4e02668cf446f6,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1877,7 +1882,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 3fc42064355812049a4e02668cf446f6, type: 3}
 --- !u!95 &942745498 stripped
 Animator:
-  m_CorrespondingSourceObject: {fileID: 8631879543690177398, guid: 3fc42064355812049a4e02668cf446f6,
+  m_CorrespondingSourceObject: {fileID: 1480561134766793757, guid: 3fc42064355812049a4e02668cf446f6,
     type: 3}
   m_PrefabInstance: {fileID: 942745497}
   m_PrefabAsset: {fileID: 0}
