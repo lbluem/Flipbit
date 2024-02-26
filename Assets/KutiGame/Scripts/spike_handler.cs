@@ -24,6 +24,6 @@ public class Spike_handler : MonoBehaviour
         //player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         player.GetComponent<Animator>().SetTrigger("Dying");
         FindObjectOfType<AudioManager>().Play("PlayerHit");
-        Debug.Log("Spike Handler: Player stepped on Spike");
+        //Debug.Log("Spike Handler: Player stepped on Spike");
     }
 }

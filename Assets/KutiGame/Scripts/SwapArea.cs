@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class SwapArea : MonoBehaviour
 {
+
+    // Kann durch SerializeField händisch verändert werden
     [SerializeField] private bool directionIsUp;
     private bool turned;
+    public Animator anim;
 
-
-    // Start is called before the first frame update
 
     void Start()
     { 
         turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
+
+        // Je nach Rotation der Sprungfeder funktioniert sie nur in eine Richtung
+        if(transform.parent.transform.rotation.eulerAngles.z == 180)
+        {
+            directionIsUp = false;
+        }else
+        {
+            directionIsUp = true;
+        }
     }
 
     // Update is called once per frame
@@ -32,6 +42,7 @@ public class SwapArea : MonoBehaviour
                 //Debug.Log("SwapArea: Player Swapped");
                 FindObjectOfType<AudioManager>().Play("PlayerTurn");
                 other.GetComponent<Player_Movement>().GravityTurn();
+                anim.SetTrigger("jumpedOn");
             } /* else if(!directionIsUp && turned)
             {
                 FindObjectOfType<AudioManager>().Play("PlayerTurn");
