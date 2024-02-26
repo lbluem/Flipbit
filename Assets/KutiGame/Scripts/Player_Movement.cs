@@ -48,11 +48,8 @@ public class Player_Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         Flip();
-        /* CheckOutOfBounds(); */
-
-        
+        /* CheckOutOfBounds(); */        
         if(!turned)
         {
             CalculateHorizontal(1);
@@ -227,6 +224,11 @@ public class Player_Movement : MonoBehaviour
         turned = !turned;
     }
 
+    // Funktion wird in der Animation vom Charakter getriggered
+    private void DeathRestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 /*     private void CheckOutOfBounds()
     {
         var thisPosition = transform.position;

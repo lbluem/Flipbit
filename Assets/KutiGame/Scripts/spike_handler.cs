@@ -3,33 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class spike_handler : MonoBehaviour
+public class Spike_handler : MonoBehaviour
 {
-    //[SerializeField] private Component dC;
-    private string thisScene;
-    // Start is called before the first frame update
-    void Start()
-    {
-        Scene scene = SceneManager.GetActiveScene();
-        thisScene = scene.name;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     //spike collision with player handler
     //spike kollision mit spieler 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
         {
-            FindObjectOfType<AudioManager>().Play("PlayerHit");
+            PlayerDies(other);
             //DeathCounter.instance.addDeathCount();
-            //Debug.Log("Spike Handler: I DIED");
+            
             //dC.GetComponent<DeathCounter>().addDeathCount();
-            SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
+    }
+
+    private void PlayerDies(Collider2D player)
+    {
+        //player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        player.GetComponent<Animator>().SetTrigger("Dying");
+        FindObjectOfType<AudioManager>().Play("PlayerHit");
+        Debug.Log("Spike Handler: Player stepped on Spike");
     }
 }

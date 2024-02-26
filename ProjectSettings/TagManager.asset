@@ -40,6 +40,7 @@ TagManager:
   - Ground
   - UIButton
   - MovingPlatform
+  - Spike
   layers:
   - Default
   - TransparentFX
