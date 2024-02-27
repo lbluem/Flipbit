@@ -5,10 +5,11 @@ using UnityEngine;
 public class SwapArea : MonoBehaviour
 {
 
-    // Kann durch SerializeField händisch verändert werden
-    [SerializeField] private bool directionIsUp;
+    // Könnte durch SerializeField händisch verändert werden, wird aber später im Code automatisiert
+    private bool directionIsUp;
     private bool turned;
     public Animator anim;
+    public Animator shockwave;
 
 
     void Start()
@@ -43,6 +44,12 @@ public class SwapArea : MonoBehaviour
                 FindObjectOfType<AudioManager>().Play("PlayerTurn");
                 other.GetComponent<Player_Movement>().GravityTurn();
                 anim.SetTrigger("jumpedOn");
+
+                // sieht momentan nicht so gut aus und pro Sprungfeder
+                // spielt die Animation auch nur einmal aus
+                //shockwave.SetTrigger("wave");
+
+                
             } /* else if(!directionIsUp && turned)
             {
                 FindObjectOfType<AudioManager>().Play("PlayerTurn");
