@@ -12,10 +12,10 @@ EditorBuildSettings:
     path: Assets/KutiGame/KutiScenes/1-Bit/Level 4.unity
     guid: 230e6308f98db3e4b813c0d6d7898add
   - enabled: 1
-    path: Assets/KutiGame/KutiScenes/1-Bit/Level 7.unity
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 5.unity
     guid: c4fa4686e70685f4997c1f99e915c26f
   - enabled: 1
-    path: Assets/KutiGame/KutiScenes/1-Bit/Level 5.unity
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 6.unity
     guid: af3fcc0cb6303d3438b61bae96c3b14f
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/1-Bit/Level 10.unity
