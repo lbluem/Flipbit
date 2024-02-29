@@ -51,8 +51,14 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s== null)
         {
-            Debug.LogWarning("Sound: "+ name + " not found!");
+            Debug.LogWarning("AudioManager: Sound: "+ name + " not found!");
             return;
+        }
+        
+        // pitch wird für Abwechslung leicht verändert
+        if(s.name != "Soundtrack")
+        {
+            RandomizeSound(s);
         }
         s.source.Play();
         //Debug.Log("AudioManager: Sound: "+ name + " played");
@@ -65,9 +71,15 @@ public class AudioManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s== null)
         {
-            Debug.LogWarning("Sound to stop: "+ name + " not found!");
+            Debug.LogWarning("AudioManager: Sound to stop: "+ name + " not found!");
             return;
         }
         s.source.Stop();
+    }
+
+    private void RandomizeSound(Sound s)
+    {   
+        s.source.pitch = UnityEngine.Random.Range(0.8f,1.2f);
+        s.pitch = s.source.pitch;
     }
 }
