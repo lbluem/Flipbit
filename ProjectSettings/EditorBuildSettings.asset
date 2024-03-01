@@ -6,39 +6,36 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/KutiGame/KutiScenes/1-Bit/OLD_Level 1.unity
-    guid: 2beed6c27a81bd14ca5723543794f4a2
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 1.unity
+    guid: 3978becb7c6b3974888ebe798ab560da
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 2.unity
+    guid: 2fa06cfadba20c041a0cf30d0521de00
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 3.unity
+    guid: a78de30de01b50743919ea690265c62d
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/1-Bit/Level 4.unity
-    guid: 230e6308f98db3e4b813c0d6d7898add
-  - enabled: 1
-    path: Assets/KutiGame/KutiScenes/1-Bit/Level 5.unity
-    guid: c4fa4686e70685f4997c1f99e915c26f
-  - enabled: 1
-    path: Assets/KutiGame/KutiScenes/1-Bit/Level 6.unity
     guid: af3fcc0cb6303d3438b61bae96c3b14f
   - enabled: 1
-    path: Assets/KutiGame/KutiScenes/1-Bit/Level 10.unity
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 5.unity
     guid: 52394da813d7b0846825badbd5f8b759
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 6.unity
+    guid: be61a3c1f85fa214facdf0d04df6b8c5
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 7.unity
+    guid: f66b536e06deb474c8732bf38a50cb26
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 8.unity
+    guid: 0a3ff860ef0d97549b50f5ed48ccea34
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 9.unity
+    guid: cec3b90d8fc4dd146af7879f13d81ca3
+  - enabled: 1
+    path: Assets/KutiGame/KutiScenes/1-Bit/Level 10.unity
+    guid: 7131b7862e78fa34eb8dcca4ad1dc0ae
   - enabled: 1
     path: Assets/KutiGame/KutiScenes/1-Bit/Level End.unity
     guid: f2f520f93ef8e5a4ba082c591e464664
-  - enabled: 0
-    path: Assets/KutiGame/KutiScenes/Porko/Level_1.unity
-    guid: 53832fb8ba9cd3a40ae32597873194a2
-  - enabled: 0
-    path: Assets/KutiGame/KutiScenes/Porko/Level_2.unity
-    guid: 3b231e9cf7b39dd4899ac8fcfc0de1d1
-  - enabled: 0
-    path: Assets/KutiGame/KutiScenes/Porko/Level_3.unity
-    guid: 986d1b13b0dec2a49a1759545d35fbe8
-  - enabled: 0
-    path: Assets/KutiGame/KutiScenes/Porko/Level_4.unity
-    guid: 800af6f36d82b494099570d68d339f5d
-  - enabled: 0
-    path: Assets/KutiGame/KutiScenes/Porko/Level_5.unity
-    guid: e76bbf33eb8e1094daafcd5a451c071e
-  - enabled: 0
-    path: Assets/KutiGame/KutiScenes/Porko/Level_End.unity
-    guid: 763ad79e380c1fd4cac75741807c2c12
   m_configObjects: {}
