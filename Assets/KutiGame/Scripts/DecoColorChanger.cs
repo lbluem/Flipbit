@@ -11,6 +11,7 @@ public class DecoColorChanger : MonoBehaviour
     public Color player1Color;
     public Color player2Color;
 
+    // Für die animierten Elemente
     public delegate void ChangeSpriteColorDelegate(Color newColor);
     public event ChangeSpriteColorDelegate OnColorChange;
 

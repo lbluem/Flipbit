@@ -5,6 +5,7 @@ public class FPSdisplay : MonoBehaviour
 {
 
     public TextMeshProUGUI fpsText;
+    public static FPSdisplay instance;
 
     private float pollingTime = 1f;
     private float time;
@@ -13,6 +14,14 @@ public class FPSdisplay : MonoBehaviour
 
     private void Awake() {
         DontDestroyOnLoad(gameObject);
+        if(instance == null)
+        {
+            instance = this;
+        }else
+        {
+            Destroy(gameObject);
+            return;
+        }
     }
 
     // Update is called once per frame
