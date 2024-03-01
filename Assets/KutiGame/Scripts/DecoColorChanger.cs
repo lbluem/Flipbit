@@ -11,6 +11,9 @@ public class DecoColorChanger : MonoBehaviour
     public Color player1Color;
     public Color player2Color;
 
+    public delegate void ChangeSpriteColorDelegate(Color newColor);
+    public event ChangeSpriteColorDelegate OnColorChange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,9 +37,11 @@ public class DecoColorChanger : MonoBehaviour
             if(gravityTurned)
             {
                 sprite.color = player2Color;
+                OnColorChange?.Invoke(player2Color);
             }else
             {
                 sprite.color = player1Color;
+                OnColorChange?.Invoke(player1Color);
             }
     }
 }

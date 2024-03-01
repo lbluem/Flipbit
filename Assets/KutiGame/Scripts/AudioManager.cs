@@ -79,7 +79,7 @@ public class AudioManager : MonoBehaviour
 
     private void RandomizeSound(Sound s)
     {   
-        s.source.pitch = UnityEngine.Random.Range(0.8f,1.2f);
+        s.source.pitch = UnityEngine.Random.Range(0.9f,1.2f);
         s.pitch = s.source.pitch;
     }
 }

@@ -51,9 +51,9 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: PlayerHit
-    clip: {fileID: 8300000, guid: d5d7c8f6dcfe4d74da254e128367167b, type: 3}
-    volume: 1
-    pitch: 0.75
+    clip: {fileID: 8300000, guid: 115a68c75e534e24a8312118208cdcad, type: 3}
+    volume: 0.7
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PlayerPickup
