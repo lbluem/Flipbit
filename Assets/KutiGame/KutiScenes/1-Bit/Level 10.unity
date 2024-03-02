@@ -1724,6 +1724,75 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1001 &336785014
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553274, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 257050648860553276, guid: 9404082dc84733b49b5a902f2ffe0783,
+        type: 3}
+      propertyPath: m_Name
+      value: DeathCounter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9404082dc84733b49b5a902f2ffe0783, type: 3}
 --- !u!1 &394191757
 GameObject:
   m_ObjectHideFlags: 0
@@ -3642,6 +3711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48b93dbe0cadeb42a98ba03c4a1e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitForAnimation: 0
 --- !u!4 &1704173047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3803718320418308334, guid: b4326296fe3531a4f92e987a0e3a6b99,
