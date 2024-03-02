@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class ResetSceneManager : MonoBehaviour
 {
-    // Update is called once per frame
+    // Skript für Menü Button
     void Update()
     {
         if(KutiInput.GetKutiButtonDown(EKutiButton.MENU))
         {
             //SceneManager.LoadScene("Level_1", LoadSceneMode.Single);
             SceneManager.LoadScene(0, LoadSceneMode.Single);
+            DeathCounter.instance.resetDeathCount();
 
             //Debug.Log("ResetSceneManager: Scene resetted");
         }

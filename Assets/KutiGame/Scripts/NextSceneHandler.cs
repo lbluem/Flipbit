@@ -36,6 +36,7 @@ public class NextSceneHandler : MonoBehaviour
             }else
             {
                 SceneManager.LoadScene(0, LoadSceneMode.Single);
+                DeathCounter.instance.resetDeathCount();
 
             }
     }

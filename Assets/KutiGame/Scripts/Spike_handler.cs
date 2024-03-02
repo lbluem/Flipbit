@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Spike_handler : MonoBehaviour
 {
+
+    public bool waitForAnimation = false;
+
     //spike collision with player handler
     //spike kollision mit spieler 
     private void OnTriggerEnter2D(Collider2D other)
@@ -22,8 +25,14 @@ public class Spike_handler : MonoBehaviour
     private void PlayerDies(Collider2D player)
     {
         //player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-        player.GetComponent<Animator>().SetTrigger("Dying");
-        FindObjectOfType<AudioManager>().Play("PlayerHit");
+
+        if(!waitForAnimation)
+        {
+            player.GetComponent<Animator>().SetTrigger("Dying");
+            FindObjectOfType<AudioManager>().Play("PlayerHit");
+            DeathCounter.instance.addDeathCount();
+            waitForAnimation = true;
+        }
         //Debug.Log("Spike Handler: Player stepped on Spike");
     }
 }

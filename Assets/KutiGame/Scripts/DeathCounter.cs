@@ -41,7 +41,7 @@ public class DeathCounter : MonoBehaviour
             deathCounterLabel_P1.SetText("Ihr habt nur "+ deathCounter +" Versuche gebraucht");
             deathCounterLabel_P2.SetText("Ihr habt nur "+ deathCounter +" Versuche gebraucht");
         }else
-        Debug.Log(deathCounter);
+        Debug.Log("DeathCounter: "+deathCounter);
     }
 
     // Method to reset the death count
@@ -50,6 +50,6 @@ public class DeathCounter : MonoBehaviour
     {
         deathCounter = 1;
         PlayerPrefs.SetInt("deathCounter", deathCounter);
-        //Debug.Log("Death Counter resetted");
+        Debug.Log("DeathCounter: Reset");
     }
 }
