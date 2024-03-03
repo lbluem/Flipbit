@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Localization>
+    <Language id="en_US">
+
+        <!-- Start Menu -->
+        <String key="up_button">Jump</String>
+        <String key="left_button">Left</String>
+        <String key="right_button">Right</String>
+        <String key="swappad_label">Swap the side!</String>
+        <String key="goal_label">This way!</String>
+
+        <!-- Level End -->
+        <String key="danke">Thank you for playing!</String>
+        <String key="level_1_info">Start again here</String>
+        <String key="versuche">You only needed ... tries</String>
+    </Language>
+    <Language id="de_DE">
+        <String key=""></String>
+
+        <!-- Start Menü -->
+        <String key="up_button">Springen</String>
+        <String key="left_button">Links</String>
+        <String key="right_button">Rechts</String>
+        <String key="swappad_label">Wechselt die Seite!</String>
+        <String key="goal_label">Hier geht's weiter!</String>
+
+        <!-- Level Ende -->
+        <String key="danke">Vielen Dank fürs Spielen!</String>
+        <String key="level_1_info">Hier geht es wieder zum Start</String>
+        <String key="versuche">Ihr habt nur ... Versuche gebraucht</String>
+    </Language>
+    <!-- Weitere Sprachen können hier hinzugefügt werden -->
+</Localization>

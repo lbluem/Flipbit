@@ -6,6 +6,7 @@ public class SwapArea : MonoBehaviour
 {
 
     // Könnte durch SerializeField händisch verändert werden, wird aber später im Code automatisiert
+    // Could be changed manually through SerializeField, but will be automated later in the code
     private bool directionIsUp;
     private bool turned;
     public Animator anim;
@@ -17,6 +18,7 @@ public class SwapArea : MonoBehaviour
         turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
 
         // Je nach Rotation der Sprungfeder funktioniert sie nur in eine Richtung
+        // Depending on the rotation of the spring, it only works in one direction
         if(transform.parent.transform.rotation.eulerAngles.z == 180)
         {
             directionIsUp = false;

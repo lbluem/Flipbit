@@ -18,6 +18,7 @@ public class NextSceneHandler : MonoBehaviour
         if(other.tag == "Player")
         {
             // lädt Level Szene die im Editor angegeben ist
+            
             //SceneManager.LoadScene(LevelToLoad, LoadSceneMode.Single);
             
             StartCoroutine(LoadLevel());

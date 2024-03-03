@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class ResetSceneManager : MonoBehaviour
 {
     // Skript für Menü Button
+    // Script for Menu Button
     void Update()
     {
         if(KutiInput.GetKutiButtonDown(EKutiButton.MENU))
