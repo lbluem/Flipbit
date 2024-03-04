@@ -22,6 +22,7 @@ public class SecretCoin_Handler : MonoBehaviour
         {
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().Play("CoinPickup");
+            CoinCounter.instance.addCoinCount();
             //Debug.Log("SecretCoin_Handler: +1 Point");
         }
     }
