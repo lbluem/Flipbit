@@ -7,6 +7,7 @@ public class SecretFinder : MonoBehaviour
 {
     // SecretLifter GameObject has to be the child of a SecretPath Tilemap
     private Tilemap secretTilemap;
+    [SerializeField] private SecretCoin_Handler thisCoin;
 
     private void Start() 
     {
@@ -18,6 +19,11 @@ public class SecretFinder : MonoBehaviour
         if(other.tag == "Player")
         {
             secretTilemap.color = new Color(1f,1f,1f,0.2f);
+            
+            if(thisCoin != null)
+            {
+                thisCoin.makeVisible();
+            }
         }    
     }
 
