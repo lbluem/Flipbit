@@ -55,7 +55,8 @@ public class AudioManager : MonoBehaviour
             return;
         }
         
-        // pitch wird für Abwechslung leicht verändert
+        // Pitch randomly changes a little for variations
+        // Pitch wird für Abwechslung leicht verändert
         if(s.name != "Soundtrack")
         {
             RandomizeSound(s);

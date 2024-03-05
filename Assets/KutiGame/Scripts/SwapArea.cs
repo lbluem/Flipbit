@@ -5,8 +5,8 @@ using UnityEngine;
 public class SwapArea : MonoBehaviour
 {
 
-    // Könnte durch SerializeField händisch verändert werden, wird aber später im Code automatisiert
     // Could be changed manually through SerializeField, but will be automated later in the code
+    // Könnte durch SerializeField händisch verändert werden, wird aber später im Code automatisiert
     private bool directionIsUp;
     private bool turned;
     public Animator anim;
@@ -17,8 +17,8 @@ public class SwapArea : MonoBehaviour
     { 
         turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
 
-        // Je nach Rotation der Sprungfeder funktioniert sie nur in eine Richtung
         // Depending on the rotation of the spring, it only works in one direction
+        // Je nach Rotation der Sprungfeder funktioniert sie nur in eine Richtung
         if(transform.parent.transform.rotation.eulerAngles.z == 180)
         {
             directionIsUp = false;
@@ -52,27 +52,7 @@ public class SwapArea : MonoBehaviour
                 //shockwave.SetTrigger("wave");
 
                 
-            } /* else if(!directionIsUp && turned)
-            {
-                FindObjectOfType<AudioManager>().Play("PlayerTurn");
-                other.GetComponent<Player_Movement>().GravityTurn();
-            } */
-
-            
+            }             
         }
     }
-
-    /* private void OnTriggerEnter2D(TilemapCollider2D other) {
-        
-        if(other.tag == "Player")
-        {
-            if((directionIsUp && !turned)||!directionIsUp && turned)
-            {
-                FindObjectOfType<AudioManager>().Play("PlayerTurn");
-                other.GetComponent<Player_Movement>().GravityTurn();
-            }
-
-            
-        }
-    } */
 }

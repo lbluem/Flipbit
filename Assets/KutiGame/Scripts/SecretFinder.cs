@@ -6,7 +6,11 @@ using UnityEngine.Tilemaps;
 public class SecretFinder : MonoBehaviour
 {
     // SecretLifter GameObject has to be the child of a SecretPath Tilemap
+    // If Player walks into this Wall it gets transparent
+
     private Tilemap secretTilemap;
+
+    // also changes the correspondent coin to make it visible
     [SerializeField] private SecretCoin_Handler thisCoin;
 
     private void Start() 

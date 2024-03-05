@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Spike_handler : MonoBehaviour
 {
 
+    // Only able to die once before Scene resets
     public bool waitForAnimation = false;
 
     //spike collision with player handler
@@ -15,17 +16,11 @@ public class Spike_handler : MonoBehaviour
         if(other.tag == "Player")
         {
             PlayerDies(other);
-            //DeathCounter.instance.addDeathCount();
-            
-            //dC.GetComponent<DeathCounter>().addDeathCount();
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         }
     }
 
     private void PlayerDies(Collider2D player)
     {
-        //player.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-
         if(!waitForAnimation)
         {
             player.GetComponent<Animator>().SetTrigger("Dying");

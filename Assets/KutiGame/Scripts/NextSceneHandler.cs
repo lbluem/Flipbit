@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class NextSceneHandler : MonoBehaviour
 {
 
-    //public int LevelToLoad;
+    // Part of a simple Collider as a trigger
+
+
     [SerializeField] private bool restartToLevel1;
-    //[SerializeField] private Collider2D nextLevelZone;
 
     public Animator transition;
     public float transitionTime = 1f;
@@ -16,15 +17,12 @@ public class NextSceneHandler : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.tag == "Player")
-        {
-            // lädt Level Szene die im Editor angegeben ist
-            
-            //SceneManager.LoadScene(LevelToLoad, LoadSceneMode.Single);
-            
+        {            
             StartCoroutine(LoadLevel());
         }
     }
 
+    // Waits for the Level transition Animation
     IEnumerator LoadLevel()
     {
         transition.SetTrigger("Start");

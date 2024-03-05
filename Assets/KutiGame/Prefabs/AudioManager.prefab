@@ -56,18 +56,6 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
-  - name: PlayerPickup
-    clip: {fileID: 8300000, guid: 262fd95248bf5904ca0999b1f54625f0, type: 3}
-    volume: 0.75
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  - name: MenuButton
-    clip: {fileID: 8300000, guid: 39fef5d8316d85e4b87eeb21d0f874ea, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
   - name: PlayerFall
     clip: {fileID: 8300000, guid: 104bd810bb4ae1542b3a97a305502d3f, type: 3}
     volume: 0.6
@@ -79,12 +67,6 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     loop: 0
-    source: {fileID: 0}
-  - name: PlatformMove
-    clip: {fileID: 8300000, guid: b6e12c07c3ee5504ab07d1c8ea0c2887, type: 3}
-    volume: 0.35
-    pitch: 1
-    loop: 1
     source: {fileID: 0}
   - name: Soundtrack
     clip: {fileID: 8300000, guid: fb73f9973dc13a8438ff4cdb2d04f813, type: 3}

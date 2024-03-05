@@ -11,17 +11,17 @@ public class Player_Movement : MonoBehaviour
 
     private Animator _animator;
 
+    // For move direction
     private float horizontal = 0f;
+    public float speed = 16f;
 
-    //Out of Bounds Check
-    private string thisScene;
-    public float speed = 12f;
-    private float moveDirection;
-
-    // Flip sprite
+    // Flip sprite on gravity change
+    // has to be set in Editor if Level starts turned
     public bool turned = false;
-    public float jumpStrength = 19;
+    public float jumpStrength = 32;
     private bool inAir = false;
+
+    // for the Flip function
     private bool isFacingRight = true;
 
     // Button Tracker
@@ -34,10 +34,9 @@ public class Player_Movement : MonoBehaviour
     void Start()
     {
         _animator = GetComponent<Animator>();
-        thisScene = SceneManager.GetActiveScene().name;
 
-        // Für den Fall das wir mit dem Spieler 2 anfangen
         // For the case that we start with player 2
+        // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
         {
             GravityTurn();
@@ -49,11 +48,12 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         Flip();
-        /* CheckOutOfBounds(); */        
+
         if(!turned)
         {
             CalculateHorizontal(1);
 
+            // Jumping
             if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
@@ -68,6 +68,7 @@ public class Player_Movement : MonoBehaviour
         {
             CalculateHorizontal(2);
 
+            // Jumping
             if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
@@ -79,6 +80,7 @@ public class Player_Movement : MonoBehaviour
             }
         }
 
+        // Plays according animations
         _animator.SetBool("isJumping", !IsGrounded());
         _animator.SetBool("isRunning", !IsRunning());
 
@@ -95,7 +97,6 @@ public class Player_Movement : MonoBehaviour
             inAir = false;
         }else
         {
-            
             _animator.SetBool("isLanding", false);
         }
 
@@ -113,8 +114,8 @@ public class Player_Movement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.75f, groundLayer);
     }
 
-    // Check if the player is running
-    // Überprüfe, ob der Spieler rennt
+    // Check if the player is running (for the animation)
+    // Überprüfe, ob der Spieler rennt (für die Animation)
     private bool IsRunning()
     {
         if(horizontal == 0)
@@ -209,16 +210,11 @@ public class Player_Movement : MonoBehaviour
     // Die Schwerkraft für den Spieler umkehren
    public void GravityTurn()
     {
-        // wenn zu "geturned" wird sollte folgendes passieren
         p1ButtonLeftUp = true;
         p1ButtonRightUp = true;
         p2ButtonLeftUp = true;
         p2ButtonRightUp = true;
 
-        // so wie oben ist das Problem erstmal gelöst
-        // aber führt zu anderen nischigeren Problemen
-
-        //horizontal = 0;
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
@@ -229,17 +225,7 @@ public class Player_Movement : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-/*     private void CheckOutOfBounds()
-    {
-        var thisPosition = transform.position;
 
-        if(thisPosition.x > 11.5 || thisPosition.x < -11.5
-        || thisPosition.y > 9.5 || thisPosition.y < -9.5)
-        {
-            FindObjectOfType<AudioManager>().Play("PlayerHit");
-            SceneManager.LoadScene(thisScene, LoadSceneMode.Single);
-        }
-    } */
 
 }
 

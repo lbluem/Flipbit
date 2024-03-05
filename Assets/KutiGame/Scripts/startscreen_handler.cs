@@ -69,7 +69,7 @@ public class startscreen_handler : MonoBehaviour
             // bis zu tausende male abgespielt wird
             if (playSound)
             {
-                FindObjectOfType<AudioManager>().Play("MenuButton");
+                //FindObjectOfType<AudioManager>().Play("MenuButton");
                 playSound = false;
             }
             //Debug.Log("MENUUEE");

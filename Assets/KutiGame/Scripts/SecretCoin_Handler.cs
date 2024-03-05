@@ -18,7 +18,7 @@ public class SecretCoin_Handler : MonoBehaviour
             Destroy(gameObject);
         }else
         {
-            Debug.Log("SecretCoin_Handler: PlayerPref ist "+PlayerPrefs.GetInt(coinID,50));
+            Debug.Log("SecretCoin_Handler: PlayerPref ist "+PlayerPrefs.GetInt(coinID));
             secretScript = GetComponentInParent<SecretFinder>();
             coinSprite = GetComponent<SpriteRenderer>();
             coinID = "coinLevel"+(SceneManager.GetActiveScene().buildIndex + 1);
@@ -35,7 +35,7 @@ public class SecretCoin_Handler : MonoBehaviour
             Destroy(gameObject);
             FindObjectOfType<AudioManager>().Play("CoinPickup");
             CoinCounter.instance.addCoinCount();
-            PlayerPrefs.SetInt(coinID, 0);
+            PlayerPrefs.SetInt(coinID, 1);
             //Debug.Log("SecretCoin_Handler: +1 Point");
         }
     }

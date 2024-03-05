@@ -5,17 +5,13 @@ using UnityEngine;
 public class Platform_Movement : MonoBehaviour
 {
 
+    // Sets boundaries for the platforms
     public Transform leftEnd;
     public Transform rightEnd;
     public float speed = 8;
     public float moveDirection = 0;
-    // Start Position um da zurückkehren zu können
-    // start position to return to
-    public Vector3 startPosition;
-    public bool turned;
 
-    // Collision of player
-    private Collision2D player = null;
+    public bool turned;
 
     // Button Tracker
     private bool p1ButtonLeftUp = true;
@@ -26,7 +22,6 @@ public class Platform_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        startPosition = gameObject.transform.position;
         turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
     }
 
@@ -37,22 +32,11 @@ public class Platform_Movement : MonoBehaviour
         // das Player Game Object zu finden. Bedarf evtl einer anderen Lösung
         turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
 
-        // Ist ein RigidBody überhaupt nötig?
-        //thisRB.velocity = new Vector2(speed*moveDirection, thisRB.velocity.y);
-
         GetMovement();
     }
 
     private void FixedUpdate() {
        
-        if(moveDirection == 0)
-        {
-            //FindObjectOfType<AudioManager>().Stop("PlatformMove");
-            //Debug.Log("Stopping Platform Move Sound");
-        }else{
-            //FindObjectOfType<AudioManager>().Play("PlatformMove");
-            //Debug.Log("Platform Move Sound");
-        }
         if(leftEnd != null && rightEnd != null)
         {
             if(
@@ -151,42 +135,9 @@ public class Platform_Movement : MonoBehaviour
         //Debug.Log("Platform Movement: Collision detected");
         if(other.gameObject.tag == "Player")
         {
-            player = other;
             other.transform.SetParent(transform);
-        }else if(other.gameObject.tag == "Ground")
-        {
-            //Debug.Log("Platform Movement: Ground detected");
-            /* if(player != null)
-            {
-                player.transform.SetParent(null);
-            } */
         }
-        /* }else if(other.gameObject.tag == "Ground")
-        {
-            moveDirection = 0;
-        } */
-        /* else if(other.gameObject.tag == "Ground")
-        {
-            if(other.transform.position.x > transform.position.x)
-            {
-                //rechte wand wurde getroffen
-                Debug.Log("RECHTE WAND GETROFFEN");
-            }
-        } */
     }
-
-    // Wall Collision Handler
-    // Kollisionshandler für die Wand
-    /* private bool wallCollision(Collision2D other) 
-    {
-        Debug.Log("Wilde Sachen passieren");
-        if(other.gameObject.tag == "Ground")
-        {
-            FindObjectOfType<AudioManager>().Stop("PlatformMove");
-            return true;
-        }
-        return false;
-    } */
 
     // Collision Handler for leaving the platform
     // Kollisionshandler für  Plattform verlassen
