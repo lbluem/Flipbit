@@ -14,6 +14,7 @@ public class ResetSceneManager : MonoBehaviour
             //SceneManager.LoadScene("Level_1", LoadSceneMode.Single);
             SceneManager.LoadScene(0, LoadSceneMode.Single);
             DeathCounter.instance.resetDeathCount();
+            CoinCounter.instance.resetCoinCount();
 
             //Debug.Log("ResetSceneManager: Scene resetted");
         }
