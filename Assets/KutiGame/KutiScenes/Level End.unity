@@ -1699,7 +1699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b31f93c0a2e6942b2af781f7af1425, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  restartToLevel1: 1
+  restartToLevel1: 0
   transition: {fileID: 2019349144}
   transitionTime: 1
 --- !u!1001 &913128585
