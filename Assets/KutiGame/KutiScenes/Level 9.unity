@@ -185,7 +185,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &314736000
 PrefabInstance:
@@ -202,7 +202,7 @@ PrefabInstance:
     - target: {fileID: 5333729759397813559, guid: d843ee89980fa8944aab8eec02e7f817,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5333729759397813559, guid: d843ee89980fa8944aab8eec02e7f817,
         type: 3}
@@ -1695,7 +1695,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &394191760
 MonoBehaviour:
@@ -1727,12 +1727,12 @@ PrefabInstance:
     - target: {fileID: 7007195210315271438, guid: 3a6b88771e0486c468568a6be7671a0f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.020000458
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7007195210315271438, guid: 3a6b88771e0486c468568a6be7671a0f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4799995
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7007195210315271438, guid: 3a6b88771e0486c468568a6be7671a0f,
         type: 3}
@@ -1797,7 +1797,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589579675}
   m_Layer: 0
-  m_Name: Swaps
+  m_Name: SwapPads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1844,22 +1844,22 @@ PrefabInstance:
     - target: {fileID: 8631879543830780445, guid: 3fc42064355812049a4e02668cf446f6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8631879543830780445, guid: 3fc42064355812049a4e02668cf446f6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.3757775
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8631879543830780445, guid: 3fc42064355812049a4e02668cf446f6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7756362
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8631879543830780445, guid: 3fc42064355812049a4e02668cf446f6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.98490953
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8631879543830780445, guid: 3fc42064355812049a4e02668cf446f6,
         type: 3}
@@ -2725,6 +2725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48b93dbe0cadeb42a98ba03c4a1e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitForAnimation: 0
 --- !u!66 &1453801700
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -4913,7 +4914,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4953539972691348, guid: e1f1d8247d6e9be4985ab010318f605e, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4953539972691348, guid: e1f1d8247d6e9be4985ab010318f605e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5064,7 +5065,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1905455674}
   m_Layer: 0
-  m_Name: Platform Controller
+  m_Name: Platform Controller (and SwapPad 2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5152,7 +5153,7 @@ PrefabInstance:
     - target: {fileID: 7007195210315271442, guid: 3a6b88771e0486c468568a6be7671a0f,
         type: 3}
       propertyPath: m_Name
-      value: SwapPad 1 (1)
+      value: SwapPad 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a6b88771e0486c468568a6be7671a0f, type: 3}
