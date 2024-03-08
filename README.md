@@ -1,6 +1,6 @@
 ## 🕹 Kuti von Template
 
-Ein Videospiel für die Kuti Konsole auf der Basis eines bereitgestellten Unity Template Projekts.
+Ein Videospiel für den Kuti Spieltisch auf der Basis eines bereitgestellten Unity Template Projekts.
 
 ---
 
@@ -43,6 +43,8 @@ Zusätzlich haben alle Level
 - 1BitPlayer
 - Tilemaps
 - SwapPad(s)
+- (Platform Controller)
+- (Boxes)
 
 ### 🕸 Skript Relationen
 ![Flipbit Skript Relations](https://github.com/lbluem/Kuti_von_Template/assets/66683993/2596608c-5d45-4add-beaa-00c047733cc2)
