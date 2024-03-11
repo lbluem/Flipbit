@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 116345812}
   - component: {fileID: 116345816}
   - component: {fileID: 116345817}
+  - component: {fileID: 116345818}
   m_Layer: 5
   m_Name: StartMenu
   m_TagString: Untagged
@@ -352,6 +353,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myUIGroup: {fileID: 116345817}
+  language: en
+  localizationManager: {fileID: 116345818}
 --- !u!225 &116345817
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -364,6 +367,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &116345818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116345811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 284084e79ed747b4997f2c6bdcb4bfce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localizationFile: {fileID: 4900000, guid: 344a3abd67eca9c40b7779de0a95651a, type: 3}
 --- !u!1001 &132013764
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,7 +534,7 @@ GameObject:
   - component: {fileID: 246463472}
   m_Layer: 5
   m_Name: RightButtonLabel
-  m_TagString: Untagged
+  m_TagString: rightbuttonlabel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2475,8 +2491,8 @@ GameObject:
   - component: {fileID: 796628085}
   - component: {fileID: 796628084}
   m_Layer: 5
-  m_Name: GoalText
-  m_TagString: Untagged
+  m_Name: SwapText2
+  m_TagString: swaptext
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2616,7 +2632,7 @@ GameObject:
   - component: {fileID: 1052008821}
   m_Layer: 5
   m_Name: UpBottonLabel
-  m_TagString: Untagged
+  m_TagString: upbuttonlabel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3162,7 +3178,7 @@ GameObject:
   - component: {fileID: 1537667530}
   m_Layer: 5
   m_Name: UpBottonLabel
-  m_TagString: Untagged
+  m_TagString: upbuttonlabel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3294,9 +3310,9 @@ GameObject:
   - component: {fileID: 1552258872}
   - component: {fileID: 1552258874}
   - component: {fileID: 1552258873}
-  m_Layer: 0
-  m_Name: SwapText2
-  m_TagString: Untagged
+  m_Layer: 5
+  m_Name: GoalText
+  m_TagString: goaltext
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4012,7 +4028,7 @@ GameObject:
   - component: {fileID: 1744398518}
   m_Layer: 5
   m_Name: RightButtonLabel
-  m_TagString: Untagged
+  m_TagString: rightbuttonlabel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4144,9 +4160,9 @@ GameObject:
   - component: {fileID: 1756776154}
   - component: {fileID: 1756776156}
   - component: {fileID: 1756776155}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: GoalText2
-  m_TagString: Untagged
+  m_TagString: goaltext
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4280,7 +4296,7 @@ GameObject:
   - component: {fileID: 1822914970}
   m_Layer: 5
   m_Name: SwapText
-  m_TagString: Untagged
+  m_TagString: swaptext
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4414,7 +4430,7 @@ GameObject:
   - component: {fileID: 1828967072}
   m_Layer: 5
   m_Name: LeftButtonLabel
-  m_TagString: Untagged
+  m_TagString: leftbuttonlabel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4623,7 +4639,7 @@ GameObject:
   - component: {fileID: 1870629076}
   m_Layer: 5
   m_Name: LeftButtonLabel
-  m_TagString: Untagged
+  m_TagString: leftbuttonlabel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

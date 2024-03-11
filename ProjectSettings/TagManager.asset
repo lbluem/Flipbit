@@ -41,6 +41,14 @@ TagManager:
   - UIButton
   - MovingPlatform
   - Spike
+  - upbuttonlabel
+  - leftbuttonlabel
+  - swaptext
+  - goaltext
+  - rightbuttonlabel
+  - danke
+  - level_1_info
+  - versuche
   layers:
   - Default
   - TransparentFX
