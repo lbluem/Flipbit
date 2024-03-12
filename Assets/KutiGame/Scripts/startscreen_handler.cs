@@ -32,8 +32,9 @@ public class startscreen_handler : MonoBehaviour
             DeathCounter.instance.resetDeathCount();
             Debug.Log("startscreen_handler: Death Counter resetted");
         }
-        //playerObject = GameObject.Find("Player");
-        //playerObject.GetComponent<Player_Movement>().enabled = false;
+
+        // Resetting individual coins
+        PlayerPrefs.SetInt("coinLevel10",0);
 
         uiButtons = GameObject.FindGameObjectsWithTag("UIButton");
 
