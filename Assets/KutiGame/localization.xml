@@ -12,6 +12,11 @@
         <String key="danke">Thank you for playing!</String>
         <String key="level_1_info">Start again here</String>
         <String key="versuche">You only needed     tries</String>
+
+        <!-- Credits -->
+        <String key="from">A game from &#xA; &#xA; Tony Tu und &#xA; Lukas Buesen</String>
+        <String key="graphics">Graphic Assets by &#xA; Kenney.nl</String>
+        <String key="soundtrack">Soundtrack by &#xA; AVGVSTA</String>
     </Language>
     <Language id="de_DE">
         <!-- Start Menü -->
@@ -25,6 +30,11 @@
         <String key="danke">Vielen Dank fürs Spielen!</String>
         <String key="level_1_info">Hier geht es wieder zum Start</String>
         <String key="versuche">Ihr habt nur     Versuche gebraucht</String>
+
+        <!-- Credits -->
+        <String key="from">Ein Spiel von &#xA; &#xA; Tony Tu und &#xA; Lukas Buesen</String>
+        <String key="graphics">Grafik Assets von &#xA; Kenney.nl</String>
+        <String key="soundtrack">Soundtrack von AVGVSTA</String>
     </Language>
     <!-- Weitere Sprachen können hier hinzugefügt werden -->
 </Localization>
