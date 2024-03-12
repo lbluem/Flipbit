@@ -24,8 +24,8 @@ public class DeathCounter : MonoBehaviour
 
         if(deathCounterLabel_P1 != null)
         {
-            deathCounterLabel_P1.SetText("Ihr habt nur "+ deathCounter +" Versuche gebraucht");
-            deathCounterLabel_P2.SetText("Ihr habt nur "+ deathCounter +" Versuche gebraucht");
+            deathCounterLabel_P1.SetText(deathCounter.ToString());
+            deathCounterLabel_P2.SetText(deathCounter.ToString());
         }
     }
 
