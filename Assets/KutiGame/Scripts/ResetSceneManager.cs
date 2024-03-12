@@ -16,8 +16,6 @@ public class ResetSceneManager : MonoBehaviour
             DeathCounter.instance.resetDeathCount();
             CoinCounter.instance.resetCoinCount();
 
-            // CoinID reset...
-
             //Debug.Log("ResetSceneManager: Scene resetted");
         }
     }
