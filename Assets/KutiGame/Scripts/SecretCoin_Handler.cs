@@ -17,14 +17,14 @@ public class SecretCoin_Handler : MonoBehaviour
         if(PlayerPrefs.GetInt(coinID)==1)
         {
             Destroy(gameObject);
-            Debug.Log("SecretCoin_Handler: Coin already found so it was destroyed");
+            //Debug.Log("SecretCoin_Handler: Coin already found so it was destroyed");
         }else
         {
             Debug.Log("SecretCoin_Handler: First PlayerPref is "+PlayerPrefs.GetInt(coinID));
             secretScript = GetComponentInParent<SecretFinder>();
             coinSprite = GetComponent<SpriteRenderer>();
             
-            Debug.Log("SecretCoin_Handler: CoinID is \""+coinID+"\"");
+            //Debug.Log("SecretCoin_Handler: CoinID is \""+coinID+"\"");
 
             coinSprite.color = new Color(1f,1f,1f,0f);
         }
@@ -38,7 +38,7 @@ public class SecretCoin_Handler : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("CoinPickup");
             CoinCounter.instance.addCoinCount();
             PlayerPrefs.SetInt(coinID, 1);
-            Debug.Log("SecretCoin_Handler: Second PlayerPref is "+PlayerPrefs.GetInt(coinID));
+            //Debug.Log("SecretCoin_Handler: Second PlayerPref is "+PlayerPrefs.GetInt(coinID));
         }
     }
 
