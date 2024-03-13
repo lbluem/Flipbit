@@ -52,8 +52,8 @@ public class Platform_Movement : MonoBehaviour
         }
     }
 
-    // Um die mögliche Strecke der Plattform zu visualisieren
     // To visualize the possible path of the platform
+    // Um die mögliche Strecke der Plattform zu visualisieren
     private void OnDrawGizmos() 
     {
         if(leftEnd != null && rightEnd != null)

@@ -5,13 +5,13 @@ using UnityEngine.Tilemaps;
 
 public class Animated_Decoration : MonoBehaviour
 {
-    // Ein Objekt mit diesem Skript muss immer Child einer Decoration Tilemap sein
-    // An object with this script must always be a child of a decoration tilemap
+    // An object with this script must always be a child of a (decoration) tilemap
+    // Ein Objekt mit diesem Skript muss immer Child einer (Decoration) Tilemap sein
     private Color currentBgColor;
     private SpriteRenderer thisSprite;
 
-    // Die Tilemap muss händisch im Editor auf das Feld gezogen werden
     // The tilemap must be dragged onto the field manually in the editor
+    // Die Tilemap muss händisch im Editor auf das Feld gezogen werden
     public DecoColorChanger decoColorChangerScript;
 
     // Start is called before the first frame update
@@ -37,6 +37,4 @@ public class Animated_Decoration : MonoBehaviour
     {
         thisSprite.color = color;
     }   
-
-
 }

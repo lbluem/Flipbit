@@ -6,8 +6,8 @@ using TMPro;
 public class DeathCounter : MonoBehaviour
 {
     public static DeathCounter instance;
-    // attempt counter not death counter therefor start = 1
-    // eig kein Death Counter sondern VERSUCHs Counter deswegen Start bei 1
+    // Attempt counter not death counter therefor start = 1
+    // kein Death Counter sondern VERSUCHs Counter deswegen Start bei 1
     private int deathCounter = 1;
 
     public TextMeshProUGUI deathCounterLabel_P1;

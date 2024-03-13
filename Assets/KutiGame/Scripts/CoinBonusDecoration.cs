@@ -10,13 +10,7 @@ public class CoinBonusDecoration : MonoBehaviour
     {
         if(!(PlayerPrefs.GetInt("coinCounter")>= 3))
         {
-            GetComponentInParent<Tilemap>().color = new Color(1f,1f,1f,0.2f);
+            GetComponentInParent<Tilemap>().color = new Color(1f,1f,1f,0f);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

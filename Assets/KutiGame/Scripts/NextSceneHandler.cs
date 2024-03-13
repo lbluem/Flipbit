@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class NextSceneHandler : MonoBehaviour
 {
 
-    // Part of a simple Collider as a trigger
-
+    // Part of a simple Collider as a trigger transitioning to the next level
 
     [SerializeField] private bool restartToLevel1;
 

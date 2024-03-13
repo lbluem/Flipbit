@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class DecoColorChanger : MonoBehaviour
 {
-    // is part of a tilemap
+    // Is part of a tilemap
     // ist Teil von einer Tilemap
     
     private Tilemap sprite;
