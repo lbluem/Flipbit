@@ -5,17 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class ResetSceneManager : MonoBehaviour
 {
-    // Skript für Menü Button
-    // Script for Menu Button
+    // Only for development
+    // Script for Menu Button and will be deprecated in the future
+    // Nur für die Entwicklung
+    // Skript für Menü Button und ist in der Zukunft überflüssig
     void Update()
     {
         if(KutiInput.GetKutiButtonDown(EKutiButton.MENU))
         {
-            //SceneManager.LoadScene("Level_1", LoadSceneMode.Single);
             SceneManager.LoadScene(0, LoadSceneMode.Single);
-            DeathCounter.instance.resetDeathCount();
-            CoinCounter.instance.resetCoinCount();
-
             //Debug.Log("ResetSceneManager: Scene resetted");
         }
     }

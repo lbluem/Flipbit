@@ -5,6 +5,8 @@ using UnityEngine;
 public class SwapArea : MonoBehaviour
 {
 
+    // Handling the logic of the SwapPads (springs)
+
     // Could be changed manually through SerializeField, but will be automated later in the code
     // Könnte durch SerializeField händisch verändert werden, wird aber später im Code automatisiert
     private bool directionIsUp;
@@ -15,7 +17,11 @@ public class SwapArea : MonoBehaviour
 
     void Start()
     { 
-        turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
+        // Event prerequisites
+        Player_Movement player_Movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>();
+        player_Movement.OnGravityChange += ChangeTurned;
+        // Manual function call at the beginning of the Level
+        ChangeTurned(player_Movement.turned);
 
         // Depending on the rotation of the spring, it only works in one direction
         // Je nach Rotation der Sprungfeder funktioniert sie nur in eine Richtung
@@ -28,16 +34,17 @@ public class SwapArea : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Triggered once at the start of the Level and then as an Event
+    // everytime the Player changes
+    private void ChangeTurned(bool turnedFromPlayer)
     {
-        turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
+        turned = turnedFromPlayer;
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
 
         //Debug.Log("SwapArea: Collider Entered");
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
             //Debug.Log("SwapArea: Player Entered");
             if((directionIsUp && !turned)||!directionIsUp && turned)

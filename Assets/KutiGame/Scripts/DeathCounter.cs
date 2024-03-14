@@ -5,11 +5,13 @@ using TMPro;
 
 public class DeathCounter : MonoBehaviour
 {
-    public static DeathCounter instance;
-    // Attempt counter not death counter therefor start = 1
+    // Managing the PlayerPref DeathCounter
+    // Attempt counter not death counter therefore it starts at 1
     // kein Death Counter sondern VERSUCHs Counter deswegen Start bei 1
+    public static DeathCounter instance;
     private int deathCounter = 1;
 
+    // To manipulate the Text in the End Level
     public TextMeshProUGUI deathCounterLabel_P1;
     public TextMeshProUGUI deathCounterLabel_P2;
 
@@ -22,6 +24,7 @@ public class DeathCounter : MonoBehaviour
     {
         deathCounter = PlayerPrefs.GetInt("deathCounter");
 
+        // Only happens in the end Level
         if(deathCounterLabel_P1 != null)
         {
             deathCounterLabel_P1.SetText(deathCounter.ToString());
@@ -31,22 +34,16 @@ public class DeathCounter : MonoBehaviour
 
     // Method to increment the death count
     // Methode zur Inkrementierung des Versuchs-Zählers
-    public void addDeathCount()
+    public void AddDeathCount()
     {
         deathCounter++;
         PlayerPrefs.SetInt("deathCounter", deathCounter);
-
-        if(deathCounterLabel_P1 != null)
-        {
-            deathCounterLabel_P1.SetText("Ihr habt nur "+ deathCounter +" Versuche gebraucht");
-            deathCounterLabel_P2.SetText("Ihr habt nur "+ deathCounter +" Versuche gebraucht");
-        }else
         Debug.Log("DeathCounter: "+deathCounter);
     }
 
     // Method to reset the death count
     // Methode zum Zurücksetzen des Versuchs-Zählers
-    public void resetDeathCount()
+    public void ResetDeathCount()
     {
         deathCounter = 1;
         PlayerPrefs.SetInt("deathCounter", deathCounter);

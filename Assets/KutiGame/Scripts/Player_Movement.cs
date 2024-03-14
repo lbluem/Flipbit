@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
+
+    // Everything regarding the Player including the movement and other logic
+
     [SerializeField] private Rigidbody2D myRB;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -21,6 +24,10 @@ public class Player_Movement : MonoBehaviour
     public float jumpStrength = 32;
     private bool inAir = false;
 
+    // Event for gravity change
+    public delegate void OnTurned(bool turned);
+    public event OnTurned OnGravityChange;
+
     // for the Flip function
     private bool isFacingRight = true;
 
@@ -33,9 +40,12 @@ public class Player_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();
+        _animator = GetComponent<Animator>();        
+    }
 
-        // For the case that we start with player 2
+    private void Awake() 
+    {
+        // In the case we start with player 2 controlling the character
         // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
         {
@@ -206,7 +216,7 @@ public class Player_Movement : MonoBehaviour
 
     }
 
-    // Invert gravity for the player
+    // Invert gravity for the player → The player changes
     // Die Schwerkraft für den Spieler umkehren
    public void GravityTurn()
     {
@@ -218,14 +228,15 @@ public class Player_Movement : MonoBehaviour
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
+
+        OnGravityChange?.Invoke(turned);
     }
 
-    // Funktion wird in der Animation vom Charakter getriggered
+    // Function gets triggered in the animation from the character
+    // Funtion wird in der Animation vom Charakter getriggered
     private void DeathRestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-
 }
 

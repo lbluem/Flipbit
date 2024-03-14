@@ -8,14 +8,17 @@ public class NextSceneHandler : MonoBehaviour
 
     // Part of a simple Collider as a trigger transitioning to the next level
 
-    [SerializeField] private bool restartToLevel1;
+
+    // restartToLevel1 is deprecated because the first Level loads after the credits
+    // in no contact with this GameObject
+    //[SerializeField] private bool restartToLevel1;
 
     public Animator transition;
     public float transitionTime = 1f;
  
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {            
             StartCoroutine(LoadLevel());
         }
@@ -28,14 +31,14 @@ public class NextSceneHandler : MonoBehaviour
 
         yield return new WaitForSeconds(transitionTime);
 
-        if(!restartToLevel1)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
+
+        /* if(!restartToLevel1)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
             }else
             {
                 SceneManager.LoadScene(0, LoadSceneMode.Single);
-                DeathCounter.instance.resetDeathCount();
-
-            }
+            } */
     }
 }

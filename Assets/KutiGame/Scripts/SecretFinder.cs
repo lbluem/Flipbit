@@ -5,8 +5,8 @@ using UnityEngine.Tilemaps;
 
 public class SecretFinder : MonoBehaviour
 {
-    // SecretLifter GameObject has to be the child of a SecretPath Tilemap
-    // If Player walks into this Wall it gets transparent
+    // SecretLifter GameObject has to be the child of a SecretPath tilemap
+    // If player walks into this wall it gets transparent
 
     private Tilemap secretTilemap;
 
@@ -20,20 +20,20 @@ public class SecretFinder : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
             secretTilemap.color = new Color(1f,1f,1f,0.2f);
             
             if(thisCoin != null)
             {
-                thisCoin.makeVisible();
+                thisCoin.MakeVisible();
             }
         }    
     }
 
     private void OnTriggerExit2D(Collider2D other) 
     {
-        if(other.tag == "Player")
+        if(other.CompareTag("Player"))
         {
             secretTilemap.color = new Color(1f,1f,1f,1f);
         }  

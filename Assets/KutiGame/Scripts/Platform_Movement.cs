@@ -5,10 +5,14 @@ using UnityEngine;
 public class Platform_Movement : MonoBehaviour
 {
 
+    // Managing the movement and logic of the moving platforms
+
     // Sets boundaries for the platforms
     public Transform leftEnd;
     public Transform rightEnd;
-    public float speed = 8;
+
+    // Speed gets overwritten in editor
+    public float speed = 12;
     public float moveDirection = 0;
 
     public bool turned;
@@ -22,17 +26,26 @@ public class Platform_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
+        // Event prerequisites
+        Player_Movement player_Movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>();
+        player_Movement.OnGravityChange += ChangeTurned;
+        // Manual function call at the beginning of the Level
+        ChangeTurned(player_Movement.turned);
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Kann mir vorstellen, dass das zu taxing ist jede gefühlte Millisekunde
-        // das Player Game Object zu finden. Bedarf evtl einer anderen Lösung
-        turned = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>().turned;
-
         GetMovement();
+    }
+
+    // Triggered once at the start of the Level and then as an Event
+    // everytime the Player changes
+    private void ChangeTurned(bool turnedFromPlayer)
+    {
+        turned = turnedFromPlayer;
+        //Debug.Log(transform.parent.name+" turned to "+turned);
     }
 
     private void FixedUpdate() {
@@ -133,7 +146,7 @@ public class Platform_Movement : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) 
     {
         //Debug.Log("Platform Movement: Collision detected");
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(transform);
         }
@@ -143,7 +156,7 @@ public class Platform_Movement : MonoBehaviour
     // Kollisionshandler für  Plattform verlassen
     private void OnCollisionExit2D(Collision2D other) 
     {
-        if(other.gameObject.tag == "Player")
+        if(other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(null);
         }

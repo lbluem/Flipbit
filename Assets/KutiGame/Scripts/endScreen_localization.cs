@@ -7,6 +7,9 @@ using System.Linq; // Hinzugefügter Namespace für LINQ
 
 public class endScreen_localization : MonoBehaviour
 {
+
+    // Text localization for the End Level
+
     [SerializeField] private string language;
 
     public LocalizationManager localizationManager;
@@ -17,12 +20,6 @@ public class endScreen_localization : MonoBehaviour
     void Start()
     {
         UpdateLocalizedTexts();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
      void UpdateLocalizedTexts()

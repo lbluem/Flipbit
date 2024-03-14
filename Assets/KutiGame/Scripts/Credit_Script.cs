@@ -5,22 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class Credit_Script : MonoBehaviour
 {
+    // Only for the Credit Scene
+    // Part of the Main Camera
     void Update()
     {
-        if(KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT)||
-        KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT)||
-        KutiInput.GetKutiButtonDown(EKutiButton.P1_MID)||
-        KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT)||
-        KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT)||
-        KutiInput.GetKutiButtonDown(EKutiButton.P2_MID))
+        // Loads Level 1 if a button was pressed
+        if(KutiInput.GetAnyButtonDown())
         {
             SceneManager.LoadScene(0, LoadSceneMode.Single);
-            DeathCounter.instance.resetDeathCount();
-            CoinCounter.instance.resetCoinCount();
-
-            // CoinID reset...
-
-            //Debug.Log("ResetSceneManager: Scene resetted");
         }
 
     }

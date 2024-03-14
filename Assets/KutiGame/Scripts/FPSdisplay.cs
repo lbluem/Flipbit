@@ -4,6 +4,7 @@ using TMPro;
 public class FPSdisplay : MonoBehaviour
 {
 
+    // Showing the Frames per second for performance purposes
     public TextMeshProUGUI fpsText;
     public static FPSdisplay instance;
 

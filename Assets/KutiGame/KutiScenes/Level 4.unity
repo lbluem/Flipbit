@@ -1904,7 +1904,7 @@ PrefabInstance:
     - target: {fileID: 4576327629164306204, guid: cec3da77ce068534c8d0be579925af0f,
         type: 3}
       propertyPath: turned
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cec3da77ce068534c8d0be579925af0f, type: 3}
@@ -3929,6 +3929,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1905455674}
     m_Modifications:
+    - target: {fileID: 2739324384212902894, guid: 1373a2ef1a45a4c4992c57aabff89adb,
+        type: 3}
+      propertyPath: turned
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2739324384366207117, guid: 1373a2ef1a45a4c4992c57aabff89adb,
         type: 3}
       propertyPath: m_LocalPosition.x

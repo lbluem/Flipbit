@@ -35,6 +35,9 @@ public class Animated_Decoration : MonoBehaviour
 
     void SetColor(Color color)
     {
-        thisSprite.color = color;
+        if(thisSprite != null)
+        {
+            thisSprite.color = color;
+        }
     }   
 }

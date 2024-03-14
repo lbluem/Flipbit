@@ -29,16 +29,13 @@ public class startscreen_handler : MonoBehaviour
         playSound = true;
         if(DeathCounter.instance != null)
         {
-            DeathCounter.instance.resetDeathCount();
+            DeathCounter.instance.ResetDeathCount();
             Debug.Log("startscreen_handler: Death Counter resetted");
         }
 
         // Resetting coins
-        PlayerPrefs.SetInt("coinLevel3",0);
-        PlayerPrefs.SetInt("coinLevel8",0);
-        PlayerPrefs.SetInt("coinLevel10",0);
-        PlayerPrefs.SetInt("coinCounter", 0);
-
+        CoinCounter.instance.ResetCoins();
+        
         uiButtons = GameObject.FindGameObjectsWithTag("UIButton");
 
 
@@ -109,7 +106,6 @@ public class startscreen_handler : MonoBehaviour
                 //FindObjectOfType<AudioManager>().Play("MenuButton");
                 playSound = false;
             }
-            //Debug.Log("MENUUEE");
         }
     }
 
