@@ -13,8 +13,7 @@ public class endScreen_localization : MonoBehaviour
     [SerializeField] private string language;
 
     public LocalizationManager localizationManager;
-    private TextMeshProUGUI  attemptsText;
-    private TextMeshProUGUI  thankyouText;
+
 
     // Start is called before the first frame update
     void Start()

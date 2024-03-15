@@ -1,42 +1,21 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq; // Hinzugefügter Namespace für LINQ
 
-public class startscreen_handler : MonoBehaviour
+    
+public class Localization_Handler : MonoBehaviour
 {
-    [SerializeField] private CanvasGroup myUIGroup;
     [SerializeField] private string language;
-
-    private GameObject playerObject;
-    private GameObject [] uiButtons;
-    private bool player_1 = false;
-    private bool player_2 = false;
-
-    private bool playSound;
 
     public LocalizationManager localizationManager;
 
     void Start() {
 
-        playSound = true;
-        if(DeathCounter.instance != null)
-        {
-            DeathCounter.instance.ResetDeathCount();
-            Debug.Log("startscreen_handler: Death Counter resetted");
-        }
-
-        // Resetting coins
-        CoinCounter.instance.ResetCoins();
-        
-        uiButtons = GameObject.FindGameObjectsWithTag("UIButton");
-
-
         UpdateLocalizedTexts();
     }
-
     void UpdateLocalizedTexts()
     {
         if (language == "en")
@@ -46,6 +25,8 @@ public class startscreen_handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("leftbuttonlabel", localizationManager.GetLocalizedText("en_US", "left_button"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("goaltext", localizationManager.GetLocalizedText("en_US", "goal_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("en_US", "swappad_label"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("versuche", localizationManager.GetLocalizedText("en_US", "versuche"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("danke", localizationManager.GetLocalizedText("en_US", "danke"));
         }
         else if (language == "de")
         {
@@ -54,56 +35,10 @@ public class startscreen_handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("leftbuttonlabel", localizationManager.GetLocalizedText("de_DE", "left_button"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("goaltext", localizationManager.GetLocalizedText("de_DE", "goal_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("de_DE", "swappad_label"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("versuche", localizationManager.GetLocalizedText("de_DE", "versuche"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("danke", localizationManager.GetLocalizedText("de_DE", "danke"));
         }
     }
-
-    void Update (){
-        if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID)){
-            player_1 = true;
-            foreach (GameObject button in uiButtons)
-            {
-                /* if(button.name == "button_p1_up"){
-                   button.GetComponent<SpriteRenderer>().color = Color.green;
-                } */
-                
-            }
-        }else if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID)){
-            player_2 = true;
-            foreach (GameObject button in uiButtons)
-            {
-                /* if(button.name == "button_p2_up"){
-                   button.GetComponent<SpriteRenderer>().color = Color.green;
-                } */
-                
-            }
-        }
-
-        if(player_1 || player_2){
-            if(myUIGroup.alpha >= 0){
-                myUIGroup.alpha -= Time.deltaTime;
-            }
-            foreach (GameObject button in uiButtons)
-            {
-                Color colorTmp = button.GetComponent<SpriteRenderer>().color;
-                if(colorTmp.a >= 0){
-                    colorTmp.a -= Time.deltaTime;
-                    button.GetComponent<SpriteRenderer>().color = colorTmp;
-                }
-            }
-            //playerObject.GetComponent<Player_Movement>().enabled = true;
-            Destroy(GameObject.Find("StartScreen"), 2);
-
-            // Diese If Abfrage wird trotzdem sie zerstört wurde immer noch unzählige male
-            // ausgeführt, d.h. ich kann keinen Sound abspielen da auch dieser dann
-            // bis zu tausende male abgespielt wird
-            if (playSound)
-            {
-                //FindObjectOfType<AudioManager>().Play("MenuButton");
-                playSound = false;
-            }
-        }
-    }
-
     public static class TextMeshProTagManager
 {
     public static void UpdateTextMeshProWithTag(string tag, string newText)
