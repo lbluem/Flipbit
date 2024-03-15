@@ -47,7 +47,8 @@ Zusätzlich haben alle Level
 - (Boxes)
 
 ### 🕸 Skript Relationen
-![Flipbit Skript Relations](https://github.com/lbluem/Kuti_von_Template/assets/66683993/2596608c-5d45-4add-beaa-00c047733cc2)
+![Flipbit Skript Relations](https://github.com/lbluem/Kuti_von_Template/assets/66683993/11658bf5-4578-43cf-9b4f-40de1022540f)
+
 (alle Relationen sind unidirektional)
 
 ### ♨ Liste externer Materialien
