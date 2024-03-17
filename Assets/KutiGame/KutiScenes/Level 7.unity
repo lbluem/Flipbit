@@ -5718,8 +5718,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eb02fdcec6dcdb4286484b90e0cf14f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player1Color: {r: 0.62352943, g: 0.4392157, b: 0.99215686, a: 0.6862745}
-  player2Color: {r: 0.99215686, g: 0.7490196, b: 0.3764706, a: 0.72156864}
+  player1Color: {r: 0.62352943, g: 0.4392157, b: 0.99215686, a: 1}
+  player2Color: {r: 0.8867924, g: 0.64396626, b: 0.27189392, a: 1}
 --- !u!1 &1783382491
 GameObject:
   m_ObjectHideFlags: 0
