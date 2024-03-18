@@ -8,7 +8,6 @@ using System.Linq; // Hinzugefügter Namespace für LINQ
 public class startscreen_handler : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUIGroup;
-    [SerializeField] private string language;
 
     private GameObject playerObject;
     private GameObject [] uiButtons;
@@ -17,7 +16,6 @@ public class startscreen_handler : MonoBehaviour
 
     private bool playSound;
 
-    public LocalizationManager localizationManager;
 
     void Start() {
 
@@ -34,27 +32,7 @@ public class startscreen_handler : MonoBehaviour
         uiButtons = GameObject.FindGameObjectsWithTag("UIButton");
 
 
-        UpdateLocalizedTexts();
-    }
-
-    void UpdateLocalizedTexts()
-    {
-        if (language == "en")
-        {
-            TextMeshProTagManager.UpdateTextMeshProWithTag("upbuttonlabel", localizationManager.GetLocalizedText("en_US", "up_button"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("rightbuttonlabel", localizationManager.GetLocalizedText("en_US", "right_button"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("leftbuttonlabel", localizationManager.GetLocalizedText("en_US", "left_button"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("goaltext", localizationManager.GetLocalizedText("en_US", "goal_label"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("en_US", "swappad_label"));
-        }
-        else if (language == "de")
-        {
-            TextMeshProTagManager.UpdateTextMeshProWithTag("upbuttonlabel", localizationManager.GetLocalizedText("de_DE", "up_button"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("rightbuttonlabel", localizationManager.GetLocalizedText("de_DE", "right_button"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("leftbuttonlabel", localizationManager.GetLocalizedText("de_DE", "left_button"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("goaltext", localizationManager.GetLocalizedText("de_DE", "goal_label"));
-            TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("de_DE", "swappad_label"));
-        }
+        
     }
 
     void Update (){
@@ -109,19 +87,4 @@ public class startscreen_handler : MonoBehaviour
         }
     }
 
-    public static class TextMeshProTagManager
-{
-    public static void UpdateTextMeshProWithTag(string tag, string newText)
-    {
-        TextMeshProUGUI[] textMeshPros = GameObject.FindGameObjectsWithTag(tag)
-                                                  .Select(go => go.GetComponent<TextMeshProUGUI>())
-                                                  .Where(tmpro => tmpro != null)
-                                                  .ToArray();
-
-        foreach (TextMeshProUGUI tmpro in textMeshPros)
-        {
-            tmpro.text = newText;
-        }
-    }
-}
 }

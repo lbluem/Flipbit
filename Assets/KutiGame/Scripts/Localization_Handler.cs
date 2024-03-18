@@ -27,6 +27,10 @@ public class Localization_Handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("en_US", "swappad_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("versuche", localizationManager.GetLocalizedText("en_US", "versuche"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("danke", localizationManager.GetLocalizedText("en_US", "danke"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("from", localizationManager.GetLocalizedText("en_US", "from"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("graphics", localizationManager.GetLocalizedText("en_US", "graphics"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("soundtrack", localizationManager.GetLocalizedText("en_US", "soundtrack"));
+
         }
         else if (language == "de")
         {
@@ -37,6 +41,10 @@ public class Localization_Handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("de_DE", "swappad_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("versuche", localizationManager.GetLocalizedText("de_DE", "versuche"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("danke", localizationManager.GetLocalizedText("de_DE", "danke"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("from", localizationManager.GetLocalizedText("de_DE", "from"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("graphics", localizationManager.GetLocalizedText("de_DE", "graphics"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("soundtrack", localizationManager.GetLocalizedText("de_DE", "soundtrack"));
+
         }
     }
     public static class TextMeshProTagManager

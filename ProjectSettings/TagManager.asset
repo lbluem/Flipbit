@@ -49,6 +49,9 @@ TagManager:
   - danke
   - level_1_info
   - versuche
+  - from
+  - graphics
+  - soundtrack
   layers:
   - Default
   - TransparentFX

@@ -249,6 +249,7 @@ GameObject:
   - component: {fileID: 116345816}
   - component: {fileID: 116345817}
   - component: {fileID: 116345818}
+  - component: {fileID: 116345819}
   m_Layer: 5
   m_Name: StartMenu
   m_TagString: Untagged
@@ -353,8 +354,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myUIGroup: {fileID: 116345817}
-  language: en
-  localizationManager: {fileID: 116345818}
 --- !u!225 &116345817
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -380,6 +379,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   localizationFile: {fileID: 4900000, guid: 344a3abd67eca9c40b7779de0a95651a, type: 3}
+--- !u!114 &116345819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116345811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286489b23f85da649bdddf771e9806a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  language: en
+  localizationManager: {fileID: 116345818}
 --- !u!1001 &132013764
 PrefabInstance:
   m_ObjectHideFlags: 0
