@@ -4365,7 +4365,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286489b23f85da649bdddf771e9806a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  language: en
+  language: de
   localizationManager: {fileID: 1222238023}
 --- !u!114 &1222238023
 MonoBehaviour:
