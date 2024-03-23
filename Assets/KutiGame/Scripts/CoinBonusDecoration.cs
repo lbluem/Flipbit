@@ -9,9 +9,10 @@ public class CoinBonusDecoration : MonoBehaviour
     // If the players found all the coins there will be bonus decoration in the end level
     void Start()
     {
-        if(!(CoinCounter.instance.GetCoinCount()>=3))
+        GetComponentInParent<Tilemap>().color = new Color(1f,1f,1f,0f);
+        if(CoinCounter.instance.GetCoinCount()>=3)
         {
-            GetComponentInParent<Tilemap>().color = new Color(1f,1f,1f,0f);
+            GetComponentInParent<Tilemap>().color = new Color(1f,1f,1f,1f);
         }
     }
 }
