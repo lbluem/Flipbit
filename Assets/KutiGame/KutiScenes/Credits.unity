@@ -1126,7 +1126,7 @@ GameObject:
   - component: {fileID: 1657365131}
   m_Layer: 5
   m_Name: Copyright_P2
-  m_TagString: soundtrack
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1260,7 +1260,7 @@ GameObject:
   - component: {fileID: 1747492589}
   m_Layer: 5
   m_Name: Copyright_P1
-  m_TagString: soundtrack
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

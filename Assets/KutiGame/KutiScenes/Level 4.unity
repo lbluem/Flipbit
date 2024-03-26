@@ -17580,7 +17580,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b48b93dbe0cadeb42a98ba03c4a1e525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitForAnimation: 0
 --- !u!1 &1704173046
 GameObject:
   m_ObjectHideFlags: 0
