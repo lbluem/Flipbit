@@ -9,7 +9,7 @@ public class Spike_handler : MonoBehaviour
     // Handling the logic of the deadly spikes
 
     // Only able to die once before Scene resets
-    public bool waitForAnimation = false;
+    //public bool waitForAnimation = false;
 
     //spike collision with player handler
     //spike kollision mit spieler 
@@ -23,7 +23,7 @@ public class Spike_handler : MonoBehaviour
 
     private void PlayerDies(Collider2D player)
     {
-        if(!waitForAnimation)
+        if(!player.GetComponent<Player_Movement>().GetIsDying())
         {
             player.GetComponent<Animator>().SetTrigger("Dying");
             FindObjectOfType<AudioManager>().Play("PlayerHit");
@@ -33,7 +33,7 @@ public class Spike_handler : MonoBehaviour
             {
                 Debug.LogWarning("Spike_Handler: No DeathCounter in this scene");
             }
-            waitForAnimation = true;
+            player.GetComponent<Player_Movement>().SetIsDying(true);
         }
         //Debug.Log("Spike Handler: Player stepped on Spike");
     }

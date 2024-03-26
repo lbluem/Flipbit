@@ -24,6 +24,8 @@ public class Player_Movement : MonoBehaviour
     public float jumpStrength = 32;
     private bool inAir = false;
 
+    public bool isDying = false;
+
     // Event for gravity change
     public delegate void OnTurned(bool turned);
     public event OnTurned OnGravityChange;
@@ -237,6 +239,16 @@ public class Player_Movement : MonoBehaviour
     private void DeathRestartLevel()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public bool GetIsDying()
+    {
+        return isDying;
+    }
+
+    public void SetIsDying(bool newIsDying)
+    {
+        isDying = newIsDying;
     }
 }
 
