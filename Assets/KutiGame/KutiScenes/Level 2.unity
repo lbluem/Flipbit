@@ -6132,7 +6132,7 @@ PrefabInstance:
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
       propertyPath: m_Color.a
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
@@ -8039,7 +8039,7 @@ PrefabInstance:
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
       propertyPath: m_TileMatrixArray.Array.data[0].m_RefCount
-      value: 98
+      value: 99
       objectReference: {fileID: 0}
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
@@ -8099,7 +8099,7 @@ PrefabInstance:
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
       propertyPath: m_TileMatrixArray.Array.data[2].m_RefCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
@@ -9079,7 +9079,7 @@ PrefabInstance:
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
       propertyPath: m_Tiles.Array.data[57].second.m_TileMatrixIndex
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5341602552501313345, guid: ed1440cea87d76c4da1610c1c06a44c7,
         type: 3}
