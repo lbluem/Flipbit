@@ -52,6 +52,7 @@ TagManager:
   - from
   - graphics
   - soundtrack
+  - restartlabel
   layers:
   - Default
   - TransparentFX
