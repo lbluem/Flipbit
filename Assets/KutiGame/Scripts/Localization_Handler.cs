@@ -30,6 +30,7 @@ public class Localization_Handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("from", localizationManager.GetLocalizedText("en_US", "from"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("graphics", localizationManager.GetLocalizedText("en_US", "graphics"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("soundtrack", localizationManager.GetLocalizedText("en_US", "soundtrack"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("restartlabel", localizationManager.GetLocalizedText("en_US", "replaylabel"));
 
         }
         else if (language == "de")
@@ -44,6 +45,7 @@ public class Localization_Handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("from", localizationManager.GetLocalizedText("de_DE", "from"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("graphics", localizationManager.GetLocalizedText("de_DE", "graphics"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("soundtrack", localizationManager.GetLocalizedText("de_DE", "soundtrack"));
+            TextMeshProTagManager.UpdateTextMeshProWithTag("restartlabel", localizationManager.GetLocalizedText("de_DE", "replaylabel"));
 
         }
     }
