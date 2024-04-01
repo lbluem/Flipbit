@@ -12,8 +12,11 @@ public class Localization_Handler : MonoBehaviour
 
     public LocalizationManager localizationManager;
 
+    public int deathcounter;
+
     void Start() {
 
+        deathcounter = PlayerPrefs.GetInt("deathCounter");
         UpdateLocalizedTexts();
     }
     void UpdateLocalizedTexts()
@@ -26,6 +29,19 @@ public class Localization_Handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("goaltext", localizationManager.GetLocalizedText("en_US", "goal_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("en_US", "swappad_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("versuche", localizationManager.GetLocalizedText("en_US", "versuche"));
+            if(deathcounter <= 20)
+            {
+                TextMeshProTagManager.UpdateTextMeshProWithTag("versucheflavor", localizationManager.GetLocalizedText("en_US", "versucheflavor1"));
+
+            }
+            else if(deathcounter > 20 && deathcounter <= 60)
+            {
+                TextMeshProTagManager.UpdateTextMeshProWithTag("versucheflavor", localizationManager.GetLocalizedText("en_US", "versucheflavor2"));
+            }
+            else
+            {
+                TextMeshProTagManager.UpdateTextMeshProWithTag("versucheflavor", localizationManager.GetLocalizedText("en_US", "versucheflavor3"));
+            }
             TextMeshProTagManager.UpdateTextMeshProWithTag("danke", localizationManager.GetLocalizedText("en_US", "danke"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("from", localizationManager.GetLocalizedText("en_US", "from"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("graphics", localizationManager.GetLocalizedText("en_US", "graphics"));
@@ -41,6 +57,19 @@ public class Localization_Handler : MonoBehaviour
             TextMeshProTagManager.UpdateTextMeshProWithTag("goaltext", localizationManager.GetLocalizedText("de_DE", "goal_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("swaptext", localizationManager.GetLocalizedText("de_DE", "swappad_label"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("versuche", localizationManager.GetLocalizedText("de_DE", "versuche"));
+            if(deathcounter <= 20)
+            {
+                TextMeshProTagManager.UpdateTextMeshProWithTag("versucheflavor", localizationManager.GetLocalizedText("de_DE", "versucheflavor1"));
+
+            }
+            else if(deathcounter > 20 && deathcounter <= 60)
+            {
+                TextMeshProTagManager.UpdateTextMeshProWithTag("versucheflavor", localizationManager.GetLocalizedText("de_DE", "versucheflavor2"));
+            }
+            else
+            {
+                TextMeshProTagManager.UpdateTextMeshProWithTag("versucheflavor", localizationManager.GetLocalizedText("de_DE", "versucheflavor3"));
+            }
             TextMeshProTagManager.UpdateTextMeshProWithTag("danke", localizationManager.GetLocalizedText("de_DE", "danke"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("from", localizationManager.GetLocalizedText("de_DE", "from"));
             TextMeshProTagManager.UpdateTextMeshProWithTag("graphics", localizationManager.GetLocalizedText("de_DE", "graphics"));

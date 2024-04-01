@@ -17,13 +17,14 @@ public class DeathCounter : MonoBehaviour
 
     private void Awake() {
         instance = this;
+        PlayerPrefs.SetInt("deathCounter", deathCounter);
         //DontDestroyOnLoad(gameObject);
     }
 
     private void Start() 
     {
         deathCounter = PlayerPrefs.GetInt("deathCounter");
-
+        
         // Only happens in the end Level
         if(deathCounterLabel_P1 != null)
         {
@@ -49,4 +50,5 @@ public class DeathCounter : MonoBehaviour
         PlayerPrefs.SetInt("deathCounter", deathCounter);
         Debug.Log("DeathCounter: Reset");
     }
+
 }

@@ -11,7 +11,10 @@
         <!-- Level End -->
         <String key="danke">Thank you for playing!</String>
         <String key="level_1_info">Start again here</String>
-        <String key="versuche">You only needed     tries</String>
+        <String key="versuche">Attempts:</String>
+        <String key="versucheflavor1">That was fantastic!</String>
+        <String key="versucheflavor2">Good job!</String>
+        <String key="versucheflavor3">Not bad!</String>
 
         <!-- Credit Screen -->
         <String key="from">A game by &#xA; &#xA;Tony Tu and &#xA;Lukas Buesen</String>
@@ -32,7 +35,10 @@
         <!-- Level Ende -->
         <String key="danke">Vielen Dank für's Spielen!</String>
         <String key="level_1_info">Hier geht es wieder zum Start</String>
-        <String key="versuche">Ihr habt nur     Versuche gebraucht</String>
+        <String key="versuche">Versuche:</String>
+        <String key="versucheflavor1">Das war fantastisch!</String>
+        <String key="versucheflavor2">Gut gemacht!</String>
+        <String key="versucheflavor3">Gar nicht schlecht!</String>
 
         <!-- Credit Screen -->
         <String key="from">Ein Spiel von &#xA; &#xA;Tony Tu und &#xA;Lukas Buesen</String>

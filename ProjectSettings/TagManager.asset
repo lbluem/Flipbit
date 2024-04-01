@@ -53,6 +53,8 @@ TagManager:
   - graphics
   - soundtrack
   - restartlabel
+  - versucheflavor
+  - deathcounter
   layers:
   - Default
   - TransparentFX
