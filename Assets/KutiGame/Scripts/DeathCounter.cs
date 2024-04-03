@@ -17,7 +17,6 @@ public class DeathCounter : MonoBehaviour
 
     private void Awake() {
         instance = this;
-        PlayerPrefs.SetInt("deathCounter", deathCounter);
         //DontDestroyOnLoad(gameObject);
     }
 
