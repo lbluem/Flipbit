@@ -85,6 +85,7 @@ public class DevToolScript : MonoBehaviour
         if(other.CompareTag("Player"))    
         {
             IsInArea = false;
+            // The index (counter) gets reset
             index = 0;
         }
     }
@@ -93,11 +94,14 @@ public class DevToolScript : MonoBehaviour
     private void SwitchMode()
     {
         activateMode = !activateMode;
+        // Sound cue
         FindObjectOfType<AudioManager>().Play("CoinPickup");
 
         if(activateMode)
         {
             framesDisplay.fpsText.alpha = 1f;
+            // Dummy Coins used from a previous discarded concept
+            // this leads to hearts being at the Level End Scene if "Dev Mode" is on
             CoinCounter.instance.AddCoinCount("coinLevel3");
             CoinCounter.instance.AddCoinCount("coinLevel8");
             CoinCounter.instance.AddCoinCount("coinLevel10");
