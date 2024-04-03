@@ -93,13 +93,18 @@ public class DevToolScript : MonoBehaviour
     private void SwitchMode()
     {
         activateMode = !activateMode;
+        FindObjectOfType<AudioManager>().Play("CoinPickup");
 
         if(activateMode)
         {
             framesDisplay.fpsText.alpha = 1f;
+            CoinCounter.instance.AddCoinCount("coinLevel3");
+            CoinCounter.instance.AddCoinCount("coinLevel8");
+            CoinCounter.instance.AddCoinCount("coinLevel10");
         }else
         {
             framesDisplay.fpsText.alpha = 0f;
+            CoinCounter.instance.ResetCoins();
         }
     }
 }
