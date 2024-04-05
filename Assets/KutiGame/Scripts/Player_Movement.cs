@@ -24,13 +24,14 @@ public class Player_Movement : MonoBehaviour
     public float jumpStrength = 32;
     private bool inAir = false;
 
+    // To prevent the player from dying again before the scene resets
     public bool isDying = false;
 
-    // Event for gravity change
+    // Event for gravity change for different gameObjects
     public delegate void OnTurned(bool turned);
     public event OnTurned OnGravityChange;
 
-    // for the Flip function
+    // for the making the char look in the right direction
     private bool isFacingRight = true;
 
     // Button Tracker
@@ -71,6 +72,7 @@ public class Player_Movement : MonoBehaviour
                 myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
                 FindObjectOfType<AudioManager>().Play("PlayerJump");
             }
+            // longer press → longer air time
             if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
@@ -86,6 +88,7 @@ public class Player_Movement : MonoBehaviour
                 myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
                 FindObjectOfType<AudioManager>().Play("PlayerJump");
             }
+            // longer press → longer air time
             if(KutiInput.GetKutiButtonUp(EKutiButton.P2_MID) && myRB.velocity.y < 0f)
             {   
                 myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
@@ -206,6 +209,7 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
+    // If the player walks to the left the character also looks to the left
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -241,6 +245,7 @@ public class Player_Movement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    // Get and Set used by Spike Handler
     public bool GetIsDying()
     {
         return isDying;
