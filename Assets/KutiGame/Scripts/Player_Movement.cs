@@ -64,7 +64,7 @@ public class Player_Movement : MonoBehaviour
 
         if(!turned)
         {
-            CalculateHorizontal(1);
+            SetDirection(1);
 
             // Jumping
             if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
@@ -80,7 +80,7 @@ public class Player_Movement : MonoBehaviour
 
         }else
         {
-            CalculateHorizontal(2);
+            SetDirection(2);
 
             // Jumping
             if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
@@ -145,67 +145,61 @@ public class Player_Movement : MonoBehaviour
 
     // Calculate horizontal movement based on player
     // Berechne die horizontale Bewegung basierend auf dem Spieler
-    private void CalculateHorizontal(int player)
+    private void SetDirection(int player)
     {
-
+        TrackButtons();
         // Eleganter wäre eine "activePlayer" Variable die zwischen
         // EKutiButton.P1.. und EKutiButton.P2.. swapped
         // die if Abfragen anpassen und damit sollte Code gespart werden
 
         if(player == 1)
         {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
-            {
-                horizontal -= 1;
-                p1ButtonLeftUp = false;
-            }
-            if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
-            {
-                horizontal -= 1;
-                p1ButtonRightUp = true;
-            }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
-            {
-                horizontal += 1;
-                p1ButtonLeftUp = true;
-            }
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
-            {
-                horizontal += 1;
-                p1ButtonRightUp = false;
-            }
-            if(p1ButtonLeftUp && p1ButtonRightUp)
-            {
-                horizontal = 0;
-            }
-
-
+            if(!p1ButtonLeftUp&&p1ButtonRightUp){horizontal=-1;}
+            if(!p1ButtonRightUp&&p1ButtonLeftUp){horizontal=+1;}
+            if(p1ButtonLeftUp&&p1ButtonRightUp||!p1ButtonLeftUp&&!p1ButtonRightUp){horizontal=0;}
         }else if(player == 2)
         {
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
-            {
-                horizontal += 1;
-                p2ButtonLeftUp = false;
-            }
-            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
-            {
-                horizontal += 1;
-                p2ButtonRightUp = true;
-            }
-            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
-            {
-                horizontal -= 1;
-                p2ButtonLeftUp = true;
-            }
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
-            {
-                horizontal -= 1;
-                p2ButtonRightUp = false;
-            }
-            if(p2ButtonLeftUp && p2ButtonRightUp)
-            {
-                horizontal = 0;
-            }
+            if(p2ButtonLeftUp&&!p2ButtonRightUp){horizontal=-1;}
+            if(p2ButtonRightUp&&!p2ButtonLeftUp){horizontal=+1;}
+            if(p2ButtonLeftUp&&p2ButtonRightUp||!p2ButtonLeftUp&&!p2ButtonRightUp){horizontal=0;}
+        }
+        
+    }
+
+    // Keeping track of all the button states
+    private void TrackButtons()
+    {
+        if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
+        {
+            p1ButtonLeftUp = false;
+        }
+        if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+        {
+            p1ButtonRightUp = true;
+        }
+        if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
+        {
+            p1ButtonLeftUp = true;
+        }
+        if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+        {
+            p1ButtonRightUp = false;
+        }
+        if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
+        {
+            p2ButtonLeftUp = false;
+        }
+        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+        {
+            p2ButtonRightUp = true;
+        }
+        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
+        {
+            p2ButtonLeftUp = true;
+        }
+        if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+        {
+            p2ButtonRightUp = false;
         }
     }
 
@@ -226,14 +220,16 @@ public class Player_Movement : MonoBehaviour
     // Die Schwerkraft für den Spieler umkehren
    public void GravityTurn()
     {
-        p1ButtonLeftUp = true;
+        /* p1ButtonLeftUp = true;
         p1ButtonRightUp = true;
         p2ButtonLeftUp = true;
-        p2ButtonRightUp = true;
+        p2ButtonRightUp = true; */
+
 
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
+        if(!turned){SetDirection(1);}else{SetDirection(2);}
 
         OnGravityChange?.Invoke(turned);
     }

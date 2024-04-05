@@ -82,62 +82,59 @@ public class Platform_Movement : MonoBehaviour
     // Movement Handler 
     private void GetMovement()
     {
+        TrackButtons();
+        
         if(turned)
         {
             // Handle movement input for player 1
             // Bewegungseingabe für Spieler 1
-            if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
-            {
-                moveDirection -= 1;
-                p1ButtonLeftUp = false;
-            }
-            if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
-            {
-                moveDirection -= 1;
-                p1ButtonRightUp = true;
-            }
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
-            {
-                moveDirection += 1;
-                p1ButtonLeftUp = true;
-            }
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
-            {
-                moveDirection += 1;
-                p1ButtonRightUp = false;
-            }
-            if(p1ButtonLeftUp && p1ButtonRightUp)
-            {
-                moveDirection = 0;
-            }
+            if(!p1ButtonLeftUp&&p1ButtonRightUp){moveDirection=-1;}
+            if(!p1ButtonRightUp&&p1ButtonLeftUp){moveDirection=+1;}
+            if(p1ButtonLeftUp&&p1ButtonRightUp||!p1ButtonLeftUp&&!p1ButtonRightUp){moveDirection=0;}
         }else
         {
             // Handle movement input for player 2
             // Bewegungseingabe für Spieler 2
-       if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
-            {
-                moveDirection += 1;
-                p2ButtonLeftUp = false;
-            }
-            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
-            {
-                moveDirection += 1;
-                p2ButtonRightUp = true;
-            }
-            if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
-            {
-                moveDirection -= 1;
-                p2ButtonLeftUp = true;
-            }
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
-            {
-                moveDirection -= 1;
-                p2ButtonRightUp = false;
-            }
-            if(p2ButtonLeftUp && p2ButtonRightUp)
-            {
-                moveDirection = 0;
-            }
+            if(p2ButtonLeftUp&&!p2ButtonRightUp){moveDirection=-1;}
+            if(p2ButtonRightUp&&!p2ButtonLeftUp){moveDirection=+1;}
+            if(p2ButtonLeftUp&&p2ButtonRightUp||!p2ButtonLeftUp&&!p2ButtonRightUp){moveDirection=0;}
+        }
+    }
+
+    // Keeping track of all the button states
+    private void TrackButtons()
+    {
+        if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
+        {
+            p1ButtonLeftUp = false;
+        }
+        if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
+        {
+            p1ButtonRightUp = true;
+        }
+        if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
+        {
+            p1ButtonLeftUp = true;
+        }
+        if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
+        {
+            p1ButtonRightUp = false;
+        }
+        if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
+        {
+            p2ButtonLeftUp = false;
+        }
+        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
+        {
+            p2ButtonRightUp = true;
+        }
+        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
+        {
+            p2ButtonLeftUp = true;
+        }
+        if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
+        {
+            p2ButtonRightUp = false;
         }
     }
 
