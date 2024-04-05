@@ -139,10 +139,10 @@ public class Platform_Movement : MonoBehaviour
     }
 
     // Collision Handler for being on the platform
+    // Uses Trigger Collider from Child Object "Player Check"
     // Kollisionshandler für auf der Plattform sein
-    private void OnCollisionEnter2D(Collision2D other) 
+    private void OnTriggerEnter2D(Collider2D other) 
     {
-        //Debug.Log("Platform Movement: Collision detected");
         if(other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(transform);
@@ -151,12 +151,11 @@ public class Platform_Movement : MonoBehaviour
 
     // Collision Handler for leaving the platform
     // Kollisionshandler für  Plattform verlassen
-    private void OnCollisionExit2D(Collision2D other) 
+    private void OnTriggerExit2D(Collider2D other) 
     {
         if(other.gameObject.CompareTag("Player"))
         {
             other.transform.SetParent(null);
         }
     }
-
 }
