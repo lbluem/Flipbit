@@ -5,13 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NextSceneHandler : MonoBehaviour
 {
-
     // Part of a simple Collider as a trigger transitioning to the next level
-
-
-    // restartToLevel1 is deprecated because the first Level loads after the credits
-    // in no contact with this GameObject
-    //[SerializeField] private bool restartToLevel1;
 
     public Animator transition;
     public float transitionTime = 1f;
@@ -32,13 +26,5 @@ public class NextSceneHandler : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-
-        /* if(!restartToLevel1)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, LoadSceneMode.Single);
-            }else
-            {
-                SceneManager.LoadScene(0, LoadSceneMode.Single);
-            } */
     }
 }

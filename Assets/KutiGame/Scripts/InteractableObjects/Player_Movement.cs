@@ -43,7 +43,7 @@ public class Player_Movement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _animator = GetComponent<Animator>();        
+        _animator = GetComponent<Animator>();
     }
 
     private void Awake() 
@@ -176,6 +176,7 @@ public class Player_Movement : MonoBehaviour
         if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
         {
             p1ButtonRightUp = true;
+            Debug.Log("RIGHT BUTTON UP");
         }
         if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
         {
@@ -184,6 +185,7 @@ public class Player_Movement : MonoBehaviour
         if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
         {
             p1ButtonRightUp = false;
+            Debug.Log("RIGHT BUTTON DOWN");
         }
         if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
         {
@@ -220,12 +222,6 @@ public class Player_Movement : MonoBehaviour
     // Die Schwerkraft für den Spieler umkehren
    public void GravityTurn()
     {
-        /* p1ButtonLeftUp = true;
-        p1ButtonRightUp = true;
-        p2ButtonLeftUp = true;
-        p2ButtonRightUp = true; */
-
-
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
