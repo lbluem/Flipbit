@@ -13,6 +13,8 @@ public class DevToolScript : MonoBehaviour
     private bool activateMode = false;
     // The FPSdisplay Object to manipulate
     FPSdisplay framesDisplay;
+    // The Timer Object to manipulate
+    Timer timerDisplay;
     // Instance to keep through Level
     public static DevToolScript instance;
 
@@ -45,6 +47,9 @@ public class DevToolScript : MonoBehaviour
     {
         framesDisplay = GetComponentInChildren<FPSdisplay>();
         framesDisplay.fpsText.alpha = 0f;
+
+        timerDisplay = GetComponentInChildren<Timer>();
+        timerDisplay.timeText.alpha = 0f;
     }
 
     // Update is called once per frame
@@ -100,6 +105,7 @@ public class DevToolScript : MonoBehaviour
         if(activateMode)
         {
             framesDisplay.fpsText.alpha = 1f;
+            timerDisplay.timeText.alpha = 1f;
             // Dummy Coins used from a previous discarded concept
             // this leads to hearts being at the Level End Scene if "Dev Mode" is on
             CoinCounter.instance.AddCoinCount("coinLevel3");
@@ -108,6 +114,7 @@ public class DevToolScript : MonoBehaviour
         }else
         {
             framesDisplay.fpsText.alpha = 0f;
+            timerDisplay.timeText.alpha = 0f;
             CoinCounter.instance.ResetCoins();
         }
     }
