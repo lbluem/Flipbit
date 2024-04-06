@@ -34,11 +34,9 @@ public class Player_Movement : MonoBehaviour
     // for the making the char look in the right direction
     private bool isFacingRight = true;
 
-    // Button Tracker
-    private bool p1ButtonLeftUp = true;
-    private bool p1ButtonRightUp = true;
-    private bool p2ButtonLeftUp = true;
-    private bool p2ButtonRightUp = true;
+    // Jump booleans
+    private bool activeJumpButton; 
+    private bool canJump = true;
 
     // Start is called before the first frame update
     void Start()
@@ -61,43 +59,12 @@ public class Player_Movement : MonoBehaviour
     void Update()
     {
         Flip();
-
-        if(!turned)
-        {
-            SetDirection(1);
-
-            // Jumping
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P1_MID) && IsGrounded())
-            {   
-                myRB.velocity = new Vector2(myRB.velocity.x, jumpStrength);
-                FindObjectOfType<AudioManager>().Play("PlayerJump");
-            }
-            // longer press → longer air time
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P1_MID) && myRB.velocity.y > 0f)
-            {   
-                myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
-            }
-
-        }else
-        {
-            SetDirection(2);
-
-            // Jumping
-            if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID) && IsGrounded())
-            {   
-                myRB.velocity = new Vector2(myRB.velocity.x, -jumpStrength);
-                FindObjectOfType<AudioManager>().Play("PlayerJump");
-            }
-            // longer press → longer air time
-            if(KutiInput.GetKutiButtonUp(EKutiButton.P2_MID) && myRB.velocity.y < 0f)
-            {   
-                myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
-            }
-        }
+        Jump();
+        SetDirection();
 
         // Plays according animations
         _animator.SetBool("isJumping", !IsGrounded());
-        _animator.SetBool("isRunning", !IsRunning());
+        _animator.SetBool("isRunning", IsRunning());
 
         if(!IsGrounded())
         {
@@ -117,11 +84,36 @@ public class Player_Movement : MonoBehaviour
 
     }
 
+    // The actual Movement
     private void FixedUpdate() 
     {
         myRB.velocity = new Vector2(horizontal * speed, myRB.velocity.y);
     }
 
+
+    private void Jump()
+    {
+        activeJumpButton = !turned ? InputManager.Instance.P1ButtonJumpUp : InputManager.Instance.P2ButtonJumpUp;
+
+        if(canJump && !activeJumpButton && IsGrounded())
+            { 
+                myRB.velocity = !turned ? new Vector2(myRB.velocity.x, jumpStrength) : new Vector2(myRB.velocity.x, -jumpStrength);
+                FindObjectOfType<AudioManager>().Play("PlayerJump");
+                canJump = false;
+            }
+            // longer press → longer air time
+            if((!turned && activeJumpButton && myRB.velocity.y > 0f) ||
+                (turned && activeJumpButton && myRB.velocity.y < 0f))
+            {
+                myRB.velocity = new Vector2(myRB.velocity.x, myRB.velocity.y * 0.5f);
+            }
+            // too prevent continous jumping while holding the jump button
+            if(activeJumpButton)
+            {
+                canJump = true;
+            }
+
+    }
     // Check if the player is grounded
     // Überprüfe, ob der Spieler auf dem Boden steht
     private bool IsGrounded()
@@ -135,74 +127,31 @@ public class Player_Movement : MonoBehaviour
     {
         if(horizontal == 0)
         {
-            return true;
+            return false;
         }else
         {
-            return false;
+            return true;
         }
     }
-
 
     // Calculate horizontal movement based on player
     // Berechne die horizontale Bewegung basierend auf dem Spieler
-    private void SetDirection(int player)
+    private void SetDirection()
     {
-        TrackButtons();
-        // Eleganter wäre eine "activePlayer" Variable die zwischen
-        // EKutiButton.P1.. und EKutiButton.P2.. swapped
-        // die if Abfragen anpassen und damit sollte Code gespart werden
-
-        if(player == 1)
+        if(!turned)
         {
-            if(!p1ButtonLeftUp&&p1ButtonRightUp){horizontal=-1;}
-            if(!p1ButtonRightUp&&p1ButtonLeftUp){horizontal=+1;}
-            if(p1ButtonLeftUp&&p1ButtonRightUp||!p1ButtonLeftUp&&!p1ButtonRightUp){horizontal=0;}
-        }else if(player == 2)
+            if(!InputManager.Instance.P1ButtonLeftUp&&InputManager.Instance.P1ButtonRightUp){horizontal=-1;}
+            if(!InputManager.Instance.P1ButtonRightUp&&InputManager.Instance.P1ButtonLeftUp){horizontal=+1;}
+            if(InputManager.Instance.P1ButtonLeftUp&&InputManager.Instance.P1ButtonRightUp||
+              !InputManager.Instance.P1ButtonLeftUp&&!InputManager.Instance.P1ButtonRightUp){horizontal=0;}
+        }else if(turned)
         {
-            if(p2ButtonLeftUp&&!p2ButtonRightUp){horizontal=-1;}
-            if(p2ButtonRightUp&&!p2ButtonLeftUp){horizontal=+1;}
-            if(p2ButtonLeftUp&&p2ButtonRightUp||!p2ButtonLeftUp&&!p2ButtonRightUp){horizontal=0;}
+            if(InputManager.Instance.P2ButtonLeftUp&&!InputManager.Instance.P2ButtonRightUp){horizontal=-1;}
+            if(InputManager.Instance.P2ButtonRightUp&&!InputManager.Instance.P2ButtonLeftUp){horizontal=+1;}
+            if(InputManager.Instance.P2ButtonLeftUp&&InputManager.Instance.P2ButtonRightUp||
+              !InputManager.Instance.P2ButtonLeftUp&&!InputManager.Instance.P2ButtonRightUp){horizontal=0;}
         }
         
-    }
-
-    // Keeping track of all the button states
-    private void TrackButtons()
-    {
-        if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
-        {
-            p1ButtonLeftUp = false;
-        }
-        if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
-        {
-            p1ButtonRightUp = true;
-            Debug.Log("RIGHT BUTTON UP");
-        }
-        if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
-        {
-            p1ButtonLeftUp = true;
-        }
-        if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
-        {
-            p1ButtonRightUp = false;
-            Debug.Log("RIGHT BUTTON DOWN");
-        }
-        if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
-        {
-            p2ButtonLeftUp = false;
-        }
-        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
-        {
-            p2ButtonRightUp = true;
-        }
-        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
-        {
-            p2ButtonLeftUp = true;
-        }
-        if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
-        {
-            p2ButtonRightUp = false;
-        }
     }
 
     // If the player walks to the left the character also looks to the left
@@ -225,8 +174,7 @@ public class Player_Movement : MonoBehaviour
         myRB.gravityScale *= -1;
         gameObject.transform.Rotate(180,0,0);
         turned = !turned;
-        if(!turned){SetDirection(1);}else{SetDirection(2);}
-
+        SetDirection();
         OnGravityChange?.Invoke(turned);
     }
 

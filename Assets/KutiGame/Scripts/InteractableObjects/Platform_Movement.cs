@@ -17,12 +17,6 @@ public class Platform_Movement : MonoBehaviour
 
     public bool turned;
 
-    // Button Tracker
-    private bool p1ButtonLeftUp = true;
-    private bool p1ButtonRightUp = true;
-    private bool p2ButtonLeftUp = true;
-    private bool p2ButtonRightUp = true;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -81,63 +75,25 @@ public class Platform_Movement : MonoBehaviour
 
     // Movement Handler 
     private void GetMovement()
-    {
-        TrackButtons();
-        
+    {        
         if(turned)
         {
             // Handle movement input for player 1
             // Bewegungseingabe für Spieler 1
-            if(!p1ButtonLeftUp&&p1ButtonRightUp){moveDirection=-1;}
-            if(!p1ButtonRightUp&&p1ButtonLeftUp){moveDirection=+1;}
-            if(p1ButtonLeftUp&&p1ButtonRightUp||!p1ButtonLeftUp&&!p1ButtonRightUp){moveDirection=0;}
+            if(!InputManager.Instance.P1ButtonLeftUp&&InputManager.Instance.P1ButtonRightUp){moveDirection=-1;}
+            if(!InputManager.Instance.P1ButtonRightUp&&InputManager.Instance.P1ButtonLeftUp){moveDirection=+1;}
+            if(InputManager.Instance.P1ButtonLeftUp&&InputManager.Instance.P1ButtonRightUp||
+              !InputManager.Instance.P1ButtonLeftUp&&!InputManager.Instance.P1ButtonRightUp){moveDirection=0;}
         }else
         {
             // Handle movement input for player 2
             // Bewegungseingabe für Spieler 2
-            if(p2ButtonLeftUp&&!p2ButtonRightUp){moveDirection=-1;}
-            if(p2ButtonRightUp&&!p2ButtonLeftUp){moveDirection=+1;}
-            if(p2ButtonLeftUp&&p2ButtonRightUp||!p2ButtonLeftUp&&!p2ButtonRightUp){moveDirection=0;}
+            if(InputManager.Instance.P2ButtonLeftUp&&!InputManager.Instance.P2ButtonRightUp){moveDirection=-1;}
+            if(InputManager.Instance.P2ButtonRightUp&&!InputManager.Instance.P2ButtonLeftUp){moveDirection=+1;}
+            if(InputManager.Instance.P2ButtonLeftUp&&InputManager.Instance.P2ButtonRightUp||
+              !InputManager.Instance.P2ButtonLeftUp&&!InputManager.Instance.P2ButtonRightUp){moveDirection=0;}
         }
     }
-
-    // Keeping track of all the button states
-    private void TrackButtons()
-    {
-        if (KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT))
-        {
-            p1ButtonLeftUp = false;
-        }
-        if (KutiInput.GetKutiButtonUp(EKutiButton.P1_RIGHT))
-        {
-            p1ButtonRightUp = true;
-        }
-        if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT))
-        {
-            p1ButtonLeftUp = true;
-        }
-        if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT))
-        {
-            p1ButtonRightUp = false;
-        }
-        if (KutiInput.GetKutiButtonDown(EKutiButton.P2_LEFT))
-        {
-            p2ButtonLeftUp = false;
-        }
-        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_RIGHT))
-        {
-            p2ButtonRightUp = true;
-        }
-        if (KutiInput.GetKutiButtonUp(EKutiButton.P2_LEFT))
-        {
-            p2ButtonLeftUp = true;
-        }
-        if(KutiInput.GetKutiButtonDown(EKutiButton.P2_RIGHT))
-        {
-            p2ButtonRightUp = false;
-        }
-    }
-
     // Collision Handler for being on the platform
     // Uses Trigger Collider from Child Object "Player Check"
     // Kollisionshandler für auf der Plattform sein
