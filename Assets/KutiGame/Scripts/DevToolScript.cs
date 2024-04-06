@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Permissions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DevToolScript : MonoBehaviour
 {
@@ -74,7 +75,10 @@ public class DevToolScript : MonoBehaviour
                 SwitchMode();
             }
         }
-        
+        if(SceneManager.GetActiveScene().buildIndex > 10)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other) 
