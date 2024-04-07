@@ -13,7 +13,7 @@ public class ResetSceneManager : MonoBehaviour
     {
         if(KutiInput.GetKutiButtonDown(EKutiButton.MENU))
         {
-            SceneManager.LoadScene(0, LoadSceneMode.Single);
+            SceneManager.LoadScene(11, LoadSceneMode.Single);
             //Debug.Log("ResetSceneManager: Scene resetted");
         }
     }
