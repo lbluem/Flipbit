@@ -57,8 +57,6 @@ public class SwapArea : MonoBehaviour
                 // sieht momentan nicht so gut aus und pro Sprungfeder
                 // spielt die Animation auch nur einmal aus
                 //shockwave.SetTrigger("wave");
-
-                
             }             
         }
     }

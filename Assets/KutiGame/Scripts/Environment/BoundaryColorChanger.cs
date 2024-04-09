@@ -11,11 +11,15 @@ public class BoundaryColorChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // Event prerequisites
+        Player_Movement player_Movement = GameObject.FindGameObjectWithTag("Player").GetComponent<Player_Movement>();
+        player_Movement.OnGravityChange += ChangeTilemapAlpha;
+        // Manual function call at the beginning of the Level
+        ChangeTilemapAlpha(player_Movement.turned);
     }
 
     // Update is called once per frame
-    void Update()
+    /* void Update()
     {
         if (playerMovement != null && tilemap != null)
         {
@@ -28,12 +32,12 @@ public class BoundaryColorChanger : MonoBehaviour
                 ChangeTilemapAlpha(0f); // Set alpha to 0
             }
         }
-    }
-
-    void ChangeTilemapAlpha(float alpha)
+    } */
+    void ChangeTilemapAlpha(bool turned)
     {
+        // 1f; 0f
         Color color = tilemap.color;
-        color.a = alpha;
+        color.a = turned ? 1f: 0f;
         tilemap.color = color;
     }
 }
