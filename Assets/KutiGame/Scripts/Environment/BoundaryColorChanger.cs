@@ -17,22 +17,7 @@ public class BoundaryColorChanger : MonoBehaviour
         // Manual function call at the beginning of the Level
         ChangeTilemapAlpha(player_Movement.turned);
     }
-
-    // Update is called once per frame
-    /* void Update()
-    {
-        if (playerMovement != null && tilemap != null)
-        {
-            if (playerMovement.turned)
-            {
-                ChangeTilemapAlpha(1f); // Set alpha to 1
-            }
-            else
-            {
-                ChangeTilemapAlpha(0f); // Set alpha to 0
-            }
-        }
-    } */
+    
     void ChangeTilemapAlpha(bool turned)
     {
         // 1f; 0f
