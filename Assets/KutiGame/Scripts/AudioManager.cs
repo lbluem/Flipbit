@@ -5,6 +5,8 @@ using System;
 public class AudioManager : MonoBehaviour
 {
 
+    // Managing and playing every Sound
+
     public Sound[] sounds;
 
     public static AudioManager instance;
@@ -78,6 +80,7 @@ public class AudioManager : MonoBehaviour
         s.source.Stop();
     }
 
+    // Giving sounds a slightly different pitch for variety
     private void RandomizeSound(Sound s)
     {   
         s.source.pitch = UnityEngine.Random.Range(0.9f,1.2f);

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Spike_handler : MonoBehaviour
+public class TouchAndYouDie_Handler : MonoBehaviour
 {
 
-    // Handling the logic of the deadly spikes and the walking enemies
+    // Handling the logic of the deadly spikes and the different enemies
     // more fitting name would be "Death_Handler"
 
     // collision with player handler

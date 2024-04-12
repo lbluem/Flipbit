@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class DevToolScript : MonoBehaviour
 {
+
+    // Activating the secret DevTool
+    // for FPS display, a (speedrun) timer and more (CoinBonus)Decoration
+
     // Index for iterating through the Keys list
     int index = 0;
     // For making sure the player is in the designated area
@@ -112,9 +116,7 @@ public class DevToolScript : MonoBehaviour
             timerDisplay.timeText.alpha = 1f;
             // Dummy Coins used from a previous discarded concept
             // this leads to hearts being at the Level End Scene if "Dev Mode" is on
-            CoinCounter.instance.AddCoinCount("coinLevel3");
-            CoinCounter.instance.AddCoinCount("coinLevel8");
-            CoinCounter.instance.AddCoinCount("coinLevel10");
+            CoinCounter.instance.AddCoinCount("devCoin");
         }else
         {
             framesDisplay.fpsText.alpha = 0f;

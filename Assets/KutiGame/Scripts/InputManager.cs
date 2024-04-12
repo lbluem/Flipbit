@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class InputManager : MonoBehaviour
 {
+
+    // Managing almost all Inputs (beside the Credit Screen)
+    // Mainly Player/Platform Movement Scripts use the InputManager Instance
+
     public static InputManager Instance;
 
     public bool P1ButtonLeftUp {get; private set;} = true;

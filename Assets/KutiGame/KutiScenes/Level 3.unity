@@ -16991,7 +16991,7 @@ PrefabInstance:
     - target: {fileID: 3513500695338247063, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}
       propertyPath: m_Name
-      value: 1BitPlayer
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5791449983888492033, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}

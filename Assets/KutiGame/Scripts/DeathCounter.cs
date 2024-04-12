@@ -6,7 +6,7 @@ using TMPro;
 public class DeathCounter : MonoBehaviour
 {
     // Managing the PlayerPref DeathCounter
-    // Attempt counter not death counter therefore it starts at 1
+    // Technically an attempt counter therefore it starts at 1
     // kein Death Counter sondern VERSUCHs Counter deswegen Start bei 1
     public static DeathCounter instance;
     private int deathCounter = 1;

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Credit_Script : MonoBehaviour
 {
-    // Only for the Credit Scene
+    // Navigating out of the Credit Scene
     // Part of the Main Camera
     void Update()
     {

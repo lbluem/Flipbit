@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 public class CoinCounter : MonoBehaviour
 {
 
+     // Now only used as a small addition to the DevTool
      // Managing the PlayerPref CoinCounter
      
     public static CoinCounter instance;
@@ -38,9 +39,7 @@ public class CoinCounter : MonoBehaviour
         Debug.Log("CoinCounter: Reset");
         
         // Sets all CoinID's as "not found"
-        PlayerPrefs.SetInt("coinLevel3",0);
-        PlayerPrefs.SetInt("coinLevel8",0);
-        PlayerPrefs.SetInt("coinLevel10",0);
+        PlayerPrefs.SetInt("devCoin",0);
    }
 
    private void UpdateCoinCount()

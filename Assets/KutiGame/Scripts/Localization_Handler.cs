@@ -8,6 +8,10 @@ using System.Linq; // Hinzugefügter Namespace für LINQ
     
 public class Localization_Handler : MonoBehaviour
 {
+
+    // Connecting the XML Information with the TMPro Elements
+
+
     [SerializeField] private string language;
 
     public LocalizationManager localizationManager;

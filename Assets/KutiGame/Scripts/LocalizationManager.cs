@@ -5,7 +5,10 @@ using System.Xml;
 
 public class LocalizationManager : MonoBehaviour
 {
-     public TextAsset localizationFile;
+
+    // Loading the Localization XML file
+
+    public TextAsset localizationFile;
     private Dictionary<string, Dictionary<string, string>> localizedTexts;
 
     void Awake()

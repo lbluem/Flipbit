@@ -8003,7 +8003,7 @@ GameObject:
   m_Component:
   - component: {fileID: 589579675}
   m_Layer: 0
-  m_Name: Swaps
+  m_Name: SwapPads
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16219,7 +16219,7 @@ PrefabInstance:
     - target: {fileID: 3513500695338247063, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}
       propertyPath: m_Name
-      value: 1BitPlayer
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5791449983888492033, guid: 54032957e9c159845af34d368f9c22ca,
         type: 3}

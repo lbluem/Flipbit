@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2304084417477067334}
   - component: {fileID: 4624141327231730990}
   m_Layer: 0
-  m_Name: 1BitPlayer
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
   speed: 16
   turned: 0
   jumpStrength: 32
+  isDying: 0
 --- !u!95 &2308790977573479025
 Animator:
   serializedVersion: 3
