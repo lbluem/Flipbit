@@ -5,8 +5,8 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
 
-    // Managing almost all Inputs (beside the Credit Screen)
-    // Mainly Player/Platform Movement Scripts use the InputManager Instance
+    // Managing almost all Inputs (besides the Credit Screen)
+    // Used by mainly Player/Platform Movement Scripts
 
     public static InputManager Instance;
 
@@ -20,7 +20,7 @@ public class InputManager : MonoBehaviour
 
     private void Awake() 
     {
-        if(!KutiInput.GetAnyButtonDown()){ResetButtons();}
+        ResetButtons();
         if(Instance == null)
         {
             Instance = this;
@@ -31,8 +31,10 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    // Keeping track of all Button states
     private void Update()
-    {
+    {  
+        
         if(KutiInput.GetKutiButtonDown(EKutiButton.P1_LEFT)){P1ButtonLeftUp = false;/* Debug.Log("P1: LEFT BUTTON DOWN"); */}
         if(KutiInput.GetKutiButtonDown(EKutiButton.P1_RIGHT)){P1ButtonRightUp = false;/* Debug.Log("P1: RIGHT BUTTON DOWN"); */}
         if(KutiInput.GetKutiButtonUp(EKutiButton.P1_LEFT)){P1ButtonLeftUp = true;/* Debug.Log("P1: LEFT BUTTON UP"); */}
@@ -48,10 +50,13 @@ public class InputManager : MonoBehaviour
 
         if(KutiInput.GetKutiButtonDown(EKutiButton.P2_MID)){P2ButtonJumpUp = false;/* Debug.Log("P2: JUMP BUTTON DOWN"); */}
         if(KutiInput.GetKutiButtonUp(EKutiButton.P2_MID)){P2ButtonJumpUp = true;/* Debug.Log("P2: JUMP BUTTON UP"); */}
+     
     }
 
-    private void ResetButtons()
+    // Resetting Buttons for a fresh start
+    public void ResetButtons()
     {
+        //Debug.Log("RESETTING BUTTONS");
         P1ButtonLeftUp = true;
         P1ButtonRightUp = true;
         P2ButtonLeftUp = true;

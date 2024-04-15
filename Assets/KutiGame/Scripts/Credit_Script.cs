@@ -12,6 +12,7 @@ public class Credit_Script : MonoBehaviour
         // Loads Level 1 if a button was pressed
         if(KutiInput.GetAnyButtonDown())
         {
+            InputManager.Instance.ResetButtons();
             SceneManager.LoadScene(0, LoadSceneMode.Single);
         }
 

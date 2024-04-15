@@ -12,6 +12,8 @@ public class NextSceneHandler : MonoBehaviour
  
     private void OnTriggerEnter2D(Collider2D other)
     {
+        InputManager.Instance.ResetButtons();
+
         if(other.CompareTag("Player"))
         {            
             StartCoroutine(LoadLevel());

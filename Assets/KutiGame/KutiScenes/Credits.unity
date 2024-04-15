@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286489b23f85da649bdddf771e9806a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  language: en
+  language: de
   localizationManager: {fileID: 1222238023}
   deathcounter: 0
 --- !u!114 &1222238023
@@ -1282,9 +1282,9 @@ RectTransform:
   m_Father: {fileID: 1222238021}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 500}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -191, y: 2.5}
   m_SizeDelta: {x: 334.5384, y: 68.9776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1657365131
@@ -1550,9 +1550,9 @@ RectTransform:
   m_Father: {fileID: 1222238021}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -450, y: -500}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 191, y: 2.5}
   m_SizeDelta: {x: 334.5384, y: 68.9776}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747492589

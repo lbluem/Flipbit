@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ResetSceneManager : MonoBehaviour
 {
-    // Only for development
+    // Only for development (not the Kuti)
     // Script for Menu Button and will be deprecated in the future
+    // On Main Camera
     // Nur für die Entwicklung
     // Skript für Menü Button und ist in der Zukunft überflüssig
     void Update()

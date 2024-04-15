@@ -46,7 +46,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Awake() 
     {
-        // In the case we start with player 2 controlling the character
+        // If player 2 starts
         // Für den Fall das wir mit dem Spieler 2 anfangen
         if(turned)
         {
@@ -74,7 +74,6 @@ public class Player_Movement : MonoBehaviour
         if(IsGrounded() && inAir)
         {
             FindObjectOfType<AudioManager>().Play("PlayerFall");
-            //Debug.Log("Player Movement: I FELL");
             _animator.SetBool("isLanding", true);
             inAir = false;
         }else
@@ -93,6 +92,7 @@ public class Player_Movement : MonoBehaviour
 
     private void Jump()
     {
+        // setting activeButton based on players turn
         activeJumpButton = !turned ? InputManager.Instance.P1ButtonJumpUp : InputManager.Instance.P2ButtonJumpUp;
 
         if(canJump && !activeJumpButton && IsGrounded())
@@ -134,8 +134,8 @@ public class Player_Movement : MonoBehaviour
         }
     }
 
-    // Calculate horizontal movement based on player
-    // Berechne die horizontale Bewegung basierend auf dem Spieler
+    // Setting the horizontal movement based of the Inputs (1, 0 or -1)
+    // Setzt die horizontale Bewegung basierend auf den Input (1, 0 oder -1)
     private void SetDirection()
     {
         if(!turned)
@@ -185,15 +185,17 @@ public class Player_Movement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
-    // Get and Set used by Spike Handler
+    // Get and Set used by TouchAndYouDie Handler
     public bool GetIsDying()
     {
         return isDying;
     }
 
+    // Also used by TouchAndYouDie Handler
     public void SetIsDying(bool newIsDying)
     {
         isDying = newIsDying;
+        // as the scene and character reloads the isDying variable is automatically set to false again
     }
 }
 
