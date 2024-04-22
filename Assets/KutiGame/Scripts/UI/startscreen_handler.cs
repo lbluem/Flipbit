@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Linq; // Hinzugefügter Namespace für LINQ
 
-public class startscreen_handler : MonoBehaviour
+public class Startscreen_Handler : MonoBehaviour
 {
     [SerializeField] private CanvasGroup myUIGroup;
 
