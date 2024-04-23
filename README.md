@@ -1,4 +1,4 @@
-## 🕹 Kuti von Template
+## 🕹 Flipbit
 
 Ein Videospiel für den Kuti Spieltisch auf der Basis eines bereitgestellten Unity Template Projekts.
 
