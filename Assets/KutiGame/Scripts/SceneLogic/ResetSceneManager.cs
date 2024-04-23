@@ -10,12 +10,13 @@ public class ResetSceneManager : MonoBehaviour
     // On Main Camera
     // Nur für die Entwicklung
     // Skript für Menü Button und ist in der Zukunft überflüssig
-    void Update()
+    
+    /* void Update()
     {
         if(KutiInput.GetKutiButtonDown(EKutiButton.MENU))
         {
             SceneManager.LoadScene(11, LoadSceneMode.Single);
             //Debug.Log("ResetSceneManager: Scene resetted");
         }
-    }
+    } */
 }
