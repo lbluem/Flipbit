@@ -40,18 +40,13 @@ Alle Szenen bestehen aus
 
 Zusätzlich haben alle Level
 - LevelTransition
-- 1BitPlayer
+- Player
 - Tilemaps
 - SwapPad(s)
 - (Platform Controller)
 - (Boxes)
 
 ### 🕸 Skript Relationen
-![Flipbit Skript Relations](https://github.com/lbluem/Kuti_von_Template/assets/66683993/62ba848e-a38f-4a88-80c1-d9ac59afff11)
+![Flipbit Skript Relations](https://github.com/lbluem/Kuti_von_Template/assets/66683993/d6fc6424-b8ce-4334-823b-fee78c052b93)
 (alle Relationen sind unidirektional)
 
-### ♨ Liste externer Materialien
-
-- Alle Grafiken stammen aus dem "1-Bit Platformer Pack" von "Kenney.nl".
-- Die Fonts sind ebenfalls von "Kenney.nl".
-- Der Soundtrack ist aus dem "Generic 8-bit JRPG Soundtrack" von "AVGVSTA".
